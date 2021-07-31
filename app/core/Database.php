@@ -28,10 +28,6 @@ class Database
             die($e->getMessage());
         }
     }
-    public function query($query)
-    {
-        $this->stmt = $this->dbh->prepare($query);
-    }
 
     public function bind($param, $value, $type = null)
     {
@@ -53,6 +49,10 @@ class Database
         $this->stmt->bindValue($param, $value, $type);
     }
 
+    public function query($query)
+    {
+        $this->stmt = $this->dbh->prepare($query);
+    }
 
     public function execute()
     {
