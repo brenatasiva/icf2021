@@ -14,7 +14,7 @@ class Database
     public function __construct()
     {
         //dsn= data source name
-        $dsn = 'msyql:host=' . $this->host . ';dbname=' . $this->db_name;
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
 
         $option = [
             PDO::ATTR_PERSISTENT => true,
@@ -27,16 +27,25 @@ class Database
             //throw $th;
             die($e->getMessage());
         }
+        // $this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
+    }
+    public function query($query)
+    {
+        $this->stmt = $this->dbh->prepare($query);
     }
 
     public function bind($param, $value, $type = null)
     {
         if (is_null($type)) {
             switch (true) {
+                    //cek apakah value nya int
                 case is_int($value):
+                    //jika int ganti type ke int
                     $type = PDO::PARAM_INT;
                     break;
+                    //cek apakah value nya boolean
                 case is_bool($value):
+                    //jika bool ganti type ke bool
                     $type = PDO::PARAM_BOOL;
                     break;
                 case is_null($value):
@@ -49,10 +58,6 @@ class Database
         $this->stmt->bindValue($param, $value, $type);
     }
 
-    public function query($query)
-    {
-        $this->stmt = $this->dbh->prepare($query);
-    }
 
     public function execute()
     {
