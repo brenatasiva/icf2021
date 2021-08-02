@@ -17,10 +17,10 @@ class User_model
 
     public function validateUser($data)
     {
-        $sql = "SELECT ('username', 'password') from user where username = :username and password = :pass";
+        $sql = "SELECT * from user where username = :username and password = :pass";
         $this->db->query($sql);
         $this->db->bind('username', $data['username']);
-        $this->db->bind('password', $data['pass']);
+        $this->db->bind('pass', $data['pass']);
         $this->db->execute();
         return $this->db->rowCount();
     }

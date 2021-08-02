@@ -23,9 +23,24 @@
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'About') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Riwayat') ? 'active' : '' ?>" href="<?= BASEURL; ?>/riwayat" <?php echo (isset($_SESSION['username'])) ? '' : 'hidden' ?>>Riwayat</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ') ? 'active' : '' ?>" href="<?= BASEURL; ?>/faq">FAQ</a>
-          <a class="nav-link <?php echo ($data['judulHalaman'] == 'Login') ? 'active' : '' ?>" href="<?= BASEURL; ?>/login">Login/Register</a>
+
+          <?php if (isset($_SESSION['username'])) { ?>
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <?= $_SESSION['username']; ?>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="<?= BASEURL; ?>/login/logout">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          <?php } else { ?>
+            <a class="nav-link <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/login">Login / Register</a>
+          <?php } ?>
 
         </div>
       </div>
     </div>
   </nav>
+  <div class="container">

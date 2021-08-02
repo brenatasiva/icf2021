@@ -1,4 +1,4 @@
-<div class="container">
+
     <h1 class="mt-4">Welcome to ICF</h1>
 
     <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -33,4 +33,3 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
