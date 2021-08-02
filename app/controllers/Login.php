@@ -15,8 +15,14 @@ class Login extends Controller
     {
         if ($this->model('User_model')->validateUser($_POST) > 0) {
             $_SESSION['username'] = $_POST['username'];
-            $data['judulHalaman'] = "Home";
-            header('location: ' . BASEURL);
+            if ($_POST['username'] == "admindong") {
+                $data['judulHalaman'] = "Admin";
+                header('location: ' . BASEURL . '/admin');
+            } else {
+                $data['judulHalaman'] = "Home";
+                header('location: ' . BASEURL);
+            }
+        } else {
         }
     }
 
