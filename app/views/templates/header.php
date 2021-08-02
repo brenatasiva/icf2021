@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +27,7 @@
           <a class="nav-link" href="<?= BASEURL; ?>/about">About</a>
           <a class="nav-link" href="<?= BASEURL; ?>/riwayat">Riwayat</a>
           <a class="nav-link" href="<?= BASEURL; ?>/faq">FAQ</a>
+          <a class="nav-link" href="<?= BASEURL; ?>/login">Login</a>
         </div>
       </div>
     </div>

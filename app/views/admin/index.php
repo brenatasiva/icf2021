@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="mt-4">Daftar Peserta Keseluruhan</h1>
 
-    <table>
+    <table class="table table-border table-dark">
         <thead>
             <td>Username</td>
             <td>Nama</td>
