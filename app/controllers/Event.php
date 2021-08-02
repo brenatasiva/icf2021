@@ -4,7 +4,7 @@ class Event extends Controller
 {
     public function index()
     {
-        $data['judulHalaman'] = "Home";
+        $data['judulHalaman'] = "Event";
         $data['listAllEvent'] = $this->model('Event_model')->getAllEvent();
         $this->view('templates/header', $data);
         $this->view('event/index', $data);

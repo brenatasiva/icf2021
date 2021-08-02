@@ -1,3 +1,8 @@
+<?php
+if ($_SESSION['username'] != 'admin') {
+    header('location: ' . BASEURL);
+}
+?>
 <div class="container">
     <h1 class="mt-4">Daftar Peserta Keseluruhan</h1>
 
