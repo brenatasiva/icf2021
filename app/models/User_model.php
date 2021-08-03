@@ -71,7 +71,7 @@ class User_model
         $this->db->bind('email', $data['email']);
         $this->db->bind('no_hp', $data['no_hp']);
         $this->db->bind('nrp', $data['nrp']);
-        $this->db->bind('username', $data['username']);
+        $this->db->bind('username', $_SESSION['username']);
         $this->db->execute();
         return $this->db->rowCount();
     }

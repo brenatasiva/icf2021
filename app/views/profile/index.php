@@ -1,7 +1,5 @@
 <?php Flasher::flash(); ?>
 <form class="mt-5" action="<?= BASEURL; ?>/user/editProfile" method="post">
-    <input type="text" class="form-control" id="username" name="username" value="<?= $_SESSION['username']; ?>" hidden>
-
     <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
         <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" disabled value="<?= $data['User'][0]['nama']; ?>">
