@@ -23,7 +23,11 @@ class User extends Controller
     public function editProfile()
     {
         $data['judulHalaman'] = "Profile";
-        $this->model('User_model')->editUser($_POST);
+        if ($this->model('User_model')->editUser($_POST) > 0)
+            Flasher::setFlash("Berhasil", "Edit Profile", "Ijo bg-success");
+        else
+            Flasher::setFlash("Gagal", "Edit Profile", "Merah bg-danger");
+        $data['User'] = $this->model('User_model')->getUser($_SESSION['username']);
         $this->view('templates/header', $data);
         $this->view('profile/index', $data);
         $this->view('templates/footer');
@@ -50,6 +54,11 @@ class User extends Controller
                 header('location: ' . BASEURL);
             }
         } else {
+            Flasher::setFlash("Gagal", "Login", "Merah bg-danger");
+            $data['judulHalaman'] = "Login";
+            $this->view('templates/header', $data);
+            $this->view('login/index', $data);
+            $this->view('templates/footer');
         }
     }
 

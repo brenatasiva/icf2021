@@ -66,8 +66,7 @@ class User_model
 
     public function editUser($data)
     {
-        print_r($data);
-        $sql = "UPDATE user set email = :email, no_hp = :ho_hp, nrp = :nrp where username = :username";
+        $sql = "UPDATE user set email = :email, no_hp = :no_hp, nrp = :nrp where username = :username";
         $this->db->query($sql);
         $this->db->bind('email', $data['email']);
         $this->db->bind('no_hp', $data['no_hp']);

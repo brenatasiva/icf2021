@@ -1,3 +1,4 @@
+<?php Flasher::flash(); ?>
 <form class="mt-5" action="<?= BASEURL; ?>/user/editProfile" method="post">
     <input type="text" class="form-control" id="username" name="username" value="<?= $_SESSION['username']; ?>" hidden>
 
