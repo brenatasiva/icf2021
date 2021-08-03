@@ -10,8 +10,16 @@ class User_model
 
     public function getAllUser()
     {
-        $sql = "SELECT * from user;";
+        $sql = "SELECT * from user";
         $this->db->query($sql);
+        return $this->db->resultSet();
+    }
+
+    public function getUser($data)
+    {
+        $sql = "SELECT * from user where username = :username";
+        $this->db->query($sql);
+        $this->db->bind('username', $data);
         return $this->db->resultSet();
     }
 
@@ -52,6 +60,19 @@ class User_model
         $this->db->bind('email', $data['email']);
         $this->db->bind('no_hp', $data['no_hp']);
         $this->db->bind('nrp', $data['nrp']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function editUser($data)
+    {
+        print_r($data);
+        $sql = "UPDATE user set email = :email, no_hp = :ho_hp, nrp = :nrp where username = :username";
+        $this->db->query($sql);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('no_hp', $data['no_hp']);
+        $this->db->bind('nrp', $data['nrp']);
+        $this->db->bind('username', $data['username']);
         $this->db->execute();
         return $this->db->rowCount();
     }
