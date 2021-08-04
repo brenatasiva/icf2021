@@ -10,14 +10,14 @@ class Event_model
 
     public function getAllEvent()
     {
-        $sql = "SELECT * from event";
+        $sql = "SELECT * from event e inner join jenis j on e.jenis_id = j.id";
         $this->db->query($sql);
         return $this->db->resultSet();
     }
 
     public function getEvent($data)
     {
-        $sql = "SELECT * from event where id = :id";
+        $sql = "SELECT * from event e inner join jenis j on e.jenis_id = j.id where e.id = :id";
         $this->db->query($sql);
         $this->db->bind('id', $data['id']);
         return $this->db->single();

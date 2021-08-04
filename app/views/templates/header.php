@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav text-center">
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Home') ? 'active' : '' ?>" href="<?= BASEURL; ?>">Home</a>
-          <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event">Event</a>
+          <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event' || $data['judulHalaman'] == "Detil Event" || $data['judulHalaman'] == 'Daftar Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event">Event</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'About') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Riwayat') ? 'active' : '' ?>" href="<?= BASEURL; ?>/riwayat" <?php echo (isset($_SESSION['username'])) ? '' : 'hidden' ?>>Riwayat</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ') ? 'active' : '' ?>" href="<?= BASEURL; ?>/faq">FAQ</a>
@@ -27,16 +27,17 @@
           <?php if (isset($_SESSION['username'])) { ?>
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" #" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <?= $_SESSION['username']; ?>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                  <li><a class="dropdown-item" href="<?= BASEURL; ?>/login/logout">Logout</a></li>
+                  <li><a class="dropdown-item <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" <?= BASEURL; ?>/user/profile">Edit Profile</a></li>
+                  <li><a class="dropdown-item" href="<?= BASEURL; ?>/user/logout">Logout</a></li>
                 </ul>
               </li>
             </ul>
           <?php } else { ?>
-            <a class="nav-link <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/login">Login / Register</a>
+            <a class="nav-link <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">Login / Register</a>
           <?php } ?>
 
         </div>
