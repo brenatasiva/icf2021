@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav text-center">
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Home') ? 'active' : '' ?>" href="<?= BASEURL; ?>">Home</a>
-          <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event">Event</a>
+          <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event' || $data['judulHalaman'] == "Detil Event") ? 'active' : '' ?>" href="<?= BASEURL; ?>/event">Event</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'About') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Riwayat') ? 'active' : '' ?>" href="<?= BASEURL; ?>/riwayat" <?php echo (isset($_SESSION['username'])) ? '' : 'hidden' ?>>Riwayat</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ') ? 'active' : '' ?>" href="<?= BASEURL; ?>/faq">FAQ</a>

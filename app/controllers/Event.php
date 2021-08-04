@@ -13,5 +13,10 @@ class Event extends Controller
 
     public function detil()
     {
+        $data['judulHalaman'] = "Detil Event";
+        $data['listAllEvent'] = $this->model('Event_model')->getEvent($_POST);
+        $this->view('templates/header', $data);
+        $this->view('event/detil', $data);
+        $this->view('templates/footer');
     }
 }

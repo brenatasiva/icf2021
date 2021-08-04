@@ -77,4 +77,14 @@ class User extends Controller
         $this->view('register/index', $data);
         $this->view('templates/footer');
     }
+
+    public function daftarEvent()
+    {
+        # 
+    }
+
+    public function hapusEvent()
+    {
+        # code...
+    }
 }

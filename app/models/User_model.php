@@ -80,7 +80,7 @@ class User_model
     {
         $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar, bukti_pembayaran, nama_tim) values (:username, :event_id, :tgl_daftar: bukti_pembayaran, nama_tim)";
         $this->db->query($sql);
-        $this->db->bind('username', $data['username']);
+        $this->db->bind('username', $_SESSION['username']);
         $this->db->bind('event_id', $data['event_id']);
         $this->db->bind('tgl_daftar', $data['tgl_daftar']);
         $this->db->bind('bukti_pembayaran', $data['bukti_pembayaran']);
