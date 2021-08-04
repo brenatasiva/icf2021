@@ -54,11 +54,9 @@ class User extends Controller
                 header('location: ' . BASEURL);
             }
         } else {
-            Flasher::setFlash("Gagal", "Login", "Merah bg-danger");
+            Flasher::setFlash("Gagal", "Login", "danger");
             $data['judulHalaman'] = "Login";
-            $this->view('templates/header', $data);
-            $this->view('login/index', $data);
-            $this->view('templates/footer');
+            header('location: ' . BASEURL . '/user/login');
         }
     }
 
