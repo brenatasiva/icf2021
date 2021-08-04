@@ -12,11 +12,9 @@
         $tglMulai = date("d M Y", strtotime($data['listEvent']['tanggal_mulai']));
         $tglSelesai = date("d M Y", strtotime($data['listEvent']['tanggal_selesai']));
         ?>
-        <form action="<?= BASEURL; ?>/event/formDaftar" method="post">
-            <td><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai ?></td>
-            <td><?= $data['listEvent']['deskripsi']; ?></td>
-            <td><?= $data['listEvent']['jenis']; ?></td>
-            <td><button type="submit" name="id" value="<?= $data['listEvent']['id']; ?>">Daftar</button></td>
-        </form>
+        <td><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai ?></td>
+        <td><?= $data['listEvent']['deskripsi']; ?></td>
+        <td><?= $data['listEvent']['jenis']; ?></td>
+        <td><a href="<?= BASEURL; ?>/event/formDaftar/<?= $data['paramEvent'] ?>">Daftar</a></td>
     </tbody>
 </table>

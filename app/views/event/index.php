@@ -11,15 +11,14 @@
         <?php foreach ($data['listAllEvent'] as $key) :
             $tglMulai = date("d M Y", strtotime($key['tanggal_mulai']));
             $tglSelesai = date("d M Y", strtotime($key['tanggal_selesai']));
+            $paramEvent = strtolower(str_replace(' ', '-', $key['nama']));
         ?>
-            <form action="<?= BASEURL; ?>/event/detil" method="post">
-                <tr>
-                    <td><?= $key['nama']; ?></td>
-                    <td><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai ?></td>
-                    <td><?= $key['jenis']; ?></td>
-                    <td><button type="submit" name="id" value="<?= $key['id']; ?>">Lihat Detil</button></td>
-                </tr>
-            </form>
+            <tr>
+                <td><?= $key['nama']; ?></td>
+                <td><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai ?></td>
+                <td><?= $key['jenis']; ?></td>
+                <td><a href="<?= BASEURL; ?>/event/detil/<?= $paramEvent ?>">Lihat Detil</a></td>
+            </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
