@@ -2,6 +2,11 @@
 
 class User extends Controller
 {
+    public function index()
+    {
+        header('Location: ' . BASEURL);
+    }
+
     public function admin()
     {
         $data['judulHalaman'] = "Admin";
@@ -24,9 +29,9 @@ class User extends Controller
     {
         $data['judulHalaman'] = "Profile";
         if ($this->model('User_model')->editUser($_POST) > 0)
-            Flasher::setFlash("Berhasil", "Edit Profile", "Ijo bg-success");
+            Flasher::setFlash("Berhasil", "Edit Profile", "success");
         else
-            Flasher::setFlash("Gagal", "Edit Profile", "Merah bg-danger");
+            Flasher::setFlash("Gagal", "Edit Profile", "danger");
         $data['User'] = $this->model('User_model')->getUser($_SESSION['username']);
         $this->view('templates/header', $data);
         $this->view('profile/index', $data);
@@ -54,11 +59,9 @@ class User extends Controller
                 header('location: ' . BASEURL);
             }
         } else {
-            Flasher::setFlash("Gagal", "Login", "Merah bg-danger");
+            Flasher::setFlash("Gagal", "Login", "danger");
             $data['judulHalaman'] = "Login";
-            $this->view('templates/header', $data);
-            $this->view('login/index', $data);
-            $this->view('templates/footer');
+            header('location: ' . BASEURL . '/user/login');
         }
     }
 
