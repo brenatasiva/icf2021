@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2021 at 05:06 PM
+-- Generation Time: Aug 04, 2021 at 07:36 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -38,6 +38,15 @@ CREATE TABLE `event` (
   `jenis_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `link`, `jenis_id`) VALUES
+(1, 'Workshop Menggambar Komik', '2021-08-01', '2021-08-01', 'lorem ipsum', '', 2),
+(2, 'Seminar IoT', '2021-08-02', '2021-08-02', 'lorem lorem', '', 1),
+(3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', 3);
+
 -- --------------------------------------------------------
 
 --
@@ -68,6 +77,15 @@ CREATE TABLE `jenis` (
   `id` int(11) NOT NULL,
   `jenis` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `jenis`
+--
+
+INSERT INTO `jenis` (`id`, `jenis`) VALUES
+(1, 'Seminar'),
+(2, 'Workshop'),
+(3, 'Lomba');
 
 -- --------------------------------------------------------
 
@@ -128,7 +146,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`) VALUES
-('dummy1', 'dummy1', 'dummy1', 'dummy1@gmail.com', '08123456789', '123456789'),
+('dummy1', 'dummy1', 'dummy1', 'dummy1@gmail.com', '08123456789', '1234'),
 ('dummy2', 'dummy2', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789');
 
 --
@@ -189,7 +207,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -201,7 +219,7 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pengumuman`

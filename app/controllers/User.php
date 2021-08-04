@@ -33,9 +33,7 @@ class User extends Controller
         else
             Flasher::setFlash("Gagal", "Edit Profile", "danger");
         $data['User'] = $this->model('User_model')->getUser($_SESSION['username']);
-        $this->view('templates/header', $data);
-        $this->view('profile/index', $data);
-        $this->view('templates/footer');
+        header('location: ' . BASEURL . '/user/profile');
     }
 
     public function Login()
