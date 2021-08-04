@@ -77,4 +77,43 @@ class User extends Controller
         $this->view('register/index', $data);
         $this->view('templates/footer');
     }
+
+    public function registUser()
+    {
+        if (isset($_POST['btnsubmit'])) {
+            if (!isset($_POST['username']) || $_POST['username'] == "") {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . '/user/register');
+            }
+            if (!isset($_POST['password']) || $_POST['password'] == "") {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . 'user/register');
+            }
+            if (!isset($_POST['nama']) || $_POST['nama'] == "") {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . 'user/register');
+            }
+            if (!isset($_POST['email']) || $_POST['email'] == "") {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . 'user/register');
+            }
+            if (!isset($_POST['nomor'])) {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . 'user/register');
+            }
+            if (!isset($_POST['nrp']) || strlen($_POST['nrp']) > 10) {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . 'user/register');
+            }
+            if ($this->model('User_model')->insertUser($_POST) > 0) {
+                Flasher::setFlash('berhasil', 'terdaftar', 'success');
+                header('Location: ' . BASEURL . 'user/register');
+            } else {
+                Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                header('Location: ' . BASEURL . 'user/register');
+            }
+        } else {
+            header('Location: ' . BASEURL . 'user/register');
+        }
+    }
 }
