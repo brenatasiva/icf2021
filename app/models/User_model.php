@@ -39,10 +39,10 @@ class User_model
         $sql = "INSERT into user (username, password, nama, email, no_hp, nrp) values(:username, :pass, :nama, :email, :no_hp, :nrp)";
         $this->db->query($sql);
         $this->db->bind('username', $data['username']);
-        $this->db->bind('password', $data['password']);
+        $this->db->bind('pass', $data['password']);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('email', $data['email']);
-        $this->db->bind('no_hp', $data['no_hp']);
+        $this->db->bind('no_hp', $data['nomor']);
         $this->db->bind('nrp', $data['nrp']);
         $this->db->execute();
         return $this->db->rowCount();
