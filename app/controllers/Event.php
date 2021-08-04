@@ -14,9 +14,30 @@ class Event extends Controller
     public function detil()
     {
         $data['judulHalaman'] = "Detil Event";
-        $data['listAllEvent'] = $this->model('Event_model')->getEvent($_POST);
+        $data['listEvent'] = $this->model('Event_model')->getEvent($_POST);
         $this->view('templates/header', $data);
         $this->view('event/detil', $data);
         $this->view('templates/footer');
+    }
+
+    public function formDaftar()
+    {
+        $data['judulHalaman'] = "Daftar Event";
+        $this->view('templates/header', $data);
+        $this->view('event/daftar', $data);
+        $this->view('templates/footer');
+    }
+
+    public function daftarEvent()
+    {
+        if ($this->model('User_model')->insertPendaftaran($_POST) > 0) {
+            $this->index();
+        } else {
+        }
+    }
+
+    public function hapusEvent()
+    {
+        # code...
     }
 }

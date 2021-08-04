@@ -4,7 +4,6 @@
     <thead>
         <td>Nama</td>
         <td>Tanggal</td>
-        <td>Deskripsi</td>
         <td>Jenis</td>
         <td>Aksi</td>
     </thead>
@@ -17,9 +16,8 @@
                 <tr>
                     <td><?= $key['nama']; ?></td>
                     <td><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai ?></td>
-                    <td><?= $key['deskripsi']; ?></td>
                     <td><?= $key['jenis']; ?></td>
-                    <td><button type="submit" name="id" value="<?= $key['id']; ?>">Daftar</button></td>
+                    <td><button type="submit" name="id" value="<?= $key['id']; ?>">Lihat Detil</button></td>
                 </tr>
             </form>
         <?php endforeach; ?>
