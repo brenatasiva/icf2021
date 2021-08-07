@@ -25,7 +25,7 @@ class User_model
 
     public function validateUser($data)
     {
-        if ($data['username'] == "admindong") {
+        if ($data['username'] == "adminduongz") {
             if ($data['pass'] == "wokeee") {
                 return 1;
             } else {

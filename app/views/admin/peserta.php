@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION['username'] != 'admindong') {
+if ($_SESSION['username'] != 'adminduongz') {
     header('location: ' . BASEURL);
 }
 ?>

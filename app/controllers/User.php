@@ -7,15 +7,6 @@ class User extends Controller
         header('Location: ' . BASEURL);
     }
 
-    public function admin()
-    {
-        $data['judulHalaman'] = "Admin";
-        $data['listAllUser'] = $this->model('User_model')->getAllUser();
-        $this->view('templates/header', $data);
-        $this->view('admin/index', $data);
-        $this->view('templates/footer');
-    }
-
     public function profile()
     {
         $data['judulHalaman'] = "Profile";
@@ -51,7 +42,7 @@ class User extends Controller
     {
         if ($this->model('User_model')->validateUser($_POST) > 0) {
             $_SESSION['username'] = $_POST['username'];
-            if ($_POST['username'] == "admindong") {
+            if ($_POST['username'] == "adminduongz") {
                 $data['judulHalaman'] = "Admin";
                 header('location: ' . BASEURL . '/admin');
             } else {

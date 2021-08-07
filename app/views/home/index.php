@@ -36,66 +36,34 @@
 </style>
 <h1 class="mt-4">Welcome to ICF</h1>
 
-<!-- <?php foreach ($data[''] as $key) : ?>
 
-<?php endforeach; ?> -->
 <div class="container-fluid p-0 text-center my-3">
-    <h2 class="font-weight-light">Bootstrap Multi Slide Carousel</h2>
     <div class="row my-auto justify-content-center">
 
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner position-relative" role="listbox" style="z-index: 1;">
-                <div class="position-absolute " style="background-color: blue; width: 33.33vw; opacity: .25; height: 100%; z-index: 10000;"></div>
-                <div class="position-absolute " style="right:0; background-color: blue; width: 33.33vw; opacity: .25; height: 100%; z-index: 10000;"></div>
-
-                <div class="carousel-item active">
-                    <div class="col-md-4">
-                        <div class="card" style="border-radius: 0px;">
-                            <img src="//via.placeholder.com/500x400/31f?text=1" class="img-fluid">
-                            <div class="card-img-overlay">Slide 1</div>
+                <div class="position-absolute " style="background-color: blue; width: 33.33%; opacity: .25; height: 100%; z-index: 10000;"></div>
+                <div class="position-absolute " style="right:0; background-color: blue; width: 33.33%; opacity: .25; height: 100%; z-index: 10000;"></div>
+                <?php for ($i = 0; $i < 11; $i++) {
+                    if ($i == 0) {
+                ?>
+                        <div class="carousel-item active">
+                            <div class="col-md-4">
+                                <div class="card" style="border-radius: 0px;">
+                                    <img src="img/home/home_<?= $i + 1 ?>.jpg" class="img-fluid">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
-                            <div class="card-img-overlay">Slide 2</div>
+                    <?php } else { ?>
+                        <div class="carousel-item">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="img/home/home_<?= $i + 1 ?>.jpg" class="img-fluid">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
-                            <div class="card-img-overlay">Slide 4</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                            <div class="card-img-overlay">Slide 5</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                            <div class="card-img-overlay">Slide 6</div>
-                        </div>
-                    </div>
-                </div>
+                <?php }
+                } ?>
             </div>
 
             <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
@@ -106,7 +74,6 @@
             </a>
         </div>
     </div>
-    <h5 class="mt-2 fw-light">advances one slide at a time</h5>
 </div>
 
 <!-- <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
