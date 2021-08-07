@@ -42,8 +42,12 @@
 <div class="container-fluid p-0 text-center my-3">
     <h2 class="font-weight-light">Bootstrap Multi Slide Carousel</h2>
     <div class="row my-auto justify-content-center">
+
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" role="listbox" style="position: relative; z-index: 1;">
+            <div class="carousel-inner position-relative" role="listbox" style="z-index: 1;">
+                <div class="position-absolute " style="background-color: blue; width: 33.33vw; opacity: .25; height: 100%; z-index: 10000;"></div>
+                <div class="position-absolute " style="right:0; background-color: blue; width: 33.33vw; opacity: .25; height: 100%; z-index: 10000;"></div>
+
                 <div class="carousel-item active">
                     <div class="col-md-4">
                         <div class="card" style="border-radius: 0px;">
@@ -92,17 +96,12 @@
                         </div>
                     </div>
                 </div>
-                <div style="position: absolute; left: 0; background-color: blue; width: 33.33vw; height: 100%; z-index: 10;">
-
-                </div>
-                <div style="position: absolute; right: 0; background-color: blue; width: 33.33vw; height: 100%; z-index: 10;">
-
-                </div>
             </div>
-            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev" style="position: relative; z-index: 999;">
+
+            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
                 <span class=" carousel-control-prev-icon" aria-hidden="true"></span>
             </a>
-            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next" style="position: relative; z-index: 999;">
+            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </a>
         </div>
