@@ -1,4 +1,4 @@
-<form class="mt-5" action="<?= BASEURL; ?>/register/registUser" method="post">
+<form class="mt-5" action="<?= BASEURL; ?>/user/registUser" method="post">
     <?= Flasher::flash(); ?>
     <div class="mb-3">
         <label for="username" class="form-label">Username</label>
