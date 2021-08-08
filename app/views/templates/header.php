@@ -16,14 +16,19 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <div>
+          <!-- dummy -->
+        </div>
         <div class="navbar-nav text-center">
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Home') ? 'active' : '' ?>" href="<?= BASEURL; ?>">Home</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event' || $data['judulHalaman'] == "Detil Event" || $data['judulHalaman'] == 'Daftar Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event">Event</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'About') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Riwayat') ? 'active' : '' ?>" href="<?= BASEURL; ?>/riwayat" <?php echo (isset($_SESSION['username'])) ? '' : 'hidden' ?>>Riwayat</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ') ? 'active' : '' ?>" href="<?= BASEURL; ?>/faq">FAQ</a>
-
+        </div>
+        <div class="navbar-nav text-center">
+          <!-- button login -->
           <?php if (isset($_SESSION['username'])) { ?>
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -39,7 +44,6 @@
           <?php } else { ?>
             <a class="nav-link <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">Login / Register</a>
           <?php } ?>
-
         </div>
       </div>
     </div>

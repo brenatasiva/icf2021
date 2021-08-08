@@ -18,7 +18,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav text-center">
-                    <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/admin/peserta">Peserta</a>
+                    <a class="nav-link <?php echo ($data['judulHalaman'] == 'Peserta') ? 'active' : '' ?>" href="<?= BASEURL; ?>/admin/peserta">Peserta</a>
                     <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/admin/event">Event</a>
                     <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ') ? 'active' : '' ?>" href="<?= BASEURL; ?>/admin/faq">FAQ</a>
 

@@ -7,13 +7,13 @@
         .carousel-inner .carousel-item>div:first-child {
             display: block;
         }
+
+        .carousel-transparant {
+            display: none;
+        }
     }
 
-    .carousel-inner .carousel-item.active,
-    .carousel-inner .carousel-item-next,
-    .carousel-inner .carousel-item-prev {
-        display: flex;
-    }
+
 
     /* medium and up screens */
     @media (min-width: 768px) {
@@ -27,6 +27,16 @@
         .carousel-inner .carousel-item-prev {
             transform: translateX(-33.33%);
         }
+
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+
+        .carousel-transparant {
+            display: block;
+        }
     }
 
     .carousel-inner .carousel-item-end,
@@ -36,21 +46,20 @@
 </style>
 <h1 class="mt-4">Welcome to ICF</h1>
 
-
 <div class="container-fluid p-0 text-center my-3">
     <div class="row my-auto justify-content-center">
 
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner position-relative" role="listbox" style="z-index: 1;">
-                <div class="position-absolute " style="background-color: blue; width: 33.33%; opacity: .25; height: 100%; z-index: 10000;"></div>
-                <div class="position-absolute " style="right:0; background-color: blue; width: 33.33%; opacity: .25; height: 100%; z-index: 10000;"></div>
+                <div class="position-absolute carousel-transparant" style="background-color: blue; width: 33.33%; opacity: .25; height: 100%; z-index: 10000;"></div>
+                <div class="position-absolute carousel-transparant" style="right:0; background-color: blue; width: 33.33%; opacity: .25; height: 100%; z-index: 10000;"></div>
                 <?php for ($i = 0; $i < 11; $i++) {
                     if ($i == 0) {
                 ?>
                         <div class="carousel-item active">
                             <div class="col-md-4">
                                 <div class="card" style="border-radius: 0px;">
-                                    <img src="img/home/home_<?= $i + 1 ?>.jpg" class="img-fluid">
+                                    <img src="img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -58,7 +67,7 @@
                         <div class="carousel-item">
                             <div class="col-md-4">
                                 <div class="card">
-                                    <img src="img/home/home_<?= $i + 1 ?>.jpg" class="img-fluid">
+                                    <img src="img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
                         </div>
