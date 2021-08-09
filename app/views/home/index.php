@@ -13,7 +13,11 @@
         }
     }
 
-
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex;
+    }
 
     /* medium and up screens */
     @media (min-width: 768px) {
@@ -26,12 +30,6 @@
         .carousel-inner .carousel-item-start.active,
         .carousel-inner .carousel-item-prev {
             transform: translateX(-33.33%);
-        }
-
-        .carousel-inner .carousel-item.active,
-        .carousel-inner .carousel-item-next,
-        .carousel-inner .carousel-item-prev {
-            display: flex;
         }
 
         .carousel-transparant {
