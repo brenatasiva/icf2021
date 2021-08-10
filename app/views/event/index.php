@@ -34,7 +34,8 @@
                             <?php if ($key['jenis'] == 'Lomba') { ?>
                                 <button class="btn btn-primary" data-bs-target="#ModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Register</button>
                             <?php } else { ?>
-                                <form action="" method="post">
+                                <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
+                                    <input type="hidden" name="eid" value="<?= $key['id']; ?>">
                                     <input type="submit" class="btn btn-primary" value="Register">
                                 </form>
                             <?php } ?>
@@ -51,9 +52,9 @@
                                 <h5 class="modal-title" id="ModalToggleLabel2"><?= $key['nama']; ?></h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="" method="post">
+                            <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
                                 <div class="modal-body">
-                                    <input type="hidden" value="<?= $key['id']; ?>">
+                                    <input type="hidden" name="eid" value="<?= $key['id']; ?>">
                                     <input type="text" name="nama_tim" placeholder="Nama tim" required><br>
                                     <label for="">Bukti Transfer </label><input type="file" name="bukti_transfer" required>
                                 </div>

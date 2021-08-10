@@ -78,18 +78,19 @@ class User_model
 
     public function insertPendaftaran($data)
     {
+        $date = date("Y-m-d");
         if (is_null($data['nama_tim'])) {
             $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar) values (:username, :event_id, :tgl_daftar)";
             $this->db->query($sql);
             $this->db->bind('username', $_SESSION['username']);
-            $this->db->bind('event_id', $data['event_id']);
-            $this->db->bind('tgl_daftar', $data['tgl_daftar']);
+            $this->db->bind('event_id', $data['eid']);
+            $this->db->bind('tgl_daftar', $date);
         } else {
             $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar, bukti_pembayaran, nama_tim) values (:username, :event_id, :tgl_daftar, :bukti_pembayaran, :nama_tim)";
             $this->db->query($sql);
             $this->db->bind('username', $_SESSION['username']);
             $this->db->bind('event_id', $data['event_id']);
-            $this->db->bind('tgl_daftar', $data['tgl_daftar']);
+            $this->db->bind('tgl_daftar', $date);
             $this->db->bind('bukti_pembayaran', $data['bukti_pembayaran']);
             $this->db->bind('nama_tim', $data['nama_tim']);
         }

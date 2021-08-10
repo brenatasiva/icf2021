@@ -40,9 +40,20 @@ class Event extends Controller
 
     public function daftarEvent()
     {
-        if ($this->model('User_model')->insertPendaftaran($_POST) > 0) {
-            $this->index();
+        if (!isset($_SESSION['username'])) {
+            header('Location: ' . BASEURL . '/user/login');
         } else {
+            if ($_POST['eid'] == null) {
+                header('Location: ' . BASEURL . '/event');
+            } else {
+                if ($this->model('User_model')->insertPendaftaran($_POST) > 0) {
+                    Flasher::setFlash("Berhasil", "Mendaftar", "success");
+                    header('Location: ' . BASEURL . '/event');
+                } else {
+                    Flasher::setFlash("Gagal", "Mendaftar", "danger");
+                    header('Location: ' . BASEURL . '/event');
+                }
+            }
         }
     }
 
