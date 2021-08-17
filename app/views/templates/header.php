@@ -42,7 +42,7 @@
               </li>
             </ul>
           <?php } else { ?>
-            <a class="btn btn-outline-light <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">Login / Register</a>
+            <a class="btn btn-outline-light <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">Login</a>
           <?php } ?>
         </div>
       </div>

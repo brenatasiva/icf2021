@@ -1,4 +1,24 @@
-<h1 class="mt-4">FAQs</h1>
+<style type="text/css">
+    .faq-header-bg {
+        background-image: url("<?= BASEURL; ?>/img/faq/judul_faq_bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .faq-title {
+        margin: 0px !important;
+    }
+</style>
+<div class="faq-header-bg">
+    <div class="container">
+        <div class="row" style="padding-top: 60px; padding-bottom: 10px;">
+            <div class="col d-flex justify-content-start align-items-end">
+                <img src="<?= BASEURL; ?>/img/faq/white_dot.png" style="width: 20px; height: 20px; margin-bottom: 5px; margin-left: 15px;">
+                <h1 class="faq-title text-light fw-bold">FAQ's</h1>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="accordion" id="accordionExample">
     <?php
