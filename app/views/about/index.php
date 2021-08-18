@@ -43,9 +43,9 @@
     }
 </style>
 <h1 class="mt-4">About ICF</h1>
+<!-- carousel -->
 <div class="container-fluid p-0 text-center my-3">
     <div class="row my-auto justify-content-center">
-
         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner position-relative" role="listbox" style="z-index: 1;">
                 <div class="position-absolute carousel-transparant" style="background-color: #0183bd; width: 33.33%; opacity: .55; height: 100%; z-index: 10000;"></div>
@@ -81,6 +81,7 @@
         </div>
     </div>
 </div>
+<!-- end of carousel -->
 <script>
     let items = document.querySelectorAll('.carousel .carousel-item')
 

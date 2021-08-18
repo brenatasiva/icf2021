@@ -1,4 +1,3 @@
-<?php Flasher::flash(); ?>
 <form class="mt-5" action="<?= BASEURL; ?>/user/editProfile" method="post">
     <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>

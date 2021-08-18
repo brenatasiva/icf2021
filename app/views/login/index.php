@@ -1,4 +1,3 @@
-<?php Flasher::flash(); ?>
 <form method="post" action="<?= BASEURL; ?>/user/cekLogin">
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Username</label>

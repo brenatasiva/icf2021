@@ -31,7 +31,7 @@
                             <?= $key['deskripsi']; ?>
                         </div>
                         <div class="modal-footer">
-                            <?php if ($key['jenis'] == 'Lomba') { ?>
+                            <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
                                 <button class="btn btn-primary" data-bs-target="#ModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Register</button>
                             <?php } else { ?>
                                 <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <?php if ($key['jenis'] == 'Lomba') { ?>
+            <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
                 <div class="modal fade" id="ModalToggle2" aria-hidden="true" aria-labelledby="ModalToggleLabel2" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">

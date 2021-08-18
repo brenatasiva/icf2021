@@ -1,5 +1,4 @@
 <form class="mt-5" action="<?= BASEURL; ?>/user/registUser" method="post">
-    <?= Flasher::flash(); ?>
     <div class="mb-3">
         <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
     </div>
@@ -19,7 +18,7 @@
         <input type="text" class="form-control" id="nomor" name="nomor" placeholder="Nomor WA" required>
     </div>
     <div class="mb-3">
-        
+
     </div>
     <div class="mb-3">
         <input type="text" maxlength="10" class="form-control" id="nrp" name="nrp" placeholder="NRP">

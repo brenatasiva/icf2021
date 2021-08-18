@@ -22,7 +22,18 @@
         </div>
         <div class="navbar-nav text-center">
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Home') ? 'active' : '' ?>" href="<?= BASEURL; ?>">Home</a>
-          <a class="nav-link <?php echo ($data['judulHalaman'] == 'Event' || $data['judulHalaman'] == "Detil Event" || $data['judulHalaman'] == 'Daftar Event') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event">Event</a>
+          <!-- dropdown event -->
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle <?php echo ($data['judulHalaman'] == 'Seminar' || $data['judulHalaman'] == "Lomba" || $data['judulHalaman'] == 'Pameran') ? 'active' : '' ?>" href=" #" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Events</a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item <?php echo ($data['judulHalaman'] == 'Seminar') ? 'active' : '' ?>" href=" <?= BASEURL; ?>/event/seminar">Seminar</a></li>
+                <li><a class="dropdown-item <?php echo ($data['judulHalaman'] == 'Lomba') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event/lomba">Lomba</a></li>
+                <li><a class="dropdown-item <?php echo ($data['judulHalaman'] == 'Pameran') ? 'active' : '' ?>" href="<?= BASEURL; ?>/event/pameran">Pameran</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- end event -->
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'About') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'Riwayat') ? 'active' : '' ?>" href="<?= BASEURL; ?>/riwayat" <?php echo (isset($_SESSION['username'])) ? '' : 'hidden' ?>>Riwayat</a>
           <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ') ? 'active' : '' ?>" href="<?= BASEURL; ?>/faq">FAQ</a>
@@ -49,3 +60,4 @@
     </div>
   </nav>
   <div class="container-fluid p-0">
+    <?php Flasher::flash(); ?>

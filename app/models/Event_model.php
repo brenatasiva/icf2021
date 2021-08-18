@@ -18,10 +18,18 @@ class Event_model
     public function getEvent($data)
     {
         $event = str_replace('-', ' ', $data);
-        $sql = "SELECT * from event e inner join jenis j on e.jenis_id = j.id where e.nama = :nama";
+        $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where e.nama = :nama";
         $this->db->query($sql);
         $this->db->bind('nama', $event);
         return $this->db->single();
+    }
+
+    public function getEventPerCategory($data)
+    {
+        $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where j.jenis like :jenis";
+        $this->db->query($sql);
+        $this->db->bind('jenis', "%$data%");
+        return $this->db->resultSet();
     }
 
     public function insertEvent($data)
