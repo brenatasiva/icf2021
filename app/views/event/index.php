@@ -32,7 +32,9 @@
                         </div>
                         <div class="modal-footer">
                             <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
-                                <button class="btn btn-primary" data-bs-target="#ModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">Register</button>
+                                <form action="<?= BASEURL; ?>/event/formLomba" method="post">
+                                    <button type="submit" class="btn btn-primary" name="eid" value="<?= $key['id']; ?>">Register</button>
+                                </form>
                             <?php } else { ?>
                                 <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
                                     <input type="hidden" name="eid" value="<?= $key['id']; ?>">
@@ -44,7 +46,7 @@
                 </div>
             </div>
 
-            <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
+            <!-- <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
                 <div class="modal fade" id="ModalToggle2" aria-hidden="true" aria-labelledby="ModalToggleLabel2" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -66,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-            <?php } ?>
+            <?php } ?> -->
         <?php endforeach; ?>
     </tbody>
 </table>

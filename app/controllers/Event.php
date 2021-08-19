@@ -22,17 +22,45 @@ class Event extends Controller
     public function daftarEvent()
     {
         if (!isset($_SESSION['username'])) {
+            Flasher::setFlash("Perhatian", "Silahkan login sebelum daftar", "danger");
             header('Location: ' . BASEURL . '/user/login');
         } else {
-            if ($_POST['eid'] == null) {
-                header('Location: ' . BASEURL . '/event');
+            if ($this->model('User_model')->cekPendaftar($_POST) > 0) {
+                Flasher::setFlash("Perhatian", "Anda telah terdaftar di event ini", "danger");
+                header('Location: ' . BASEURL . '/home');
             } else {
-                if ($this->model('User_model')->insertPendaftaran($_POST) > 0) {
-                    Flasher::setFlash("Berhasil", "Mendaftar", "success");
-                    header('Location: ' . BASEURL . '/event');
+                if ($_POST['eid'] == null) {
+                    header('Location: ' . BASEURL . '/home');
                 } else {
-                    Flasher::setFlash("Gagal", "Mendaftar", "danger");
-                    header('Location: ' . BASEURL . '/event');
+                    if ($this->model('User_model')->insertPendaftaran($_POST) > 0) {
+                        Flasher::setFlash("Berhasil", "Mendaftar", "success");
+                        header('Location: ' . BASEURL . '/home');
+                    } else {
+                        Flasher::setFlash("Gagal", "Mendaftar", "danger");
+                        header('Location: ' . BASEURL . '/home');
+                    }
+                }
+            }
+        }
+    }
+
+    public function formLomba()
+    {
+        if (!isset($_SESSION['username'])) {
+            Flasher::setFlash("Perhatian", "Silahkan login sebelum daftar", "danger");
+            header('Location: ' . BASEURL . '/user/login');
+        } else {
+            if ($this->model('User_model')->cekPendaftar($_POST) > 0) {
+                Flasher::setFlash("Perhatian", "Anda telah terdaftar di event ini", "danger");
+                header('Location: ' . BASEURL . '/home');
+            } else {
+                if (!isset($_POST['eid'])) {
+                    header('Location: ' . BASEURL . '/home');
+                } else {
+                    $data['event'] = $this->model('Event_model')->getEvent($_POST);
+                    $this->view('templates/header', $data);
+                    $this->view('event/formLomba', $data);
+                    $this->view('templates/footer');
                 }
             }
         }

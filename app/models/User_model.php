@@ -76,7 +76,7 @@ class User_model
         return $this->db->rowCount();
     }
 
-    public function insertPendaftaran($data)
+    public function insertpendaftar($data)
     {
         $date = date("Y-m-d");
         if (!isset($data['nama_tim'])) {
@@ -94,6 +94,16 @@ class User_model
             $this->db->bind('bukti_pembayaran', $data['bukti_pembayaran']);
             $this->db->bind('nama_tim', $data['nama_tim']);
         }
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function cekPendaftar($data)
+    {
+        $sql = "SELECT user_username from pendaftar where user_username = :username and event_id = :event_id";
+        $this->db->query($sql);
+        $this->db->bind('username', $_SESSION['username']);
+        $this->db->bind('event_id', $data['eid']);
         $this->db->execute();
         return $this->db->rowCount();
     }

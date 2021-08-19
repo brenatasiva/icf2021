@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 06:34 AM
+-- Generation Time: Aug 19, 2021 at 05:50 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -21,6 +21,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `icf21`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anggota`
+--
+
+CREATE TABLE `anggota` (
+  `id` int(11) NOT NULL,
+  `pendaftar_id` int(11) DEFAULT NULL,
+  `nama` varchar(45) NOT NULL,
+  `nrp` varchar(10) DEFAULT NULL,
+  `no_hp` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `id_game` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -116,6 +132,7 @@ CREATE TABLE `pendaftar` (
   `tanggal_daftar` date NOT NULL,
   `status` enum('Pending','Diterima','Ditolak') NOT NULL DEFAULT 'Pending',
   `nama_tim` varchar(45) DEFAULT NULL,
+  `id_game` varchar(45) DEFAULT NULL,
   `link_drive` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -123,9 +140,9 @@ CREATE TABLE `pendaftar` (
 -- Dumping data for table `pendaftar`
 --
 
-INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `status`, `nama_tim`, `link_drive`) VALUES
-(1, 'dummy1', 1, '2021-08-18', 'Pending', NULL, NULL),
-(2, 'dummy1', 2, '2021-08-18', 'Pending', NULL, NULL);
+INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `status`, `nama_tim`, `id_game`, `link_drive`) VALUES
+(1, 'dummy1', 1, '2021-08-18', 'Pending', NULL, NULL, NULL),
+(2, 'dummy1', 2, '2021-08-18', 'Pending', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,6 +182,13 @@ INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`) VAL
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `anggota`
+--
+ALTER TABLE `anggota`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_rekan_pendaftar1_idx` (`pendaftar_id`);
 
 --
 -- Indexes for table `event`
@@ -255,6 +279,12 @@ ALTER TABLE `pengumuman`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `anggota`
+--
+ALTER TABLE `anggota`
+  ADD CONSTRAINT `fk_rekan_pendaftar1` FOREIGN KEY (`pendaftar_id`) REFERENCES `pendaftar` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `event`
