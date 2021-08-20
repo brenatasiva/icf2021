@@ -6,10 +6,12 @@ class Event extends Controller
     {
         $data['listAllEvent'] = $this->model('Event_model')->getEventPerCategory($category);
         if ($category === "seminar") {
-            $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
+            if (isset($_SESSION['username']))
+                $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
             $data['judulHalaman'] = "Seminar";
         } else if ($category === "lomba") {
-            $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
+            if (isset($_SESSION['username']))
+                $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
             $data['judulHalaman'] = "Lomba";
         } else if ($category === "pameran") {
             $data['judulHalaman'] = "Pameran";
