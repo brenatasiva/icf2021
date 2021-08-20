@@ -42,6 +42,8 @@
         transform: translateX(0);
     }
 </style>
+<<<<<<< Updated upstream
+=======
 
 <!-- START OF HERO -->
 <div class="h-auto" style='width:100%; position:relative;'>
@@ -57,6 +59,200 @@
     </div>
 </div>
 <!-- END OF HERO -->
+
+<!-- START OF VIDEO DESCRIPTION >
+<div style="height:85vh; background: rgb(1,151,148); background: linear-gradient(90deg, rgba(1,151,148,1) 0%, rgba(5,132,187,1) 100%); width:100%; " class="d-flex justify-content-center align-items-center">
+    <div style='height: 33.33%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+    <div style="width:70%; height:33.33%;" class='d-flex'>
+        <div style="margin: 0 3%;">
+            <h1>Lorem Ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animid est laborum</p>
+        </div>
+        <div style='height:100%; aspect-ratio: 16/9; box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'>
+            <iframe width="100%" height="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+    </div>
+    <div style='height: 33.33%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+</div>
+<END OF VIDEO DESCRIPTION -->
+
+<!-- START OF VIDEO DESCRIPTION -->
+<div style="height:auto; background: rgb(1,151,148); width:100%; position:relative;" class="d-flex justify-content-center align-items-center">
+    <img src="img/home/bgvideo.jpg" alt="" style='width:100%; position: relative;'>
+    <div style='position:absolute; height: 33.33%;' class="d-flex">
+        <div style='height: 100%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+        <div style="width:70%; height:100%;" class='d-flex'>
+            <div style="margin: 0 3%;">
+                <h1 style="font-size: 4vw;">Lorem Ipsum</h1>
+                <p style="font-size: 1vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animid est laborum</p>
+            </div>
+            <div style='height:100%; aspect-ratio: 16/9; box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'>
+                <iframe width="100%" height="100%"  src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+            </div>
+        </div>
+        <div style='height: 100%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+    </div>
+</div>
+<!-- END OF VIDEO DESCRIPTION -->
+
+<!-- START OF TIMELINE -->
+<div style='height: 30vh; width:100%; background:#efece7;'>
+    <div style='position:relative; display: flex; top: 170px; left: 22%; width:fit-content;'>
+        <img src="img/home/dotted.png" width="25px" height="25px" style="margin-top: 8px;" alt="">
+        <h2 style="margin-left: 25px;"><b>Timeline</b></h2>
+    </div>
+</div>
+<div style='height:auto; width:100%; justify-content: space-between; background:#efece7;' class='d-flex'>
+    <div style='height: auto; width:5%; background: rgb(1,151,148)'></div>
+    <div style='height: auto; width: 85%; justify-content: space-between; margin-right:-6px;' class='d-flex'>
+        <div style='height: 100%; width:50%; margin : 0 5% 0 15%;'>
+        <style>
+            ul.timeline {
+                list-style-type: none;
+                position: relative;
+            }
+            .linetimeline {
+                content: ' ';
+                background: #0582BC;
+                display: inline-block;
+                position: absolute;
+                left: 29px;
+                width: 1px;
+                height: 100%;
+                z-index: 400;
+            }
+
+            ul.timeline > li {
+                padding: 20px 0 25px 0;
+                padding-left: 20px;
+            }
+            ul.timeline > li:before {
+                content: ' ';
+                background: #efece7;
+                display: inline-block;
+                position: absolute;
+                border-radius: 50%;
+                border: 1px solid #0582BC;
+                left: -27px;
+                width: 35px;
+                height: 35px;
+                z-index: 400;
+            }
+            </style>
+            <div class="container">
+                <div class="">
+                    <ul class="timeline">
+                        <li style='position:relative;'>
+                            <div style='width:1px; height:100%; background-color:#0582BC; display:inline-block; position:absolute; left:-10px;'></div>
+                            <div style='position:relative;'>
+                                <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
+                                    <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32"/>
+                                </svg>                                
+                                <p style='position:absolute; color: white; top: -5px; left: 30px; font-size:x-large;'>
+                                    20 Sep '21
+                                </p>
+                            </div>
+                            <div style='margin-left:2.5%;'>
+                                <h3><b>Lorem Ipsum</b></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                            </div>
+                        </li>
+                        <li style='position:relative;'>
+                            <div style='width:1px; height:100%; background-color:#0582BC; display:inline-block; position:absolute; left:-10px;'></div>
+                            <div style='position:relative;'>
+                                <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
+                                    <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32"/>
+                                </svg>                                
+                                <p style='position:absolute; color: white; top: -5px; left: 30px; font-size:x-large;'>
+                                    20 Sep '21
+                                </p>
+                            </div>
+                            <div style='margin-left:2.5%;'>
+                                <h3><b>Lorem Ipsum</b></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                            </div>
+                        </li>
+                        <li style='position:relative;'>
+                            <div style='position:relative;'>
+                                <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
+                                    <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32"/>
+                                </svg>                                
+                                <p style='position:absolute; color: white; top: -5px; left: 30px; font-size:x-large;'>
+                                    20 Sep '21
+                                </p>
+                            </div>
+                            <div style='margin-left:2.5%;'>
+                                <h3><b>Lorem Ipsum</b></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style=' width:50%;'>   
+            <img src="img/home/poster.png" style='height:100%; width:100%;' alt="">
+        </div>
+    </div>
+    <div style='height: auto; width:10%; background: rgb(1,151,148); background: linear-gradient(90deg, rgba(1,151,148,1) 0%, rgba(5,132,187,1) 100%);'></div>
+</div>
+<!-- END OF TIMELINE -->
+
+<!-- START OF LOCATION -->
+<!-- END OF LOCATION -->
+
+<!-- carousel fix -->
+<!--div class="container-fluid p-0 text-center my-3">
+    <div class="row my-auto justify-content-center">
+
+        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner position-relative" role="listbox" style="z-index: 1;">
+                <div class="position-absolute carousel-transparant" style="background-color: #0183bd; width: 33.33%; opacity: .55; height: 100%; z-index: 10000;"></div>
+                <div class="position-absolute carousel-transparant" style="right:0; background-color: #0183bd; width: 33.33%; opacity: .55; height: 100%; z-index: 10000;"></div>
+                <?php for ($i = 0; $i < 11; $i++) {
+                    if ($i == 0) {
+                ?>
+                        <div class="carousel-item active">
+                            <div class="col-md-4">
+                                <div class="card" style="border-radius: 0px;">
+                                    <img src="img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    <?php } else { ?>
+                        <div class="carousel-item">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                <?php }
+                } ?>
+            </div>
+>>>>>>> Stashed changes
+
+<!-- START OF HERO -->
+<div class="h-auto" style='width:100%; position:relative;'>
+    <div style="text-align:right; position: relative;">
+        <img src="img/home/hero-main.jpg" alt="" style="width:70%;">
+        <div class='h-100 ' style="width:100%; position: absolute; top:0; left:0;
+            background: rgb(239, 236, 231);
+            background: linear-gradient(90deg, rgba(239, 236, 231,1) 0%, rgba(239, 236, 231,1) 43%, rgba(239, 236, 231,0.6699054621848739) 56%, rgba(239, 236, 231,0) 75%, rgba(239, 236, 231,0) 100%);">
+        </div>
+    </div>
+<<<<<<< Updated upstream
+    <div class='h-100 d-flex justify-content-center container' style='position: absolute; top:0; align-items:flex-start !important; flex-direction: column; margin-left: 15%; width:auto;'> 
+        <img src="img/home/welcome.png" style='height:40%;' alt="">
+    </div>
+</div>
+<!-- END OF HERO -->
+=======
+</div-->
+<!-- carousel fix -->
+>>>>>>> Stashed changes
 
 <!-- START OF VIDEO DESCRIPTION -->
 <div style="height:auto; background: rgb(1,151,148); width:100%; position:relative;" class="d-flex justify-content-center align-items-center">
