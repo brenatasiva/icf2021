@@ -122,12 +122,17 @@ class User_model
         return $this->db->rowCount();
     }
 
-    public function riwayatPendaftaran()
+    public function riwayatPendaftaran($data)
     {
-        $sql = "SELECT * from pendaftar p inner join anggota a on p.id = a.pendaftar_id where p.user_username = :username";
+        $sql = "SELECT p.id, p.status, p.nama_tim, p.id_game, p.link_drive, e.nama, e.tanggal_mulai, e.tanggal_selesai, e.author, e.link_wa, e.link_zoom from pendaftar p inner join event e on p.event_id = e.id inner join jenis j on j.id = e.jenis_id where p.user_username = :username and j.jenis like :jenis";
         $this->db->query($sql);
         $this->db->bind('username', $_SESSION['username']);
+        $this->db->bind('jenis', "%$data%");
         return $this->db->resultSet();
+    }
+
+    public function riwayatDetil($data)
+    {
     }
 
     public function updateStatus($data)

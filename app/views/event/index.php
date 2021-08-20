@@ -1,7 +1,61 @@
 <h1 class="mt-4">Events</h1>
 
-<h6>Riwayat Daftar</h6>
+<?php if ($data['judulHalaman'] != "Pameran" && isset($_SESSION['username'])) { ?>
+    <h6>Riwayat Daftar</h6>
+    <table class="table table-border table-dark">
+        <thead>
+            <td>Nama Event</td>
+            <?php if ($data['judulHalaman'] == "Seminar") echo "<td>Pembicara</td><td>Tanggal Pelaksanaan</td>"; ?>
+            <td>Status</td>
+            <?php if ($data['judulHalaman'] == "Lomba") echo "<td>Aksi</td>" ?>
+        </thead>
+        <tbody>
+            <?php foreach ($data['listRiwayat'] as $key) :
+                $tglMulai = date("d M Y", strtotime($key['tanggal_mulai']));
+                $tglSelesai = date("d M Y", strtotime($key['tanggal_selesai']));
+                $paramEvent = strtolower(str_replace(' ', '-', $key['nama']));
+                $tgl = ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai;
+            ?>
+                <tr>
+                    <td><?= $key['nama']; ?></td>
+                    <?php if ($data['judulHalaman'] == "Seminar") echo "<td>" . $key['author'] . "</td><td>" . $tgl . " </td>";
+                    elseif ($data['judulHalaman'] == "Lomba") echo ""; ?>
+                    <td><?= $key['status'] ?></td>
+                    <!-- <td><a href="<?= BASEURL; ?>/event/detil/<?= $paramEvent ?>">Lihat Detil</a></td> -->
+                    <?php if ($data['judulHalaman'] == "Lomba") { ?>
+                        <td><a data-bs-toggle="modal" href="#modalToggle<?= $key['id']; ?>" role="button">Lihat Detil</a></td>
+                    <?php } ?>
+                </tr>
 
+                <div class="modal fade" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalToggle<?= $key['id']; ?>Label"><?= $key['nama']; ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <?= $key['deskripsi']; ?>
+                            </div>
+                            <div class="modal-footer">
+                                <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
+                                    <form action="<?= BASEURL; ?>/event/formLomba" method="post">
+                                        <button type="submit" class="btn btn-primary" name="eid" value="<?= $key['id']; ?>">Register</button>
+                                    </form>
+                                <?php } else { ?>
+                                    <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
+                                        <input type="hidden" name="eid" value="<?= $key['id']; ?>">
+                                        <input type="submit" class="btn btn-primary" value="Register">
+                                    </form>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php } ?>
 
 
 
