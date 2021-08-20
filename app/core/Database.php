@@ -80,4 +80,9 @@ class Database
     {
         return $this->stmt->rowCount();
     }
+
+    public function getLastId()
+    {
+        return $this->dbh->lastInsertId();
+    }
 }

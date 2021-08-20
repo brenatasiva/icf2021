@@ -1,4 +1,11 @@
 <h1 class="mt-4">Events</h1>
+
+<h6>Riwayat Daftar</h6>
+
+
+
+
+<h6>Daftar <?= $data['judulHalaman'] ?></h6>
 <table class="table table-border table-dark">
     <thead>
         <td>Nama</td>

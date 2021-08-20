@@ -76,7 +76,7 @@ class User_model
         return $this->db->rowCount();
     }
 
-    public function insertpendaftar($data)
+    public function insertPendaftar($data)
     {
         $date = date("Y-m-d");
         if (!isset($data['nama_tim'])) {
@@ -85,16 +85,30 @@ class User_model
             $this->db->bind('username', $_SESSION['username']);
             $this->db->bind('event_id', $data['eid']);
             $this->db->bind('tgl_daftar', $date);
+            $this->db->execute();
         } else {
-            $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar, bukti_pembayaran, nama_tim) values (:username, :event_id, :tgl_daftar, :bukti_pembayaran, :nama_tim)";
+            $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar, nama_tim, id_game, link_drive) values (:username, :event_id, :tgl_daftar, :nama_tim, :id_game, :link_drive)";
             $this->db->query($sql);
             $this->db->bind('username', $_SESSION['username']);
             $this->db->bind('event_id', $data['eid']);
             $this->db->bind('tgl_daftar', $date);
-            $this->db->bind('bukti_pembayaran', $data['bukti_pembayaran']);
             $this->db->bind('nama_tim', $data['nama_tim']);
+            $this->db->bind('id_game', $data['idPubg']);
+            $this->db->bind('link_drive', $data['linkDrive']);
+            $this->db->execute();
+            $lastId = $this->db->getLastId();
+            $sql = "INSERT into anggota (pendaftar_id, nama, nrp, no_hp, email, id_game) values (:pendaftar_id, :nama, :nrp, :no_hp, :email, :id_game)";
+            for ($i = 1; $i <= 3; $i++) {
+                $this->db->query($sql);
+                $this->db->bind('pendaftar_id', $lastId);
+                $this->db->bind('nama', $data['nama' . $i]);
+                $this->db->bind('nrp', $data['nrp' . $i]);
+                $this->db->bind('no_hp', $data['nomor' . $i]);
+                $this->db->bind('email', $data['email' . $i]);
+                $this->db->bind('id_game', $data['idPubg' . $i]);
+                $this->db->execute();
+            }
         }
-        $this->db->execute();
         return $this->db->rowCount();
     }
 
@@ -106,6 +120,14 @@ class User_model
         $this->db->bind('event_id', $data['eid']);
         $this->db->execute();
         return $this->db->rowCount();
+    }
+
+    public function riwayatPendaftaran()
+    {
+        $sql = "SELECT * from pendaftar p inner join anggota a on p.id = a.pendaftar_id where p.user_username = :username";
+        $this->db->query($sql);
+        $this->db->bind('username', $_SESSION['username']);
+        return $this->db->resultSet();
     }
 
     public function updateStatus($data)

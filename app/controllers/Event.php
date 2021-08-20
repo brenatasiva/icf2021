@@ -6,8 +6,10 @@ class Event extends Controller
     {
         $data['listAllEvent'] = $this->model('Event_model')->getEventPerCategory($category);
         if ($category === "seminar") {
+            $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran();
             $data['judulHalaman'] = "Seminar";
         } else if ($category === "lomba") {
+            $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran();
             $data['judulHalaman'] = "Lomba";
         } else if ($category === "pameran") {
             $data['judulHalaman'] = "Pameran";
@@ -32,7 +34,7 @@ class Event extends Controller
                 if ($_POST['eid'] == null) {
                     header('Location: ' . BASEURL . '/home');
                 } else {
-                    if ($this->model('User_model')->insertPendaftaran($_POST) > 0) {
+                    if ($this->model('User_model')->insertPendaftar($_POST) > 0) {
                         Flasher::setFlash("Berhasil", "Mendaftar", "success");
                         header('Location: ' . BASEURL . '/home');
                     } else {
