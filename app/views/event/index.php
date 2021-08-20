@@ -1,6 +1,7 @@
 <h1 class="mt-4">Events</h1>
 
-<?php if ($data['judulHalaman'] != "Pameran" && isset($_SESSION['username'])) { ?>
+<?php if ($data['judulHalaman'] != "Pameran" && isset($_SESSION['username']) && !empty($data['listRiwayat'])) { ?>
+    </pre>
     <h6>Riwayat Daftar</h6>
     <table class="table table-border table-dark">
         <thead>
