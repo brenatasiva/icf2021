@@ -25,7 +25,7 @@ class Faq_model
 
     public function insertFaq($data)
     {
-        $sql = "INSERT INTO faq VALUES (:pertanyaan, :jawaban)";
+        $sql = "INSERT INTO faq (pertanyaan , jawaban) VALUES (:pertanyaan, :jawaban)";
         $this->db->query($sql);
         $this->db->bind('pertanyaan', $data['pertanyaan']);
         $this->db->bind('jawaban', $data['jawaban']);
@@ -35,10 +35,11 @@ class Faq_model
 
     public function updateFaq($data)
     {
-        $sql = "UPDATE faq SET pertanyaan, jawaban VALUES (:pertanyaan, :jawaban)";
+        $sql = "UPDATE faq SET pertanyaan = :pertanyaan, jawaban = :jawaban WHERE id = :id";
         $this->db->query($sql);
         $this->db->bind('pertanyaan', $data['pertanyaan']);
         $this->db->bind('jawaban', $data['jawaban']);
+        $this->db->bind('id', $data['id']);
         $this->db->execute();
         return $this->db->rowCount();
     }

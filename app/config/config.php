@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/icf/icf2021/public');
+define('BASEURL', 'http://localhost/icf2021/public');
 
 //db
 define('DB_HOST', 'localhost');
