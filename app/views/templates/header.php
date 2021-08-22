@@ -7,12 +7,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> <?= $data['judulHalaman']; ?> </title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main.min.css">
+  <style type="text/css">
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 1rem 1.5rem;
+    }
+
+    .crop {
+      width: 75px;
+      height: 50px;
+      overflow: hidden;
+      margin: auto;
+    }
+
+    .crop img {
+      margin-top: -7px;
+    }
+
+    .icon-header-outside {
+      position: relative;
+      padding: 28px 0px;
+    }
+
+    .icon-header-inside {
+      position: absolute;
+      top: -3px;
+      width: auto;
+    }
+  </style>
+  <script src="<?= BASEURL; ?>/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= BASEURL; ?>/js/jquery.js"></script>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="<?= BASEURL; ?>">ICF</a>
+      <div class="icon-header-outside">
+        <div class="icon-header-inside container" style="margin: 0; padding: 0;">
+          <div class="row" style="min-width: 135px;">
+            <div class="col-6">
+              <a class="navbar-brand" href="https://ubaya.ac.id/" style="padding: 0; margin: 0;">
+                <img style="width: 60px; height: auto;" src="<?= BASEURL; ?>/img/header/logoubaya.png">
+              </a>
+            </div>
+            <div class="col-6">
+              <a class="navbar-brand" href="<?= BASEURL; ?>" style="padding: 0; margin: 0;">
+                <div class="crop">
+                  <img style="width: 75px; height: auto;" src="<?= BASEURL; ?>/img/header/logoicf.png">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

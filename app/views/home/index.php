@@ -187,13 +187,12 @@
 <div class="mapouter">
     <div class="bg-location d-flex justify-content-center align-items-center">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90px" height="90px;" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;fill:#f36f25" xml:space="preserve">
-
             <g>
                 <g>
                     <path d="M256,0C161.896,0,85.333,76.563,85.333,170.667c0,28.25,7.063,56.26,20.49,81.104L246.667,506.5
-                c1.875,3.396,5.448,5.5,9.333,5.5s7.458-2.104,9.333-5.5l140.896-254.813c13.375-24.76,20.438-52.771,20.438-81.021
-                C426.667,76.563,350.104,0,256,0z M256,256c-47.052,0-85.333-38.281-85.333-85.333c0-47.052,38.281-85.333,85.333-85.333
-                s85.333,38.281,85.333,85.333C341.333,217.719,303.052,256,256,256z" />
+                        c1.875,3.396,5.448,5.5,9.333,5.5s7.458-2.104,9.333-5.5l140.896-254.813c13.375-24.76,20.438-52.771,20.438-81.021
+                        C426.667,76.563,350.104,0,256,0z M256,256c-47.052,0-85.333-38.281-85.333-85.333c0-47.052,38.281-85.333,85.333-85.333
+                        s85.333,38.281,85.333,85.333C341.333,217.719,303.052,256,256,256z" />
                 </g>
             </g>
         </svg>
@@ -201,31 +200,42 @@
             <h1 style="font-weight:bold;color:#efece7;font-family:'Circular Std Bold';font-size:50px;">Universitas Surabaya</h1>
             <p style="color:#efece7;line-height:50%;font-size:13px;font-family:'Circular Std Thin'">Jl. Raya Rungkut, Kali Rungkut, Kec. Rungkut, Kota SBY, Jawa Timur 60293</p>
         </div>
+
     </div>
-    <div class="gmap_canvas"><iframe width="100%" height="700" id="gmap_canvas" src="https://maps.google.com/maps?q=Universitas%20Surabaya&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
-        <style>
-            .mapouter {
-                position: relative;
-                height: 90vh;
-                width: 100%;
-            }
-        </style>
-        <style>
-            .gmap_canvas {
-                overflow: hidden;
-                background: none !important;
-                height: 700px;
-                width: 100%;
-            }
-        </style>
-        <style>
-            .bg-location {
-                background: rgb(1, 151, 148);
-                background: linear-gradient(90deg, rgba(1, 151, 148, 1) 0%, rgba(5, 132, 187, 1) 100%);
-                width: 100%;
-                height: 150px;
-            }
-        </style>
+    <div class="gmap-outer">
+        <div class="gmap_canvas">
+            <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Universitas%20Surabaya&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://123movies-to.org"></a><br>
+            <style>
+                .mapouter {
+                    width: 100%;
+                    background: rgb(1, 151, 148);
+                    background: linear-gradient(90deg, rgba(1, 151, 148, 1) 0%, rgba(5, 132, 187, 1) 100%);
+                }
+            </style>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 100%;
+                    width: 100%;
+                    padding-left: 10%;
+                    padding-right: 10%;
+                }
+            </style>
+            <style>
+                .bg-location {
+                    width: 100%;
+                    height: 150px;
+                }
+            </style>
+            <style>
+                .gmap-outer {
+                    width: 100%;
+                    height: 600px;
+                }
+            </style>
+        </div>
     </div>
 </div>
 <!-- END OF LOCATION -->

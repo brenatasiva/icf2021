@@ -64,8 +64,7 @@
         <img src="<?= BASEURL; ?>/img/footer/logoubaya.png" style="width: 110px; height: 110px;">
     </div>
 </footer>
-<script src="<?= BASEURL; ?>/js/bootstrap.bundle.min.js"></script>
-<script src="<?= BASEURL; ?>/js/jquery.js"></script>
+
 </body>
 
 </html>
