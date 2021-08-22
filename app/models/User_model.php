@@ -50,6 +50,25 @@ class User_model
         return $this->db->rowCount();
     }
 
+    private function generateSalt($plainPwd, $salt)
+    {
+        $saltedPwd = sha1($plainPwd . $salt);
+        return $saltedPwd;
+    }
+
+    private function getSalt($username)
+    {
+        $sql = "SELECT salt from users where username = :username";
+        $this->db->query($sql);
+        $this->db->bind("username", $username);
+        $this->db->execute();
+        $res = $this->db->single();
+        $salt = "";
+        if ($res != false) $salt = $res['salt'];
+        return $salt;
+    }
+
+
     public function insertUser($data)
     {
         $sql = "INSERT into user (username, password, nama, email, no_hp, nrp) values(:username, :pass, :nama, :email, :no_hp, :nrp)";

@@ -11,7 +11,6 @@
             <?php if ($data['judulHalaman'] == "Lomba") echo "<td>Aksi</td>" ?>
         </thead>
         <tbody>
-            <?php die(var_dump($data['listRiwayat'])); ?>
             <?php foreach ($data['listRiwayat'] as $key) :
                 $tglMulai = date("d M Y", strtotime($key['tanggal_mulai']));
                 $tglSelesai = date("d M Y", strtotime($key['tanggal_selesai']));

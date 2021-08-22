@@ -86,7 +86,6 @@
         </div>
     </div>
 </div>
-<script src="<?= BASEURL; ?>/js/jquery.js"></script>
 <script>
     $('body').on('click', '#insertFaq', function() {
         $('#modalTitle').html('Tambah FAQ');
