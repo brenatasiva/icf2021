@@ -35,7 +35,6 @@ class User extends Controller
 
         $this->view('templates/header', $data);
         $this->view('login/index', $data);
-        $this->view('templates/footer');
     }
 
     public function cekLogin()
@@ -69,7 +68,6 @@ class User extends Controller
 
         $this->view('templates/header', $data);
         $this->view('register/index', $data);
-        $this->view('templates/footer');
     }
 
     public function registUser()

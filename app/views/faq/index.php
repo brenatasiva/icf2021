@@ -35,7 +35,7 @@
     }
 
     .accordion-item {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .accordion-item:not(:first-of-type) {
