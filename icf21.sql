@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2021 at 05:50 PM
+-- Generation Time: Aug 23, 2021 at 06:49 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -38,6 +38,15 @@ CREATE TABLE `anggota` (
   `id_game` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `anggota`
+--
+
+INSERT INTO `anggota` (`id`, `pendaftar_id`, `nama`, `nrp`, `no_hp`, `email`, `id_game`) VALUES
+(1, 2, 'anggota1', '', '0812', 'anggota1@gmail.com', 'pubg1'),
+(2, 2, 'anggota2', '', '0812', 'anggota2@gmail.com', 'pubg2'),
+(3, 2, 'anggota3', '', '0812', 'anggota3@gmail.com', 'pubg3');
+
 -- --------------------------------------------------------
 
 --
@@ -63,7 +72,7 @@ CREATE TABLE `event` (
 
 INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `jenis_id`) VALUES
 (1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'lorem ipsum', 'Leonardo da Vinci', '', '', NULL, 2),
-(2, 'Seminar IoT', '2021-08-02', '2021-08-02', 'lorem lorem', '', '', '', NULL, 1),
+(2, 'Seminar IoT', '2021-08-02', '2021-08-02', 'lorem lorem', 'Avianto Tiyo', '', '', NULL, 1),
 (3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', '', '', NULL, 3);
 
 -- --------------------------------------------------------
@@ -84,7 +93,8 @@ CREATE TABLE `faq` (
 
 INSERT INTO `faq` (`id`, `pertanyaan`, `jawaban`) VALUES
 (1, 'aiuhiauhdi', 'hah?'),
-(2, 'AHIAHIUHHU', 'HAHHH??');
+(2, 'AHIAHIUHHU', 'HAHHH??'),
+(3, 'he..', 'apa?');
 
 -- --------------------------------------------------------
 
@@ -141,8 +151,8 @@ CREATE TABLE `pendaftar` (
 --
 
 INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `status`, `nama_tim`, `id_game`, `link_drive`) VALUES
-(1, 'dummy1', 1, '2021-08-18', 'Pending', NULL, NULL, NULL),
-(2, 'dummy1', 2, '2021-08-18', 'Pending', NULL, NULL, NULL);
+(1, 'dummy1', 2, '2021-08-20', 'Pending', NULL, NULL, NULL),
+(2, 'dummy1', 3, '2021-08-20', 'Pending', 'tim1', 'pubg', '..');
 
 -- --------------------------------------------------------
 
@@ -168,16 +178,18 @@ CREATE TABLE `user` (
   `nama` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `no_hp` varchar(15) NOT NULL,
-  `nrp` varchar(10) DEFAULT NULL
+  `nrp` varchar(10) DEFAULT NULL,
+  `salt` varchar(55) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`) VALUES
-('dummy1', 'dummy1', 'dummy1', 'dummy1@gmail.com', '08123456789', '123'),
-('dummy2', 'dummy2', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789');
+INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`, `salt`) VALUES
+('dummy1', '910af55fb4adc1217159f79d860698c76a9ca4cf', 'dummy1', 'dummy1@gmail.com', '08123456789', '123', 'flh4r'),
+('dummy2', 'd8d30c6b86825ec6db7b4a3c7e1fc4689a19bbe3', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', 'flh4r'),
+('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r');
 
 --
 -- Indexes for dumped tables
@@ -241,6 +253,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `anggota`
+--
+ALTER TABLE `anggota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
@@ -250,7 +268,7 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gambar`

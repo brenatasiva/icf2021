@@ -50,7 +50,7 @@
                         <input type="text" class="form-control user-input" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Username or Email">
                     </div>
                     <div class="pb-2">
-                        <input type="password" class="form-control user-input" id="exampleInputPassword1" name="pass" placeholder="Password">
+                        <input type="password" class="form-control user-input" id="exampleInputPassword1" name="password" placeholder="Password">
                     </div>
                     <div class="pb-3 d-flex justify-content-end">
                         <a data-bs-toggle="modal" role="button" href="#modalToggle" style="color: orange !important;">Forgot Password?</a>
