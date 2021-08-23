@@ -23,19 +23,45 @@ class User_model
         return $this->db->resultSet();
     }
 
+    // salt
+    private function generateSalt()
+    {
+        $salt = substr(session_id(), 0, 5);
+        return $salt;
+    }
+
+    private function generateSaltedPwd($plainPwd, $salt)
+    {
+        $saltedPwd = sha1($plainPwd . $salt);
+        return $saltedPwd;
+    }
+
+    private function getSalt($username)
+    {
+        $sql = "SELECT salt from user where username = :username";
+        $this->db->query($sql);
+        $this->db->bind("username", $username);
+        return $this->db->single();
+    }
+    // end salt
+
     public function validateUser($data)
     {
+
         if ($data['username'] == "adminduongz") {
-            if ($data['pass'] == "wokeee") {
+            if ($data['password'] == "wokeee") {
                 return 1;
             } else {
                 return 0;
             }
         } else {
+            $salt = $this->getSalt($data['username']);
+            $saltedPwd = $this->generateSaltedPwd($data['password'], $salt);
+
             $sql = "SELECT * from user where username = :username and password = :pass";
             $this->db->query($sql);
             $this->db->bind('username', $data['username']);
-            $this->db->bind('pass', $data['pass']);
+            $this->db->bind('pass', $saltedPwd);
             $this->db->execute();
             return $this->db->rowCount();
         }
@@ -50,35 +76,20 @@ class User_model
         return $this->db->rowCount();
     }
 
-    private function generateSalt($plainPwd, $salt)
-    {
-        $saltedPwd = sha1($plainPwd . $salt);
-        return $saltedPwd;
-    }
-
-    private function getSalt($username)
-    {
-        $sql = "SELECT salt from users where username = :username";
-        $this->db->query($sql);
-        $this->db->bind("username", $username);
-        $this->db->execute();
-        $res = $this->db->single();
-        $salt = "";
-        if ($res != false) $salt = $res['salt'];
-        return $salt;
-    }
-
-
     public function insertUser($data)
     {
-        $sql = "INSERT into user (username, password, nama, email, no_hp, nrp) values(:username, :pass, :nama, :email, :no_hp, :nrp)";
+        $salt = $this->generateSalt();
+        $saltedPwd = $this->generateSaltedPwd($data['password'], $salt);
+
+        $sql = "INSERT into user (username, password, nama, email, no_hp, nrp, salt) values(:username, :pass, :nama, :email, :no_hp, :nrp, :salt)";
         $this->db->query($sql);
         $this->db->bind('username', $data['username']);
-        $this->db->bind('pass', $data['password']);
+        $this->db->bind('pass', $saltedPwd);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('email', $data['email']);
         $this->db->bind('no_hp', $data['nomor']);
         $this->db->bind('nrp', $data['nrp']);
+        $this->db->bind('salt', $salt);
         $this->db->execute();
         return $this->db->rowCount();
     }

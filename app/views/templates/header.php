@@ -25,7 +25,7 @@
 
     .icon-header-outside {
       position: relative;
-      padding: 28px 0px;
+      padding: 28px 52px 28px 0px;
     }
 
     .icon-header-inside {
