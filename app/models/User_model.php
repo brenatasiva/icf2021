@@ -161,11 +161,38 @@ class User_model
         return $this->db->resultSet();
     }
 
-    public function riwayatDetil($data)
+    public function getPendaftarByEvent($idevent)
     {
+        $sql = "SELECT * FROM pendaftar WHERE event_id = :id";
+        $this->db->query($sql);
+        $this->db->bind('id', $idevent);
+        return $this->db->resultSet();
     }
 
-    public function updateStatus($data)
+    public function updateDetil($data)
+    {
+        $arrId = $data['id'];
+        $arrTglDaftar = $data['tanggal_daftar'];
+        $arrNamaTim = $data['nama_tim'];
+        $arrIdGame = $data['id_game'];
+        $arrLinkDrive = $data['link_drive'];
+        $arrStatus = $data['status'];
+        $rowAffected = 0;
+        $sql = "UPDATE pendaftar SET tanggal_daftar = :tgl_daftar, nama_tim = :namatim, id_game = :idgame, link_drive = :linkdrive, status = :status WHERE id = :id";
+        $this->db->query($sql);
+        for ($i = 0; $i < count($arrId); $i++) {
+            $this->db->bind('tgl_daftar', $arrTglDaftar[$i]);
+            $this->db->bind('namatim', $arrNamaTim[$i]);
+            $this->db->bind('idgame', $arrIdGame[$i]);
+            $this->db->bind('linkdrive', $arrLinkDrive[$i]);
+            $this->db->bind('status', $arrStatus[$i]);
+            $this->db->bind('id', $arrId[$i]);
+            $this->db->execute();
+            $rowAffected += $this->db->rowCount();
+        }
+        return $rowAffected;
+    }
+    public function riwayatDetil($data)
     {
     }
 }

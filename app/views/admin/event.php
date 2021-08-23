@@ -20,7 +20,7 @@
                 <td><?= $key['jenis']; ?></td>
                 <td style="max-width: 100px;">
                     <a class="btn btn-altorange me-5" id="editEvent" data-id="<?= $key['id']; ?>" data-bs-toggle="modal" data-bs-target="#modalEvent">Edit</a>
-                    <a href="" class="btn btn-altdarkgrey">Detail</a>
+                    <a href="<?= BASEURL; ?>/admin/detil/<?= $key['id']; ?>" class="btn btn-altdarkgrey">Detail</a>
                 </td>
             </tr>
         <?php endforeach; ?>

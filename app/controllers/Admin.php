@@ -13,6 +13,12 @@ class Admin extends Controller
 
     // Event Methods
 
+    private function templates($view, $data)
+    {
+        $this->view('templates/header_admin', $data);
+        $this->view($view, $data);
+        $this->view('templates/footer');
+    }
     public function getJenisEvent()
     {
         echo json_encode($this->model('Event_model')->getJenisEvent());
@@ -25,6 +31,29 @@ class Admin extends Controller
         $this->view('templates/header_admin', $data);
         $this->view('admin/event', $data);
         $this->view('templates/footer');
+    }
+
+    public function detil($idEvent)
+    {
+        $id['id'] = $idEvent;
+        $detilEvent = $this->model('Event_model')->getEvent($id);
+        $detilPesertaPerEvent = $this->model('User_model')->getPendaftarByEvent($idEvent);
+        $judul = $detilEvent['nama'];
+
+        $data = [
+            'judulHalaman' => $judul,
+            'detilEvent' => $detilEvent,
+            'detilPeserta' => $detilPesertaPerEvent
+        ];
+        $this->templates('admin/detilEvent', $data);
+    }
+
+    public function updateDetil()
+    {
+        if ($this->model('User_model')->updateDetil($_POST) >= 0) {
+            header('Location: ' . BASEURL . '/admin/detil/' . $_POST['idevent']);
+            $_SESSION['updatedDetil'] = 'Updated';
+        }
     }
 
     public function tambahEvent()
