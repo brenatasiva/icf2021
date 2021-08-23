@@ -56,7 +56,7 @@ class User_model
             }
         } else {
             $salt = $this->getSalt($data['username']);
-            $saltedPwd = $this->generateSaltedPwd($data['password'], $salt);
+            $saltedPwd = $this->generateSaltedPwd($data['password'], $salt['salt']);
 
             $sql = "SELECT * from user where username = :username and password = :pass";
             $this->db->query($sql);
