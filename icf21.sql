@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2021 at 06:42 AM
+-- Generation Time: Aug 23, 2021 at 06:49 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -187,8 +187,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`, `salt`) VALUES
-('dummy1', 'dummy1', 'dummy1', 'dummy1@gmail.com', '08123456789', '123', ''),
-('dummy2', 'dummy2', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', ''),
+('dummy1', '910af55fb4adc1217159f79d860698c76a9ca4cf', 'dummy1', 'dummy1@gmail.com', '08123456789', '123', 'flh4r'),
+('dummy2', 'd8d30c6b86825ec6db7b4a3c7e1fc4689a19bbe3', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', 'flh4r'),
 ('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r');
 
 --
