@@ -37,6 +37,17 @@
         background: #009b8d;
         border: 0px !important;
     }
+
+    .crop-login {
+        width: 280px;
+        height: 100px;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .crop-login img {
+        margin-top: -30px;
+    }
 </style>
 <div class="user-bg">
     <div class="container">

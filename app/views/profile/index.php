@@ -1,7 +1,7 @@
 <form class="mt-5" action="<?= BASEURL; ?>/user/editProfile" method="post">
     <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" disabled value="<?= $data['User'][0]['nama']; ?>">
+        <input type="text" class="form-control" placeholder="Nama Lengkap" disabled value="<?= $data['User'][0]['nama']; ?>">
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
