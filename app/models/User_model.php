@@ -111,11 +111,12 @@ class User_model
     {
         $date = date("Y-m-d");
         if (!isset($data['nama_tim'])) {
-            $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar) values (:username, :event_id, :tgl_daftar)";
+            $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar, link_drive) values (:username, :event_id, :tgl_daftar, :link)";
             $this->db->query($sql);
             $this->db->bind('username', $_SESSION['username']);
             $this->db->bind('event_id', $data['eid']);
             $this->db->bind('tgl_daftar', $date);
+            $this->db->bind('link', $data['link']);
             $this->db->execute();
         } else {
             $sql = "INSERT into pendaftar (user_username, event_id, tanggal_daftar, nama_tim, id_game, link_drive) values (:username, :event_id, :tgl_daftar, :nama_tim, :id_game, :link_drive)";
@@ -196,6 +197,7 @@ class User_model
 
     public function riwayatDetil($data)
     {
+        
     }
 
     public function deletePendaftar()

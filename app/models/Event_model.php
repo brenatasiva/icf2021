@@ -29,7 +29,7 @@ class Event_model
         $sql = "SELECT e.*,j.jenis from event e inner join jenis j on e.jenis_id = j.id where e.id = :id";
         $this->db->query($sql);
         // $this->db->bind('id', $event);
-        $this->db->bind('id', $data['id']);
+        $this->db->bind('id', $data['eid']);
         return $this->db->single();
     }
 
@@ -70,7 +70,7 @@ class Event_model
         $this->db->bind('linkwa', $data['linkwa']);
         $this->db->bind('linkzoom', $data['linkzoom']);
         $this->db->bind('jenis_id', $data['jenis_id']);
-        $this->db->bind('id', $data['id']);
+        $this->db->bind('id', $data['eid']);
         $this->db->execute();
         return $this->db->rowCount();
     }

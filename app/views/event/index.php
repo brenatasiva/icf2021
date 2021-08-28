@@ -84,6 +84,11 @@
         border-color: #009b8d !important;
     }
 
+    .btn-disabled {
+        width: 70%;
+        border-radius: 10px;
+    }
+
     .modal-dialog {
         max-width: 650px;
     }
@@ -426,6 +431,7 @@
             text-align: unset;
         }
 
+        .btn-disabled,
         .btn-sign-up {
             width: 100%;
         }
@@ -589,6 +595,7 @@
                     else if ($data['judulHalaman'] == "Lomba")
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
+                                <th>Jenis</th>
                                 <th></th>";
                     else if ($data['judulHalaman'] == "Pameran")
                         echo "<th style='width: 30%;'>Nama/Judul Karya</th>
@@ -605,33 +612,35 @@
                         <tr>
                             <?php
                             if ($data['judulHalaman'] == "Seminar") {
-                                echo '<td class="daftar-seminar">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key['nama'] . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-seminar">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key["author"] . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-seminar">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . (($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai) . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-seminar">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . (strtotime("now") >= strtotime($tglSelesai) ? "Close" : "Open") . '</span>
-                                            </div>
-                                        </td>
-                                        
-                                        <td class="daftar-seminar">
-                                            <div class="half-content" style="text-align: center !important;">
-                                                <span class="centered-content"><a class="btn btn-outline-success btn-sign-up" data-bs-toggle="modal" href="#modalToggle' . $key['id'] . '" role="button">Sign Up</a></span>
-                                            </div>
-                                        </td>';
-                            } else if ($data['judulHalaman'] == "Lomba") {
+                                $status = (date("d/m/y H:i", strtotime('now')) > $tglSelesai) ? "Closed" : "Open";
+                            ?>
+                                <td class="daftar-seminar">
+                                    <div class="half-content">
+                                        <span class="centered-content"> <?= $key['nama'] ?> </span>
+                                    </div>
+                                </td>
+                                <td class="daftar-seminar">
+                                    <div class="half-content">
+                                        <span class="centered-content"> <?= $key["author"] ?> </span>
+                                    </div>
+                                </td>
+                                <td class="daftar-seminar">
+                                    <div class="half-content">
+                                        <span class="centered-content"> <?= (($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai) ?> </span>
+                                    </div>
+                                </td>
+                                <td class="daftar-seminar">
+                                    <div class="half-content">
+                                        <span class="centered-content"> <?= $status ?> </span>
+                                    </div>
+                                </td>
+
+                                <td class="daftar-seminar">
+                                    <div class="half-content" style="text-align: center !important;">
+                                        <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href="<?php echo ($status == "Open") ? "#modalToggle" : ""; ?> <?= $key['id'] ?> " role="button">Sign Up</a></span>
+                                    </div>
+                                </td>
+                            <?php } else if ($data['judulHalaman'] == "Lomba") {
                                 echo '<td class="daftar-lomba">
                                             <div class="half-content">
                                                 <span class="centered-content">' . $key['nama'] . '</span>
@@ -640,6 +649,11 @@
                                         <td class="daftar-lomba">
                                             <div class="half-content">
                                                 <span class="centered-content">' . (($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai) . '</span>
+                                            </div>
+                                        </td>
+                                        <td class="daftar-lomba">
+                                            <div class="half-content">
+                                                <span class="centered-content">' . $key['jenis'] . '</span>
                                             </div>
                                         </td>
                                         <td class="daftar-lomba">
@@ -682,6 +696,14 @@
                                             <form action="<?= BASEURL; ?>/event/formLomba" method="post">
                                                 <button type="submit" class="btn btn-primary" name="eid" value="<?= $key['id']; ?>">Register</button>
                                             </form>
+                                        <?php } else if ($key['jenis'] == 'Lomba Individu') { ?>
+                                            <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" placeholder="Link Drive" aria-describedby="button-addon2" name="link" required>
+                                                    <button type="submit" class="btn btn-primary" id="button-addon2" name="eid" value="<?= $key['id']; ?>">Register</button>
+                                                </div>
+
+                                            </form>
                                         <?php } else { ?>
                                             <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
                                                 <input type="hidden" name="eid" value="<?= $key['id']; ?>">
@@ -723,6 +745,78 @@
     </div>
 </div>
 
+<!-- MODAL RIWAYAT -->
+<div class="modal fade" id="modalEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class=" modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                <div class="mb-3 row">
+                    <label for="nama" class="col-sm-3 col-form-label">Nama</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="tgl_mulai" class="col-sm-3 col-form-label">Tanggal Mulai</label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" id="tgl_mulai" name="tgl_mulai">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="tgl_selesai" class="col-sm-3 col-form-label">Tanggal Selesai</label>
+                    <div class="col-sm-9">
+                        <input type="date" class="form-control" id="tgl_selesai" name="tgl_selesai">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="deskripsi" class="col-sm-3 col-form-label">Deskripsi</label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="author" class="col-sm-3 col-form-label">Author</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="author" name="author">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="syarat" class="col-sm-3 col-form-label">Syarat Ketentuan</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="syarat" name="syarat">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="linkwa" class="col-sm-3 col-form-label">Link WA</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="linkwa" name="linkwa">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="linkzoom" class="col-sm-3 col-form-label">Link Zoom</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="linkzoom" name="linkzoom">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="" class="col-sm-3 col-form-label">Jenis Event</label>
+                    <div class="col-sm-9">
+                        <select class="form-select" aria-label="Default select example" id="selectJenis" name="jenis_id">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL RIWAYAT -->
 <script type="text/javascript">
     $('body').on('click', '.copy-text', function() {
         var firstChild = $(this).parent().parent().children()[0];
@@ -730,4 +824,32 @@
         navigator.clipboard.writeText(copiedValue);
         alert("Link copied!");
     });
+
+    $('body').on('click', '#detilRiwayat', function() {
+        $('#modalTitle').html('Edit Event');
+        $('form').attr('action', '<?= BASEURL; ?>/admin/updateEvent');
+
+        const idevent = $(this).data('id');
+        $('input[type="hidden"]').remove();
+        $('form').append('<input type="hidden" name="eid" value="' + idevent + '">')
+        $.ajax({
+            method: 'post',
+            url: '<?= BASEURL; ?>/admin/getEvent',
+            data: {
+                eid: idevent
+            },
+            dataType: 'json',
+            success: function(data) {
+                $('#nama').val(data.nama);
+                $('#tgl_mulai').val(data.tanggal_mulai);
+                $('#tgl_selesai').val(data.tanggal_selesai);
+                $('#deskripsi').val(data.deskripsi);
+                $('#author').val(data.author);
+                $('#syarat').val(data.syarat_ketentuan);
+                $('#linkwa').val(data.link_wa);
+                $('#linkzoom').val(data.link_zoom);
+                $('#selectJenis').val(data.jenis_id);
+            }
+        })
+    })
 </script>

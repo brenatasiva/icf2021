@@ -138,12 +138,12 @@
 
         const idevent = $(this).data('id');
         $('input[type="hidden"]').remove();
-        $('form').append('<input type="hidden" name="id" value="' + idevent + '">')
+        $('form').append('<input type="hidden" name="eid" value="' + idevent + '">')
         $.ajax({
             method: 'post',
             url: '<?= BASEURL; ?>/admin/getEvent',
             data: {
-                id: idevent
+                eid: idevent
             },
             dataType: 'json',
             success: function(data) {

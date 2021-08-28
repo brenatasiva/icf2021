@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2021 at 10:18 AM
+-- Generation Time: Aug 28, 2021 at 12:04 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -74,8 +74,9 @@ CREATE TABLE `event` (
 
 INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `id_zoom`, `pass_zoom`, `jenis_id`) VALUES
 (1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'grrgsd', 'Leonardo da Vinci', '', '', '', NULL, NULL, 2),
-(2, 'Seminar IoT', '2021-08-02', '2021-08-02', 'lorem lorem', 'Avianto Tiyo', '', '', NULL, NULL, NULL, 1),
-(3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', '', '', NULL, NULL, NULL, 3);
+(2, 'Seminar IoT', '2021-08-27', '2021-08-27', 'lorem lorem', 'Avianto Tiyo', '', '', '', NULL, NULL, 1),
+(3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', '', '', NULL, NULL, NULL, 3),
+(4, 'Character Design', '2021-08-28', '2021-08-30', 'gambar 3d', '', '', '', '', NULL, NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,10 @@ CREATE TABLE `pendaftar` (
 
 INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `status`, `nama_tim`, `id_game`, `link_drive`) VALUES
 (1, 'dummy1', 2, '2021-08-20', 'Pending', NULL, NULL, NULL),
-(2, 'dummy1', 3, '2021-08-20', 'Pending', 'tim1', 'pubg', '..');
+(2, 'dummy1', 3, '2021-08-20', 'Pending', 'tim1', 'pubg', '..'),
+(3, 'dummy2', 2, '2021-08-28', 'Pending', NULL, NULL, NULL),
+(4, 'dummy2', 4, '2021-08-28', 'Diterima', '', '', 'abcde'),
+(5, 'dummy1', 4, '2021-08-28', 'Pending', NULL, NULL, 'aa');
 
 -- --------------------------------------------------------
 
@@ -246,7 +250,7 @@ ALTER TABLE `anggota`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -270,7 +274,7 @@ ALTER TABLE `jenis`
 -- AUTO_INCREMENT for table `pendaftar`
 --
 ALTER TABLE `pendaftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

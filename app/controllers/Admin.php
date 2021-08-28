@@ -35,7 +35,7 @@ class Admin extends Controller
 
     public function detil($idEvent)
     {
-        $id['id'] = $idEvent;
+        $id['eid'] = $idEvent;
         $detilEvent = $this->model('Event_model')->getEvent($id);
         $detilPesertaPerEvent = $this->model('User_model')->getPendaftarByEvent($idEvent);
         $judul = $detilEvent['nama'];

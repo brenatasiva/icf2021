@@ -73,33 +73,43 @@ class User extends Controller
     public function registUser()
     {
         if (isset($_POST['btnsubmit'])) {
-            if (!isset($_POST['username']) || $_POST['username'] == "") {
-                Flasher::setFlash('gagal', 'terdaftar1', 'danger');
-                header('Location: ' . BASEURL . '/user/register');
-            } else if (!isset($_POST['password']) || $_POST['password'] == "") {
-                Flasher::setFlash('gagal', 'terdaftar2', 'danger');
-                header('Location: ' . BASEURL . '/user/register');
-            } else if (!isset($_POST['nama']) || $_POST['nama'] == "") {
-                Flasher::setFlash('gagal', 'terdaftar3', 'danger');
-                header('Location: ' . BASEURL . '/user/register');
-            } else if (!isset($_POST['email']) || $_POST['email'] == "") {
-                Flasher::setFlash('gagal', 'terdaftar4', 'danger');
-                header('Location: ' . BASEURL . '/user/register');
-            } else if (!isset($_POST['nomor'])) {
-                Flasher::setFlash('gagal', 'terdaftar5', 'danger');
-                header('Location: ' . BASEURL . '/user/register');
-            } else if (!isset($_POST['nrp']) || strlen($_POST['nrp']) > 10) {
-                Flasher::setFlash('gagal', 'terdaftar6', 'danger');
-                header('Location: ' . BASEURL . '/user/register');
-            } else if ($this->model('User_model')->insertUser($_POST) > 0) {
-                Flasher::setFlash('berhasil', 'terdaftar7', 'success');
-                header('Location: ' . BASEURL . '/user/register');
+            if ($this->model('User_model')->checkUsername($_POST) == 0) {
+                if (!isset($_POST['username']) || $_POST['username'] == "") {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
+                } else if (!isset($_POST['password']) || $_POST['password'] == "") {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
+                } else if (!isset($_POST['nama']) || $_POST['nama'] == "") {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
+                } else if (!isset($_POST['email']) || $_POST['email'] == "") {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
+                } else if (!isset($_POST['nomor'])) {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
+                    // } else if (!isset($_POST['nrp']) || strlen($_POST['nrp']) > 10) {
+                    //     Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    //     header('Location: ' . BASEURL . '/user/register');
+                } else if ($this->model('User_model')->insertUser($_POST) > 0) {
+                    Flasher::setFlash('berhasil', 'terdaftar', 'success');
+                    header('Location: ' . BASEURL . '/user/register');
+                } else {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
+                }
             } else {
-                Flasher::setFlash('gagal', 'terdaftar8', 'danger');
+                Flasher::setFlash('gagal', 'Username telah dipakai', 'danger');
                 header('Location: ' . BASEURL . '/user/register');
             }
         } else {
             header('Location: ' . BASEURL . '/user/register');
         }
+    }
+
+    public function getDetilRiwayat()
+    {
+        echo json_encode($this->model('User_model')->riwayatDetil($_POST));
     }
 }
