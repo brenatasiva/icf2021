@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2021 at 06:49 AM
+-- Generation Time: Aug 28, 2021 at 10:18 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -56,13 +56,15 @@ INSERT INTO `anggota` (`id`, `pendaftar_id`, `nama`, `nrp`, `no_hp`, `email`, `i
 CREATE TABLE `event` (
   `id` int(11) NOT NULL,
   `nama` varchar(45) NOT NULL,
-  `tanggal_mulai` date NOT NULL,
+  `tanggal_mulai` date DEFAULT NULL,
   `tanggal_selesai` date DEFAULT NULL,
-  `deskripsi` text NOT NULL,
+  `deskripsi` text,
   `author` varchar(255) DEFAULT NULL,
   `syarat_ketentuan` text,
-  `link_wa` varchar(50) NOT NULL,
+  `link_wa` varchar(50) DEFAULT NULL,
   `link_zoom` varchar(45) DEFAULT NULL,
+  `id_zoom` varchar(55) DEFAULT NULL,
+  `pass_zoom` varchar(55) DEFAULT NULL,
   `jenis_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -70,10 +72,10 @@ CREATE TABLE `event` (
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `jenis_id`) VALUES
-(1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'lorem ipsum', 'Leonardo da Vinci', '', '', NULL, 2),
-(2, 'Seminar IoT', '2021-08-02', '2021-08-02', 'lorem lorem', 'Avianto Tiyo', '', '', NULL, 1),
-(3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', '', '', NULL, 3);
+INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `id_zoom`, `pass_zoom`, `jenis_id`) VALUES
+(1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'grrgsd', 'Leonardo da Vinci', '', '', '', NULL, NULL, 2),
+(2, 'Seminar IoT', '2021-08-02', '2021-08-02', 'lorem lorem', 'Avianto Tiyo', '', '', NULL, NULL, NULL, 1),
+(3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', '', '', NULL, NULL, NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -157,18 +159,6 @@ INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengumuman`
---
-
-CREATE TABLE `pengumuman` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(45) NOT NULL,
-  `informasi` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -237,12 +227,6 @@ ALTER TABLE `pendaftar`
   ADD KEY `fk_pendaftar_peserta1_idx` (`user_username`);
 
 --
--- Indexes for table `pengumuman`
---
-ALTER TABLE `pengumuman`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -287,12 +271,6 @@ ALTER TABLE `jenis`
 --
 ALTER TABLE `pendaftar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `pengumuman`
---
-ALTER TABLE `pengumuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

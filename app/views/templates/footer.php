@@ -66,6 +66,17 @@
             <img src="<?= BASEURL; ?>/img/footer/logoubaya.png" style="width: 110px; height: 110px;">
         </div>
     </footer>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(window).resize(function() {
+                var footerHeight = $('#footer').outerHeight();
+                $('#contentWrap').css({
+                    'margin-bottom': footerHeight + 'px'
+                });
+            });
+            $(window).resize();
+        });
+    </script>
     </div>
 
     </body>

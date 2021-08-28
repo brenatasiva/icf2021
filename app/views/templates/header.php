@@ -39,9 +39,10 @@
       width: auto;
     }
 
-    #page-container {
+    #pageContainer {
       position: relative;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     #footer {
@@ -56,8 +57,8 @@
 </head>
 
 <body>
-  <div id="page-container">
-    <div id="content-wrap">
+  <div id="pageContainer">
+    <div id="contentWrap">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <div class="icon-header-outside">

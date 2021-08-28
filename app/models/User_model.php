@@ -78,6 +78,7 @@ class User_model
 
     public function insertUser($data)
     {
+
         $salt = $this->generateSalt();
         $saltedPwd = $this->generateSaltedPwd($data['password'], $salt);
 
