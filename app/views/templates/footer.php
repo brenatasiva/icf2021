@@ -27,7 +27,7 @@
             stroke-width: 1;
         }
     </style>
-    <footer class="footer-bg">
+    <footer id="footer" class="footer-bg">
         <div class="container d-flex justify-content-between align-items-center" style="height: auto;">
             <ul class="list-group">
                 <li class="bg-transparent border-0 list-unstyled text-light mb-3">
