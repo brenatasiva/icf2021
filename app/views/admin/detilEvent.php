@@ -8,7 +8,7 @@
         </li>
         <?php if ($data['detilEvent']['jenis'] == 'Lomba Kelompok') : ?>
             <li class="nav-item" role="presentation">
-                <button class="nav-link <?= (isset($_SESSION['updatedDetil'])) ? 'active' : ''; ?>" id="profile-tab" data-bs-toggle="tab" href="#anggota" role="tablist" type="button" aria-controls="profile" aria-selected="<?= (isset($_SESSION['updatedDetil'])) ? 'true' : 'false'; ?>">Anggota</button>
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#anggota" role="tablist" type="button" aria-controls="profile" aria-selected="false">Anggota</button>
             </li>
         <?php endif; ?>
     </ul>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <?php if ($data['detilEvent']['jenis'] == 'Lomba Kelompok') : ?>
-            <div class="tab-pane fade <?= (isset($_SESSION['updatedDetil'])) ? 'active show' : ''; ?>" id="anggota" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tab-pane fade" id="anggota" role="tabpanel" aria-labelledby="profile-tab">
                 <table class="table">
                     <thead>
                         <tr>
