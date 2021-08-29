@@ -124,6 +124,7 @@ class User_model
             $this->db->bind('username', $_SESSION['username']);
             $this->db->bind('event_id', $data['eid']);
             $this->db->bind('tgl_daftar', $date);
+            // if ($data['nama_tim'] == "") $data['nama_tim'] = null;
             $this->db->bind('nama_tim', $data['nama_tim']);
             $this->db->bind('id_game', $data['idPubg']);
             $this->db->bind('link_drive', $data['linkDrive']);
@@ -183,9 +184,10 @@ class User_model
         $sql = "UPDATE pendaftar SET tanggal_daftar = :tgl_daftar, nama_tim = :namatim, id_game = :idgame, link_drive = :linkdrive, status = :status WHERE id = :id";
         $this->db->query($sql);
         for ($i = 0; $i < count($arrId); $i++) {
+
             $this->db->bind('tgl_daftar', $arrTglDaftar[$i]);
-            $this->db->bind('namatim', $arrNamaTim[$i]);
-            $this->db->bind('idgame', $arrIdGame[$i]);
+            $this->db->bind('namatim', ($arrNamaTim[$i] == "") ? null : $arrNamaTim[$i]);
+            $this->db->bind('idgame', ($arrIdGame[$i] == "") ? null : $arrIdGame[$i]);
             $this->db->bind('linkdrive', $arrLinkDrive[$i]);
             $this->db->bind('status', $arrStatus[$i]);
             $this->db->bind('id', $arrId[$i]);
@@ -197,7 +199,11 @@ class User_model
 
     public function riwayatDetil($data)
     {
-        
+        $sql = "SELECT * from pendaftar p inner join anggota a on p.id = a.pendaftar_id where user_username = :username and event_id = :id";
+        $this->db->query($sql);
+        $this->db->bind('username', $_SESSION['username']);
+        $this->db->bind('id', $data['eid']);
+        return $this->db->resultSet();
     }
 
     public function deletePendaftar()

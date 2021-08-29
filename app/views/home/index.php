@@ -181,6 +181,9 @@
     </div>
     <div style='height: auto; width:10%; background: rgb(1,151,148); background: linear-gradient(90deg, rgba(1,151,148,1) 0%, rgba(5,132,187,1) 100%);'></div>
 </div>
+<div style='height: auto; width:100%;'>
+    <img style='width:100%; aspect-ratio: 1920/366; pointer-events: none;' src='img/home/vectorline.jpg'>
+</div>
 <!-- END OF TIMELINE -->
 
 <!-- START OF LOCATION -->
