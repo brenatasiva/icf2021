@@ -172,6 +172,20 @@ class User_model
         return $this->db->resultSet();
     }
 
+    public function getAllPendaftarLombaKelompok()
+    {
+        $sql = "SELECT p.id as 'idpendaftar',p.user_username, p.nama_tim, p.id_game,p.link_drive,p.status, j.jenis FROM `pendaftar` p INNER JOIN event e on p.event_id = e.id INNER JOIN jenis j on e.jenis_id = j.id WHERE j.jenis = 'Lomba Kelompok'";
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
+
+    public function getAllAnggota()
+    {
+        $sql = 'SELECT * FROM anggota';
+        $this->db->query($sql);
+        return $this->db->resultSet();
+    }
+
     public function updateDetil($data)
     {
         $arrId = $data['id'];

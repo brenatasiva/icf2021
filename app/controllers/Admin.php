@@ -38,12 +38,15 @@ class Admin extends Controller
         $id['eid'] = $idEvent;
         $detilEvent = $this->model('Event_model')->getEvent($id);
         $detilPesertaPerEvent = $this->model('User_model')->getPendaftarByEvent($idEvent);
+        $allPerwakilanLombaKelompok = $this->model('User_model')->getAllPendaftarLombaKelompok();
+        $allAnggota = $this->model('User_model')->getAllAnggota();
         $judul = $detilEvent['nama'];
-
         $data = [
             'judulHalaman' => $judul,
             'detilEvent' => $detilEvent,
-            'detilPeserta' => $detilPesertaPerEvent
+            'detilPeserta' => $detilPesertaPerEvent,
+            'allPerwakilanLombaKelompok' => $allPerwakilanLombaKelompok,
+            'allAnggota' => $allAnggota
         ];
         $this->templates('admin/detilEvent', $data);
     }
