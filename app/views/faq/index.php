@@ -10,6 +10,10 @@
         margin: 0px !important;
     }
 
+    .accordion {
+        font-weight: lighter;
+    }
+
     .accordion-button::after {
         content: none;
     }
@@ -31,7 +35,7 @@
     }
 
     .inner-container {
-        padding: 100px 100px 150px 100px;
+        padding: 100px 0 150px 0;
     }
 
     .accordion-item {
@@ -97,6 +101,10 @@
     .accordion-button:focus {
         box-shadow: 0 0 0 0 !important;
     }
+
+    .accordion-item {
+        width: 75%;
+    }
 </style>
 <div class="faq-header-bg">
     <div class="container">
@@ -138,9 +146,9 @@
                 }
             ?>
 
-                <div class="accordion-item">
+                <div class="accordion-item" style="margin-left: auto; margin-right: auto;">
                     <h2 class="accordion-header" id="heading<?= $result[0]; ?>">
-                        <button class="accordion-button collapsed justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $result[0]; ?>" aria-expanded="false" aria-controls="collapse<?= $result[0]; ?>">
+                        <button class="accordion-button collapsed justify-content-between" style="font-weight: lighter !important;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $result[0]; ?>" aria-expanded="false" aria-controls="collapse<?= $result[0]; ?>">
                             <?= $key['pertanyaan']; ?>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                                 <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z" />
@@ -163,5 +171,4 @@
             endforeach; ?>
         </div>
     </div>
-
 </div>

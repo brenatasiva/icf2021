@@ -19,19 +19,19 @@
 
     @font-face {
       font-family: "Circular Std";
-      src: url('<?= BASEURL ?>/font/CircularStd-Light.otf');
+      src: url('<?= BASEURL ?>/font/CircularStd-Light.otf') format('opentype');
       font-weight: 500;
     }
 
     @font-face {
       font-family: "Circular Std";
-      src: url('<?= BASEURL ?>/font/CircularStd-Medium.otf');
+      src: url('<?= BASEURL ?>/font/CircularStd-Medium.otf') format('opentype');
       font-weight: 600;
     }
 
     @font-face {
       font-family: "Circular Std";
-      src: url('<?= BASEURL ?>/font/CircularStd-Bold.otf');
+      src: url('<?= BASEURL ?>/font/CircularStd-Bold.otf') format('opentype');
       font-weight: 800;
     }
 
@@ -45,6 +45,18 @@
     a,
     input {
       font-weight: lighter !important;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 1rem 1.5rem;
+    }
+
+    .icf-color {
+      color: #009b8d !important;
+    }
+
+    .icf-bg-color {
+      background: #009b8d !important;
     }
 
     html,
@@ -144,7 +156,7 @@
               <?php if (isset($_SESSION['username'])) { ?>
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" #" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link btn-navbar-user dropdown-toggle <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" #" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <?= $_SESSION['username']; ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -154,7 +166,7 @@
                   </li>
                 </ul>
               <?php } else { ?>
-                <a class="btn btn-outline-light <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">Login</a>
+                <a class="btn btn-navbar-user btn-outline-light <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">LOGIN</a>
               <?php } ?>
             </div>
           </div>

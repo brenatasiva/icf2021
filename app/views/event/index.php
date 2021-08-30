@@ -90,20 +90,41 @@
     }
 
     .modal-dialog {
-        max-width: 650px;
+        max-width: 700px;
     }
 
     .modal-header {
         background-image: url("<?= BASEURL; ?>/img/event/avianto_tryo.png");
-        background-position: 0px -50px;
+        background-position: 0px -72px;
         background-repeat: no-repeat;
         background-size: cover;
         height: 220px;
-        flex-direction: column;
-        align-items: start;
     }
 
-    .modal-header .btn-close {
+    .modal-header-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: green;
+        opacity: 0.1;
+    }
+
+    .modal-header-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding: 2rem 2rem 0.5rem 2rem;
+    }
+
+    .modal-header-content .btn-close {
         padding: 0.5rem 0.5rem;
         margin: 0rem 0.5rem -0.5rem auto;
     }
@@ -111,10 +132,52 @@
     .modal-title {
         max-width: 300px;
         color: white;
+        line-height: 0.9;
+        font-size: 40px;
+        text-shadow: 0px 0px 30px black;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: row;
+        padding: 2rem 2rem 3rem 2rem;
+    }
+
+    .modal-body-content {
+        width: 50%;
+    }
+
+    .modal-body-desc {
+        padding-right: 2rem;
+        font-weight: lighter;
+    }
+
+    .modal-body-info {
+        flex-direction: column;
+        display: flex;
+        padding-left: 2rem;
+        font-weight: lighter;
+    }
+
+    .modal-info {
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .btn-modal-info {
+        margin-top: 30px;
+        border-radius: 0;
+        width: 100%;
+        padding: 1rem 0.75rem;
     }
 
     .btn-close {
         color: white;
+        width: unset;
+        height: unset;
+        background: transparent;
+        opacity: unset;
+        line-height: unset;
     }
 
     table {
@@ -135,9 +198,6 @@
         padding: 1.5rem 1rem !important;
     }
 
-    /*    th:last-child, td:last-child {
-        padding-right: 1rem !important;
-    }*/
     tr,
     td {
         background: white !important;
@@ -477,8 +537,6 @@
                             $tgl = ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai;
                         ?>
                             <tr>
-                                <!-- <td><? //= $key['status'] 
-                                            ?></td> -->
                                 <?php
                                 if ($data['judulHalaman'] == "Seminar") {
                                     echo '<td class="riwayat-daftar-seminar">
@@ -507,7 +565,7 @@
                                             </td>
                                             <td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
-                                                    <span class="centered-content" id="halo">' . ((!empty($key['link_zoom'])) ?
+                                                    <span class="centered-content">' . ((!empty($key['link_zoom'])) ?
                                         '<span class="link-text text-truncate link-zoom-text" style="width: 80%;display: inline-block;">' . $key['link_zoom'] . '</span>
                                                             <span style="" class="">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-files icon-copy copy-text" style="cursor: pointer;" viewBox="0 0 16 16">
@@ -691,11 +749,44 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        <h3 class="modal-title" id="modalToggle<?= $key['id']; ?>Label"><?= $key['nama']; ?></h3>
+                                        <div class="modal-header-layer"></div>
+                                        <div class="modal-header-content">
+                                            <button type="button" class="btn-close btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                                                </svg>
+                                            </button>
+                                            <h3 class="modal-title" id="modalToggle<?= $key['id']; ?>Label"><?= $key['nama']; ?></h3>
+                                        </div>
                                     </div>
                                     <div class="modal-body">
-                                        <?= $key['deskripsi']; ?>
+                                        <div class="modal-body-content modal-body-desc"><?= $key['deskripsi']; ?></div>
+                                        <div class="modal-body-content modal-body-info">
+                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;">Seminar</span>
+                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-info-circle" viewBox="0 -1 18 18">
+                                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                                    </svg></span></span>
+                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;">25 Sep 2021</span>
+                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-calendar" viewBox="0 -1 18 18">
+                                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                    </svg></span></span>
+                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;">15.10 WIB</span>
+                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock" viewBox="0 -1 18 18">
+                                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+                                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+                                                    </svg></span></span>
+                                            <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
+                                                <form action="<?= BASEURL; ?>/event/formLomba" method="post">
+                                                    <button type="submit" class="btn btn-modal-info btn-sign-up" name="eid" value="<?= $key['id']; ?>">Sign Up for this event</button>
+                                                </form>
+                                            <?php } else { ?>
+                                                <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
+                                                    <input type="hidden" name="eid" value="<?= $key['id']; ?>">
+                                                    <input type="submit" class="btn btn-modal-info btn-sign-up" value="Sign Up">
+                                                </form>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
