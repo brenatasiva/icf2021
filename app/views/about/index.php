@@ -182,14 +182,16 @@
 <!-- Competitions -->
 <div style='height: auto; width:100%; position: relative;'>
     <img src="img/about/Competition.jpg" width='100%'>
-    <div style='height:45%; width:100%;'>
-        <div style='position:absolute; top:0;'>
-            <img src="img/about/pubg.jpg" style='width:100%;' alt="">
-            <div style='position:absolute;'>
-                <h1>PUBG Battles</h1>
-            </div>
+    <div style='height:12.5%; width:100%; position:absolute; top:0;' class='d-flex justify-content-center align-items-center'>
+        <h1>Competitions</h1>
+    </div>
+    <div style='height:42.5%; width:100%; position:absolute; top:12.5%;'>
+        <div style='height:35%; background: url("img/about/pubg.jpg"); background-size: cover;' class='d-flex justify-content-center align-items-center'>
+            <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
+            <img style='position:relative;' src="img/about/pubg.png" alt="">
+            <h1 style='position:relative; color:white;'>PUBG Battles</h1>
         </div>
-        <div style='margin: 0 15%; width:70%;position:absolute; top:0;'>
+        <div style='margin: 0 15%; width:70%;'>
             <div class="row">
                 <div class="col" style='margin: 0 3%'>
                     <img src="img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
@@ -209,8 +211,36 @@
             </div>
         </div>
     </div>
+    <div style='height:45%; width:100%; position:absolute; top:55%;'>
+        <div style='height:35%; background: url("img/about/drawing.jpg"); background-size: cover; background-position:0% 40%;' class='d-flex justify-content-center align-items-center'>
+            <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
+            <img style='position:relative;' src="img/about/pencil.png" alt="">
+            <h1 style='position:relative; color:white;'>Character Design<br>Competition</h1>
+        </div>
+        <div style='margin: 0 15%; width:70%;'>
+            <div class="row">
+                <div class="col" style='margin: 0 3%'>
+                    <img src="img/about/chardes1.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center;'>1<sup>st</sup> Place</h1>
+                    <h3 style='text-align:center;'>Rp. 500.000</h3>
+                </div>
+                <div class="col" style='margin: 0 3%'>
+                    <img src="img/about/chardes2.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center;'>2<sup>nd</sup> Place</h1>
+                    <h3 style='text-align:center;'>Rp. 250.000</h3>
+                </div>
+                <div class="col" style='margin: 0 3%'>
+                    <img src="img/about/chardes3.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center;'>3<sup>rd</sup> Place</h1>
+                    <h3 style='text-align:center;'>Rp. 125.000</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- End of Competitions -->
+
+
 <script>
     let items = document.querySelectorAll('.carousel .carousel-item')
 

@@ -549,6 +549,7 @@
                                             <td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
                                                     <span class="centered-content"><a class="btn btn-altorange me-5" id="detailRiwayat" data-id="' . $key['id'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent">Detail</a></span>
+                                                    <a href="' . BASEURL . '/user/getDetilRiwayat/' . $key['event_id'] . '">detil</a>
                                                 </div>
                                             </td>';
                                 }
@@ -841,7 +842,7 @@
             },
             dataType: 'json',
             success: function(data) {
-                $('#nama').val(data.nama);
+
             }
         })
     })

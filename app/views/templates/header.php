@@ -8,8 +8,43 @@
   <title> <?= $data['judulHalaman']; ?> </title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main.min.css">
   <style type="text/css">
+    body {
+      /* font-family: "Circular Std" !important; */
+      font-family: "Bahnschrift" !important;
+    }
+
     .navbar-expand-lg .navbar-nav .nav-link {
       padding: 1rem 1.5rem;
+    }
+
+    @font-face {
+      font-family: "Circular Std";
+      src: url('<?= BASEURL ?>/font/CircularStd-Light.otf');
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: "Circular Std";
+      src: url('<?= BASEURL ?>/font/CircularStd-Medium.otf');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: "Circular Std";
+      src: url('<?= BASEURL ?>/font/CircularStd-Bold.otf');
+      font-weight: 800;
+    }
+
+    @font-face {
+      font-family: "Bahnschrift";
+      src: url('<?= BASEURL ?>/font/BAHNSCHRIFT.TTF');
+    }
+
+    table,
+    th,
+    a,
+    input {
+      font-weight: lighter !important;
     }
 
     html,

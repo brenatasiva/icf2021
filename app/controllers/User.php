@@ -108,8 +108,8 @@ class User extends Controller
         }
     }
 
-    public function getDetilRiwayat()
+    public function getDetilRiwayat($data)
     {
-        echo json_encode($this->model('User_model')->riwayatDetil($_POST));
+        print_R(json_encode($this->model('User_model')->riwayatDetil($data)));
     }
 }
