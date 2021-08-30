@@ -61,6 +61,7 @@ class Admin extends Controller
 
     public function tambahEvent()
     {
+        // die(var_dump($_FILES));
         if ($this->model('Event_model')->insertEvent($_POST) > 0) {
             header('Location: ' . BASEURL . '/admin/event');
         }

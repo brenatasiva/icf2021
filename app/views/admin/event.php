@@ -18,9 +18,10 @@
                 <td><?= $key['nama']; ?></td>
                 <td><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai ?></td>
                 <td><?= $key['jenis']; ?></td>
-                <td style="max-width: 100px;">
+                <td style="max-width: 150px;">
                     <a class="btn btn-altorange me-5" id="editEvent" data-id="<?= $key['id']; ?>" data-bs-toggle="modal" data-bs-target="#modalEvent">Edit</a>
-                    <a href="<?= BASEURL; ?>/admin/detil/<?= $key['id']; ?>" class="btn btn-altdarkgrey">Detail</a>
+                    <a href="<?= BASEURL; ?>/admin/detil/<?= $key['id']; ?>" class="btn btn-altdarkgrey me-5">Detail</a>
+                    <a class="btn btn-danger" id="deleteEvent" data-bs-toggle="modal" data-id="<?= $key['id']; ?>" data-bs-target="#deleteModal">Hapus</a>
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -92,12 +93,37 @@
                             </select>
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Poster</label>
+                        <input type="file" class="form-control" name="poster[]">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="input" class="btn btn-primary">Save changes</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmation?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Yakin delete?
+            </div>
+            <div class="modal-footer">
+                <form action="<?= BASEURL; ?>/admin/deleteEvent" method="post">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Save changes</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -138,7 +164,7 @@
 
         const idevent = $(this).data('id');
         $('input[type="hidden"]').remove();
-        $('form').append('<input type="hidden" name="eid" value="' + idevent + '">')
+        $('form').append('<input type="hidden" name="eid" value="' + idevent + '">');
         $.ajax({
             method: 'post',
             url: '<?= BASEURL; ?>/admin/getEvent',
@@ -158,5 +184,11 @@
                 $('#selectJenis').val(data.jenis_id);
             }
         })
+    })
+
+    $('body').on('click', '#deleteEvent', function() {
+        const idevent = $(this).data('id');
+        $('input[type="hidden"]').remove();
+        $('form').append('<input type="hidden" name="eid" value="' + idevent + '">')
     })
 </script>

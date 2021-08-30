@@ -55,6 +55,18 @@ class Event_model
         $this->db->bind('linkzoom', $data['linkzoom']);
         $this->db->bind('jenis_id', $data['jenis_id']);
         $this->db->execute();
+        // $idevent = $this->db->getLastId();
+        // if ($this->db->rowCount() > 0) {
+        //     foreach ($data['poster'] as $nama_file) {
+        //         $sql = 'INSERT INTO gambar (event_id, extension) VALUES (:idevent, :extension)';
+        //         $this->db->query($sql);
+        //         $this->db->bind('idevent', $idevent);
+        //         $ext = pathinfo($nama_file, PATHINFO_EXTENSION);
+        //         $this->db->bind('extension', $ext);
+        //         $this->db->execute();
+        //         return $this->db->rowCount();
+        //     }
+        // }
         return $this->db->rowCount();
     }
     public function updateEvent($data)
@@ -79,7 +91,7 @@ class Event_model
     {
         $sql = "DELETE FROM event WHERE id = :id";
         $this->db->query($sql);
-        $this->db->bind('id', $data['id']);
+        $this->db->bind('id', $data['eid']);
         $this->db->execute();
         return $this->db->rowCount();
     }

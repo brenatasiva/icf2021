@@ -76,6 +76,9 @@
                         <tr>
                             <th scope="col">No</th>
                             <th scope="col">Username</th>
+                            <th scope="col">NRP</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">No_HP</th>
                             <th scope="col">Tanggal Daftar</th>
                             <th scope="col">Nama Tim</th>
                             <th scope="col">ID_Game</th>
@@ -89,6 +92,9 @@
                             <tr>
                                 <td><?= $i; ?><input type="hidden" name="id[]" value="<?= $peserta['id']; ?>"></td>
                                 <td><?= $peserta['user_username']; ?></td>
+                                <td><?= $peserta['nrp']; ?></td>
+                                <td><?= $peserta['email']; ?></td>
+                                <td><?= $peserta['no_hp']; ?></td>
                                 <td><input type="date" class="form-control" id="tanggal_daftar[]" name="tanggal_daftar[]" value="<?= $peserta['tanggal_daftar']; ?>"></td>
                                 <td><input type="text" class="form-control" id="nama_tim[]" name="nama_tim[]" value="<?= $peserta['nama_tim']; ?>"></td>
                                 <td><input type="text" class="form-control" id="id_game[]" name="id_game[]" value="<?= $peserta['id_game']; ?>"></td>

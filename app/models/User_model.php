@@ -166,7 +166,7 @@ class User_model
 
     public function getPendaftarByEvent($idevent)
     {
-        $sql = "SELECT * FROM pendaftar WHERE event_id = :id";
+        $sql = "SELECT * FROM pendaftar p INNER JOIN user u on p.user_username = u.username WHERE event_id = :id";
         $this->db->query($sql);
         $this->db->bind('id', $idevent);
         return $this->db->resultSet();
