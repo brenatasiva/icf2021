@@ -14,7 +14,8 @@
     }
 
     .user-input:focus {
-        color: black !important;
+        background: #2b313d;
+        color: white;
     }
 
     .logo-icf {
@@ -36,6 +37,11 @@
         color: #2b313d;
         background: #009b8d;
         border: 0px !important;
+    }
+
+    .btn-user-submit:hover {
+        color: #2b313d;
+        background-color: #02756b;
     }
 
     .crop-login {

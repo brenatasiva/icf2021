@@ -14,22 +14,17 @@
         padding: 100px 0px 150px 0px;
     }
 
-    .nama-seminar {
-        min-width: 140px;
-    }
-
-    .pembicara {
-        width: 120px;
-    }
-
     .tanggal-jam {
         min-width: 135px;
-        width: 145px;
     }
 
     .zoom-id {
         min-width: 227px;
         width: 227px;
+    }
+
+    .container-link-zoom {
+        max-width: 250px;
     }
 
     .link-text {
@@ -42,20 +37,6 @@
         vertical-align: unset !important;
     }
 
-    .nama-cabang-lomba {
-        width: 32%;
-    }
-
-    .tanggal-jam-lomba {
-        width: 180px;
-        min-width: 160px;
-    }
-
-    .status {
-        width: 110px;
-        min-width: 110px;
-    }
-
     .bi-whatsapp {
         color: #009b8d !important;
     }
@@ -65,9 +46,33 @@
     }
 
     .wa-group {
-        width: 200px;
-        min-width: 180px;
         text-align: center;
+    }
+
+    .details {
+        width: 40%;
+    }
+
+    .badge-icf {
+        display: inline;
+        padding: 0.35em 0.65em;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25rem;
+    }
+
+    .btn-details {
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        color: #0d6efd;
+    }
+
+    .btn-details:hover {
+        color: #0a58ca;
     }
 
     .btn-sign-up {
@@ -99,6 +104,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 220px;
+        position: relative;
     }
 
     .modal-header-layer {
@@ -180,10 +186,13 @@
         line-height: unset;
     }
 
+    .modal-dialog-scrollable .modal-inner {
+        overflow-y: auto;
+    }
+
     table {
         border: 1px solid #009b8d !important;
         margin-bottom: 0 !important;
-        table-layout: fixed;
         width: 100%;
     }
 
@@ -191,6 +200,11 @@
         background: #009b8d !important;
         color: white;
         border-bottom: 1px solid #009b8d !important;
+    }
+
+    td {
+        display: table-cell;
+        vertical-align: middle;
     }
 
     th,
@@ -204,50 +218,7 @@
         color: black !important;
     }
 
-    @media (min-width: 1400px) {
-        .nama-seminar {
-            width: 400px;
-        }
-
-        .nama-seminar.daftar-nama-seminar {
-            width: 400px;
-        }
-    }
-
-    @media (max-width: 1400px) {
-        .nama-seminar {
-            width: 310px;
-        }
-
-        .nama-seminar.daftar-nama-seminar {
-            width: 310px;
-        }
-    }
-
-    @media (max-width: 1199px) {
-        .nama-seminar {
-            width: 220px;
-        }
-
-        .nama-seminar.daftar-nama-seminar {
-            width: 220px;
-        }
-    }
-
     @media (min-width: 992px) and (max-width: 1199px) {
-        .nama-seminar {
-            min-width: 140px;
-        }
-
-        .pembicara {
-            width: 120px;
-        }
-
-        .tanggal-jam {
-            min-width: 145px;
-            width: 145px;
-        }
-
         .zoom-id {
             min-width: 227px;
             width: 227px;
@@ -256,26 +227,9 @@
         .link-zoom {
             min-width: 140px !important;
         }
-
-        .nama-cabang-lomba {
-            width: 28%;
-        }
     }
 
     @media (max-width: 991px) {
-        .nama-seminar {
-            width: 140px;
-        }
-
-        .pembicara {
-            width: 120px;
-        }
-
-        .tanggal-jam {
-            min-width: 135px;
-            width: 135px;
-        }
-
         .zoom-id {
             min-width: 227px;
             width: 227px;
@@ -293,33 +247,6 @@
             width: 100%;
             display: inline-block;
             text-align: center;
-        }
-
-        .nama-seminar.daftar-nama-seminar {
-            width: 130px;
-        }
-
-        .btn-daftar-seminar {
-            width: 205px;
-        }
-
-        .nama-cabang-lomba {
-            width: 24%;
-        }
-
-        .tanggal-jam-lomba {
-            width: 145px;
-            min-width: 100px;
-        }
-
-        .status {
-            width: 100px;
-            min-width: 110px;
-        }
-
-        .wa-group {
-            width: 120px;
-            min-width: 120px;
         }
     }
 
@@ -406,19 +333,19 @@
         }
 
         td.riwayat-daftar-lomba:nth-of-type(2):before {
-            content: "Nama Tim";
-        }
-
-        td.riwayat-daftar-lomba:nth-of-type(3):before {
             content: "Tanggal & Jam";
         }
 
-        td.riwayat-daftar-lomba:nth-of-type(4):before {
+        td.riwayat-daftar-lomba:nth-of-type(3):before {
             content: "Status";
         }
 
-        td.riwayat-daftar-lomba:nth-of-type(5):before {
+        td.riwayat-daftar-lomba:nth-of-type(4):before {
             content: "Whatsapp Group";
+        }
+
+        td.riwayat-daftar-lomba:nth-of-type(5):before {
+            content: "\00a0 ";
         }
 
         td.daftar-seminar:nth-of-type(1):before {
@@ -438,7 +365,7 @@
         }
 
         td.daftar-seminar:nth-of-type(5):before {
-            content: "Sign Up";
+            content: "\00a0 ";
         }
 
         td.daftar-lomba:nth-of-type(1):before {
@@ -450,7 +377,11 @@
         }
 
         td.daftar-lomba:nth-of-type(3):before {
-            content: "Sign Up";
+            content: "Jenis";
+        }
+
+        td.daftar-lomba:nth-of-type(4):before {
+            content: "\00a0 ";
         }
 
         td.daftar-pameran:nth-of-type(1):before {
@@ -469,6 +400,10 @@
             display: inline-block;
             width: 59%;
             padding: 0rem 1rem 0 0.5rem;
+        }
+
+        .container-link-zoom {
+            max-width: unset;
         }
 
         .link-text {
@@ -523,10 +458,10 @@
                                     <th class='link-zoom'>Link Zoom</th>";
                         else if ($data['judulHalaman'] == "Lomba")
                             echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
-                                    <th class='nama-tim'>Nama Tim</th>
                                     <th class='tanggal-jam-lomba'>Tanggal & Jam</th>
                                     <th class='status'>Status</th>
-                                    <th class='wa-group'>Whatsapp Group</th>";
+                                    <th class='wa-group'>Whatsapp Group</th>
+                                    <th></th> ";
                         ?>
                     </thead>
                     <tbody>
@@ -563,15 +498,14 @@
                                                     </span>
                                                 </div>                                    
                                             </td>
-                                            <td class="riwayat-daftar-seminar">
+                                            <td class="riwayat-daftar-seminar container-link-zoom">
                                                 <div class="half-content">
-                                                    <span class="centered-content">' . ((!empty($key['link_zoom'])) ?
-                                        '<span class="link-text text-truncate link-zoom-text" style="width: 80%;display: inline-block;">' . $key['link_zoom'] . '</span>
-                                                            <span style="" class="">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-files icon-copy copy-text" style="cursor: pointer;" viewBox="0 0 16 16">
-                                                                    <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
-                                                                </svg>
-                                                            </span>' : '-') . '
+                                                    <span class="centered-content">' . ((!empty($key['link_zoom'])) ? '<span class="link-text text-truncate link-zoom-text" style="width: 90%;display: inline-block;">' . $key['link_zoom'] . '</span>
+                                                        <span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-files icon-copy copy-text" style="cursor: pointer;" viewBox="0 0 16 16">
+                                                                <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
+                                                            </svg>
+                                                        </span>' : '-') . '
                                                     </span>
                                                 </div>
                                             </td>';
@@ -583,30 +517,24 @@
                                             </td>
                                             <td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
-                                                    <span class="centered-content">' . $key['nama_tim'] . '</span>
-                                                </div>
-                                            </td>
-                                            <td class="riwayat-daftar-lomba">
-                                                <div class="half-content">
                                                     <span class="centered-content">' . $tglSelesai . '</span>
                                                 </div>
                                             </td>
                                             <td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
-                                                    <span class="centered-content">' . $key['status'] . '</span>
+                                                    <span class="centered-content"><span class="badge-icf bg-danger">' . $key['status'] . '</span></span>
                                                 </div>
                                             </td>
                                             <td class="riwayat-daftar-lomba wa">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a style="width: 18px;" href="' . $key['link_wa'] . '">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                                    <span class="centered-content"><a class="btn btn-sign-up join-wa" id="detailRiwayat" data-id="' . $key['id'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
                                                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                                                    </svg></a></span>
+                                                    </svg>Join</a></span>
                                                 </div>
                                             </td>
                                             <td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a class="btn btn-altorange me-5" id="detailRiwayat" data-id="' . $key['event_id'] . '" data-jenis="' . $key['jenis'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent">Detail</a></span>
+                                                    <span class="centered-content"><a class="btn-details" id="detailRiwayat" data-id="' . $key['event_id'] . '" data-jenis="' . $key['jenis'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent">Detail</a></span>
                                                 </div>
                                             </td>';
                                 }
@@ -653,13 +581,13 @@
                         echo "<th class='nama-seminar daftar-nama-seminar'>Nama Seminar</th>
                                 <th class='pembicara'>Pembicara</th>
                                 <th class='tanggal-jam'>Tanggal & Jam</th>
-                                <th style='width: 80px;'>Status</th>
+                                <th class='status'>Status</th>
                                 <th class='btn-daftar-seminar'></th>";
                     else if ($data['judulHalaman'] == "Lomba")
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
                                 <th>Jenis</th>
-                                <th></th>";
+                                <th class='details></th>";
                     else if ($data['judulHalaman'] == "Pameran")
                         echo "<th style='width: 30%;'>Nama/Judul Karya</th>
                                 <th style='width: 20%;'>Author</th>
@@ -675,7 +603,7 @@
                         <tr>
                             <?php
                             if ($data['judulHalaman'] == "Seminar") {
-                                $status = (date("d/m/y H:i", strtotime('now')) > $tglSelesai) ? "Closed" : "Open";
+                                $status = (strtotime('now') <= strtotime($tglSelesai)) ? "Closed" : "Open";
                             ?>
                                 <td class="daftar-seminar">
                                     <div class="half-content">
@@ -843,71 +771,73 @@
 
 <!-- MODAL RIWAYAT -->
 <div class="modal fade" id="modalEvent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class=" modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div id="modal_lomba_kelompok">
-                <div class="mb-3 row">
-                    <label for="nama_tim" class="col-sm-3 col-form-label">Nama Tim</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="nama_tim" name="nama_tim" readonly>
-                    </div>
+            <div class="modal-inner">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3 row">
-                    <label for="id_game_ketua" class="col-sm-3 col-form-label">ID Game Ketua</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="id_game_ketua" name="id_game_ketua" readonly>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="link_drive_tim" class="col-sm-3 col-form-label">Link Drive Tim</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="link_drive_tim" name="link_drive_tim" readonly>
-                    </div>
-                </div>
-                <?php for ($i = 1; $i <= 3; $i++) { ?>
+                <div id="modal_lomba_kelompok">
                     <div class="mb-3 row">
-                        <h1>Anggota <?= $i; ?>:</h1><br>
-                        <label for="nama_<?= $i; ?>" class="col-sm-3 col-form-label">Nama</label>
+                        <label for="nama_tim" class="col-sm-3 col-form-label">Nama Tim</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="nama_<?= $i; ?>" name="nama_<?= $i; ?>" readonly>
+                            <input type="text" class="form-control" id="nama_tim" name="nama_tim" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="no_hp_<?= $i; ?>" class="col-sm-3 col-form-label">No HP</label>
+                        <label for="id_game_ketua" class="col-sm-3 col-form-label">ID Game Ketua</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="no_hp_<?= $i; ?>" name="no_hp_<?= $i; ?>" readonly>
+                            <input type="text" class="form-control" id="id_game_ketua" name="id_game_ketua" readonly>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="email_<?= $i; ?>" class="col-sm-3 col-form-label">Email</label>
+                        <label for="link_drive_tim" class="col-sm-3 col-form-label">Link Drive Tim</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="email_<?= $i; ?>" name="email_<?= $i; ?>" readonly>
+                            <input type="text" class="form-control" id="link_drive_tim" name="link_drive_tim" readonly>
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="nrp_<?= $i; ?>" class="col-sm-3 col-form-label">NRP</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="nrp_<?= $i; ?>" name="nrp_<?= $i; ?>" readonly>
+                    <?php for ($i = 1; $i <= 3; $i++) { ?>
+                        <div class="mb-3 row">
+                            <h1>Anggota <?= $i; ?>:</h1><br>
+                            <label for="nama_<?= $i; ?>" class="col-sm-3 col-form-label">Nama</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="nama_<?= $i; ?>" name="nama_<?= $i; ?>" readonly>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="id_game_<?= $i; ?>" class="col-sm-3 col-form-label">ID Game</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="id_game_<?= $i; ?>" name="id_game_<?= $i; ?>" readonly>
+                        <div class="mb-3 row">
+                            <label for="no_hp_<?= $i; ?>" class="col-sm-3 col-form-label">No HP</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="no_hp_<?= $i; ?>" name="no_hp_<?= $i; ?>" readonly>
+                            </div>
                         </div>
-                    </div>
+                        <div class="mb-3 row">
+                            <label for="email_<?= $i; ?>" class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="email_<?= $i; ?>" name="email_<?= $i; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="nrp_<?= $i; ?>" class="col-sm-3 col-form-label">NRP</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="nrp_<?= $i; ?>" name="nrp_<?= $i; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="id_game_<?= $i; ?>" class="col-sm-3 col-form-label">ID Game</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="id_game_<?= $i; ?>" name="id_game_<?= $i; ?>" readonly>
+                            </div>
+                        </div>
 
-                <?php } ?>
-            </div>
-            <div id="modal_lomba_individu">
-                <div class="mb-3 row">
-                    <label for="link_drive_individu" class="col-sm-3 col-form-label">Link Drive</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="link_drive_individu" name="link_drive_individu" readonly>
+                    <?php } ?>
+                </div>
+                <div id="modal_lomba_individu">
+                    <div class="mb-3 row">
+                        <label for="link_drive_individu" class="col-sm-3 col-form-label">Link Drive</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="link_drive_individu" name="link_drive_individu" readonly>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -957,6 +887,6 @@
                 }
 
             }
-        })
-    })
+        });
+    });
 </script>
