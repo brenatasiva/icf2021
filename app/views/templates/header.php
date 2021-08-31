@@ -8,8 +8,58 @@
   <title> <?= $data['judulHalaman']; ?> </title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/main.min.css">
   <style type="text/css">
+    @font-face {
+      font-family: "Circular Icf";
+      src: url('<?= BASEURL ?>/font/CircularStd-Light.otf') format('opentype');
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: "Circular Icf";
+      src: url('<?= BASEURL ?>/font/CircularStd-Medium.otf') format('opentype');
+      font-weight: 600;
+    }
+
+    @font-face {
+      font-family: "Circular Icf";
+      src: url('<?= BASEURL ?>/font/CircularStd-Bold.otf') format('opentype');
+      font-weight: 800;
+    }
+
+    @font-face {
+      font-family: "Bahnschrift Icf";
+      src: url('<?= BASEURL ?>/font/BAHNSCHRIFT.TTF');
+    }
+
+    body {
+      font-family: "Bahnschrift Icf" !important;
+    }
+
     .navbar-expand-lg .navbar-nav .nav-link {
       padding: 1rem 1.5rem;
+    }
+
+    .circular-icf {
+      font-family: "Circular Icf" !important;
+    }
+
+    table,
+    th,
+    a,
+    input {
+      font-weight: lighter !important;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding: 1rem 1.5rem;
+    }
+
+    .icf-color {
+      color: #009b8d !important;
+    }
+
+    .icf-bg-color {
+      background: #009b8d !important;
     }
 
     html,
@@ -37,6 +87,22 @@
       position: absolute;
       top: -3px;
       width: auto;
+    }
+
+    .btn-navbar-user {
+      font-weight: bold !important;
+      min-width: 100px;
+      border-radius: 10px;
+      border-width: 2px !important;
+      font-size: 0.9rem !important;
+    }
+
+    .btn-logged-user {
+      font-weight: lighter !important;
+      min-width: 100px;
+      border-radius: 10px;
+      border-width: 2px !important;
+      font-size: 1rem !important;
     }
 
     #pageContainer {
@@ -109,7 +175,7 @@
               <?php if (isset($_SESSION['username'])) { ?>
                 <ul class="navbar-nav">
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" #" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link btn-logged-user circular-icf dropdown-toggle <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" #" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <?= $_SESSION['username']; ?>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -119,7 +185,7 @@
                   </li>
                 </ul>
               <?php } else { ?>
-                <a class="btn btn-outline-light <?php echo ($data['judulHalaman'] == 'Login' || $data['judulHalaman'] == 'Register') ? 'active' : '' ?>" href="<?= BASEURL; ?>/user/login">Login</a>
+                <a class="btn btn-navbar-user btn-outline-light" href="<?= BASEURL; ?>/user/login">LOGIN</a>
               <?php } ?>
             </div>
           </div>

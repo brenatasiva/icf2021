@@ -44,20 +44,31 @@
 </style>
 <div style='position:relative; height:auto;'>
     <div class="divText d-flex justify-content-center align-items-center" style='flex-direction:column; text-align:center; height:100%;'>
-        <h1>About ICF</h1>
-        <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend lacinia libero, vitae pellentesque sapien dictum a. In in ligula non felis aliquam venenatis ac nec sem. Etiam dictum velit nec accumsan tincidunt. Maecenas ex neque, fermentum at lacinia vitae, bibendum eu metus. Mauris feugiat molestie nisl eget fringilla. Mauris vitae ornare sapien. Etiam sit amet nunc magna. Ut ut nibh eget nisl luctus scelerisque. Nulla imperdiet dui et nibh sodales, eget congue ante sollicitudin.</p>
-        <button type="button" class="btn btn-outline-light">Register Now</button>
+        <img style='width:40px;aspect-ratio:1/1;' src="img/about/logoicf.png" alt="">
+        <h1 style='color:white;'><b>About ICF</b></h1>
+        <p class="aboutText">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
+            Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
+            Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
+        <br><button type="button" class="btn btn-outline-light">Register Now</button>
     </div>
     <img src="img/about/hero.jpg" width="100%">
     <style type="text/css">
         .aboutJudul {
-            color:white; width:100%;font-size:80px;font-family: 'Circular Std Bold' !important;
+            color: white;
+            width: 100%;
+            font-size: 80px;
+            font-family: 'Circular Std Bold' !important;
         }
+
         .aboutText {
-            color: white; width: 40%;font-family: 'Circular Std Thin' !important;
+            color: white;
+            width: 40%;
+            font-family: 'Circular Std Thin' !important;
         }
+
         .divText {
-            width: 100%; position:absolute;
+            width: 100%;
+            position: absolute;
         }
     </style>
 </div>
@@ -109,72 +120,72 @@
     </div>
 </div>
 <div class="row row-cols-1 row-cols-md-3 g-4" style='padding: 0 20% 5% 20%; background:#efece7; margin: 0 !important;'>
-  <div class="col">
-    <div class="card h-100">
-        <div style='position:relative;'>
-            <img src="img/about/speaker1.jpg" class="card-img-top" alt="...">
-            <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Avianto Tiyo</b></h2>
+    <div class="col">
+        <div class="card h-100">
+            <div style='position:relative;'>
+                <img src="img/about/speaker1.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Avianto Tiyo</b></h2>
+            </div>
+            <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
+                <p class="card-text">Internet of Things: Future Concept</p>
+            </div>
         </div>
-      <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-        <p class="card-text">Internet of Things: Future Concept</p>
-      </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-        <div style='position:relative;'>
-            <img src="img/about/speaker2.jpg" class="card-img-top" alt="...">
-            <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Gerdy WK</b></h2>
+    <div class="col">
+        <div class="card h-100">
+            <div style='position:relative;'>
+                <img src="img/about/speaker2.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Gerdy WK</b></h2>
+            </div>
+            <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
+                <p class="card-text">Komik Indonesia dari Masa ke Masa</p>
+            </div>
         </div>
-      <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-        <p class="card-text">Komik Indonesia dari Masa ke Masa</p>
-      </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-        <div style='position:relative;'>
-            <img src="img/about/speaker3.jpg" class="card-img-top" alt="...">
-            <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Is Yuniarto</b></h2>
+    <div class="col">
+        <div class="card h-100">
+            <div style='position:relative;'>
+                <img src="img/about/speaker3.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Is Yuniarto</b></h2>
+            </div>
+            <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
+                <p class="card-text">Komik Indonesia dari Masa ke Masa</p>
+            </div>
         </div>
-      <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-        <p class="card-text">Komik Indonesia dari Masa ke Masa</p>
-      </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-        <div style='position:relative;'>
-            <img src="img/about/speaker4.jpg" class="card-img-top" alt="...">
-            <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Yohanes D.P</b></h2>
+    <div class="col">
+        <div class="card h-100">
+            <div style='position:relative;'>
+                <img src="img/about/speaker4.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Yohanes D.P</b></h2>
+            </div>
+            <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
+                <p class="card-text">Solusi Ekonomi, <br>Memiliki Lapak Online</p>
+            </div>
         </div>
-      <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-        <p class="card-text">Solusi Ekonomi, <br>Memiliki Lapak Online</p>
-      </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-        <div style='position:relative;'>
-            <img src="img/about/speaker5.jpg" class="card-img-top" alt="...">
-            <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Vincentius R.P</b></h2>
+    <div class="col">
+        <div class="card h-100">
+            <div style='position:relative;'>
+                <img src="img/about/speaker5.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Vincentius R.P</b></h2>
+            </div>
+            <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
+                <p class="card-text">AI in Our Everyday Life and<br>How They Improve Our Lives</p>
+            </div>
         </div>
-      <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-        <p class="card-text">AI in Our Everyday Life and<br>How They Improve Our Lives</p>
-      </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-        <div style='position:relative;'>
-            <img src="img/about/speaker5.jpg" class="card-img-top" alt="...">
-            <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Lorem Ipsum</b></h2>
+    <div class="col">
+        <div class="card h-100">
+            <div style='position:relative;'>
+                <img src="img/about/speaker5.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Lorem Ipsum</b></h2>
+            </div>
+            <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
+                <p class="card-text">AI in Our Everyday Life and<br>How They Improve Our Lives</p>
+            </div>
         </div>
-      <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-        <p class="card-text">AI in Our Everyday Life and<br>How They Improve Our Lives</p>
-      </div>
     </div>
-  </div>
 </div>
 <!-- End of The Speakers -->
 
@@ -182,35 +193,65 @@
 <!-- Competitions -->
 <div style='height: auto; width:100%; position: relative;'>
     <img src="img/about/Competition.jpg" width='100%'>
-    <div style='height:45%; width:100%;'>
-        <div style='position:absolute; top:0;'>
-            <img src="img/about/pubg.jpg" style='width:100%;' alt="">
-            <div style='position:absolute;'>
-                <h1>PUBG Battles</h1>
+    <div style='height:12.5%; width:100%; position:absolute; top:0;' class='d-flex justify-content-center align-items-center'>
+        <h1 style='color:white;'><b>Competitions</b></h1>
+    </div>
+    <div style='height:42.5%; width:100%; position:absolute; top:12.5%;'>
+        <div style='height:35%; background: url("img/about/pubg.jpg"); background-size: cover;' class='d-flex justify-content-center align-items-center'>
+            <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
+            <img style='position:relative;' src="img/about/pubg.png" alt="">
+            <h1 style='position:relative; color:white;'><b>PUBG Battles</b></h1>
+        </div>
+        <div style='margin: 0 15%; width:70%;'>
+            <div class="row">
+                <div class="col">
+                    <img src="img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
+                    <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
+                </div>
+                <div class="col">
+                    <img src="img/about/pubg2.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
+                    <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
+                </div>
+                <div class="col">
+                    <img src="img/about/pubg3.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
+                    <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
+                </div>
             </div>
         </div>
-        <div style='margin: 0 15%; width:70%;position:absolute; top:0;'>
+    </div>
+    <div style='height:45%; width:100%; position:absolute; top:55%;'>
+        <div style='height:35%; background: url("img/about/drawing.jpg"); background-size: cover; background-position:0% 40%;' class='d-flex justify-content-center align-items-center'>
+            <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
+            <img style='position:relative;' src="img/about/pencil.png" alt="">
+            <h1 style='position:relative; color:white;'><b>Character Design<br>Competition</b></h1>
+        </div>
+        <div style='margin: 0 15%; width:70%;'>
             <div class="row">
                 <div class="col" style='margin: 0 3%'>
-                    <img src="img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
-                    <h1 style='text-align:center;'>1<sup>st</sup> Place</h1>
-                    <h3 style='text-align:center;'>Rp. 500.000</h3>
+                    <img src="img/about/chardes1.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
+                    <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
                 </div>
                 <div class="col" style='margin: 0 3%'>
-                    <img src="img/about/pubg2.png" style='width:100%; aspect-ratio:1/1;' alt="">
-                    <h1 style='text-align:center;'>2<sup>nd</sup> Place</h1>
-                    <h3 style='text-align:center;'>Rp. 250.000</h3>
+                    <img src="img/about/chardes2.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
+                    <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
                 </div>
                 <div class="col" style='margin: 0 3%'>
-                    <img src="img/about/pubg3.png" style='width:100%; aspect-ratio:1/1;' alt="">
-                    <h1 style='text-align:center;'>3<sup>rd</sup> Place</h1>
-                    <h3 style='text-align:center;'>Rp. 125.000</h3>
+                    <img src="img/about/chardes3.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
+                    <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!-- End of Competitions -->
+
+
 <script>
     let items = document.querySelectorAll('.carousel .carousel-item')
 

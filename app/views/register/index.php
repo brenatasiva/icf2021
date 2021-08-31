@@ -14,7 +14,8 @@
     }
 
     .user-input:focus {
-        color: black !important;
+        background: #2b313d;
+        color: white;
     }
 
     .logo-icf {
@@ -36,6 +37,11 @@
         color: #2b313d;
         background: #009b8d;
         border: 0px !important;
+    }
+
+    .btn-user-submit:hover {
+        color: #2b313d;
+        background-color: #02756b;
     }
 
     .pretty {
@@ -114,47 +120,6 @@
     .w-30 {
         width: 30% !important;
     }
-
-    /*    .container-tooltip {
-        position: absolute;
-        left: 55px;
-    }
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted black;
-      opacity: 100% !important;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: black;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-      position: absolute;
-      z-index: 1;
-      top: 150%;
-      left: 50%;
-      margin-left: -60px;
-    }
-
-    .tooltip .tooltiptext::after {
-      content: "";
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: transparent transparent black transparent;
-    }
-
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }*/
 </style>
 <div class="user-bg">
     <div class="container">
@@ -200,16 +165,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="position-relative">
-                            <div class="container-tooltip"> data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
-                                <div class="tooltip">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
-                                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
-                                    </svg>
-                                    <span class="tooltiptext">Tooltip text</span>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                     <div id="nrp"></div>
                     <div class="pt-4 pb-5">

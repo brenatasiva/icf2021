@@ -14,7 +14,8 @@
     }
 
     .user-input:focus {
-        color: black !important;
+        background: #2b313d;
+        color: white;
     }
 
     .logo-icf {
@@ -38,6 +39,11 @@
         border: 0px !important;
     }
 
+    .btn-user-submit:hover {
+        color: #2b313d;
+        background-color: #02756b;
+    }
+
     .crop-login {
         width: 280px;
         height: 100px;
@@ -53,12 +59,14 @@
     <div class="container">
         <div class="d-flex flex-column justify-content-center">
             <div class="d-flex justify-content-center inner-container">
-                <img src="<?= BASEURL; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
+                <div class="crop-login">
+                    <img src="<?= BASEURL; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
+                </div>
             </div>
             <div class="d-flex justify-content-center">
                 <form class="w-50 form-user-input" method="post" action="<?= BASEURL; ?>/user/cekLogin">
                     <div class="pb-4">
-                        <input type="text" class="form-control user-input" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Username or Email">
+                        <input type="text" class="form-control user-input" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Username">
                     </div>
                     <div class="pb-2">
                         <input type="password" class="form-control user-input" id="exampleInputPassword1" name="password" placeholder="Password">

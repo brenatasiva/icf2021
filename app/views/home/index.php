@@ -65,9 +65,14 @@
         <div style='height: 100%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
         <div style="width:70%; height:100%;" class='d-flex'>
             <div style="margin: 0 3%;">
-                <h1 style="font-size: 4vw;">Lorem Ipsum</h1>
-                <p style="font-size: 1vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animid est laborum</p>
+                <h1 style="font-size: 4vw;">INTO THE UNNAMED LAND</h1>
+                <p style="font-size: 1vw;">Di tahun 2020 kemarin, seluruh masyarakat Indonesia diwajibkan untuk melakukan segala aktivitas di rumah saja.
+                    Perubahan yang drastis tersebut membuat beberapa orang tertekan dan sulit untuk beradaptasi. Di tengah ketidakpastian serta hal-hal baru,
+                    tidak sedikit orang yang diwajibkan untuk membuat sebuah metode baru untuk menghadapi era asing yang baru ini. Banyak kegiatan sekarang beralih menjadi online.
+                    ICF kali ini mengangkat tema "Into The Unnamed Land" yang terinspirasi dari lingkungan sekitar sekarang ini. Dari segi Informatika hingga Multimedia,
+                    masyarakat di era baru seperti sekarang ini harus keluar dari zona nyaman dan mempelajari skill-skill yang dibutuhkan seperti
+                    penggunaan platform online untuk proses belajar-mengajar, pemanfaatan platform digital untuk menyampaikan suatu pekerjaan,
+                    bahkan hingga skill basic seperti cara mengoperasikan software akan sangat diperlukan.</p>
             </div>
             <div style='height:100%; aspect-ratio: 16/9; box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'>
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
