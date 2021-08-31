@@ -587,7 +587,7 @@
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
                                 <th>Jenis</th>
-                                <th class='details></th>";
+                                <th class='details'></th>";
                     else if ($data['judulHalaman'] == "Pameran")
                         echo "<th style='width: 30%;'>Nama/Judul Karya</th>
                                 <th style='width: 20%;'>Author</th>
