@@ -28,6 +28,9 @@
                     <thead>
                         <tr>
                             <th>Nama</th>
+                            <th>NRP</th>
+                            <th>NO_HP</th>
+                            <th>Email</th>
                             <th>ID_Game</th>
                             <th>Nama Tim</th>
                             <th>Link</th>
@@ -36,16 +39,19 @@
                     </thead>
                     <tbody>
 
-                        <?php foreach ($data['allPerwakilanLombaKelompok'] as $perwakilan) : ?>
+                        <?php foreach ($data['detilPeserta'] as $perwakilan) : ?>
                             <tr>
                                 <td class="table-info"><?= $perwakilan['user_username']; ?></td>
+                                <td class="table-info"><?= $perwakilan['nrp']; ?></td>
+                                <td class="table-info"><?= $perwakilan['no_hp']; ?></td>
+                                <td class="table-info"><?= $perwakilan['email']; ?></td>
                                 <td class="table-info"><?= $perwakilan['id_game']; ?></td>
                                 <td class="table-info"><?= $perwakilan['nama_tim']; ?></td>
                                 <td class="table-info"><?= $perwakilan['link_drive']; ?></td>
                                 <?php
                                 $i = 1;
                                 foreach ($data['allAnggota'] as $anggota) {
-                                    if ($anggota['pendaftar_id'] == $perwakilan['idpendaftar']) {
+                                    if ($anggota['pendaftar_id'] == $perwakilan['id']) {
                                         $i++;
                                     }
                                 } ?>
@@ -54,9 +60,12 @@
                                 </td>
                             </tr>
                             <?php foreach ($data['allAnggota'] as $anggota) : ?>
-                                <?php if ($anggota['pendaftar_id'] == $perwakilan['idpendaftar']) { ?>
+                                <?php if ($anggota['pendaftar_id'] == $perwakilan['id']) { ?>
                                     <tr>
                                         <td><?= $anggota['nama']; ?></td>
+                                        <td><?= $anggota['nrp']; ?></td>
+                                        <td><?= $anggota['no_hp']; ?></td>
+                                        <td><?= $anggota['email']; ?></td>
                                         <td><?= $anggota['id_game']; ?></td>
                                         <td><?= $perwakilan['nama_tim']; ?></td>
                                         <td><?= $perwakilan['link_drive']; ?></td>
@@ -119,28 +128,4 @@
 <?php unset($_SESSION['updatedDetil']); ?>
 <div style="clear:both;"></div>
 <script>
-    $('#select-all').click(function(event) {
-        if (this.checked) {
-            // Iterate each checkbox
-            $(':checkbox').each(function() {
-                this.checked = true;
-            });
-        } else {
-            $(':checkbox').each(function() {
-                location.reload();
-            });
-        }
-    });
-
-    function myFunction() {
-        const chkbox = document.querySelectorAll(".form-check-input");
-        const hiddenchkbox = document.querySelectorAll('.hiddencheckbox');
-        for (let i = 0; i < chkbox.length; i++) {
-            if (chkbox[i].checked == true) {
-                hiddenchkbox[i].disabled = true;
-            } else {
-                hiddenchkbox[i].disabled = false;
-            }
-        }
-    }
 </script>

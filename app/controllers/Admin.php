@@ -40,10 +40,10 @@ class Admin extends Controller
         $detilPesertaPerEvent = $this->model('User_model')->getPendaftarByEvent($idEvent);
         $allPerwakilanLombaKelompok = $this->model('User_model')->getAllPendaftarLombaKelompok();
         $allAnggota = $this->model('User_model')->getAllAnggota();
-        $judul = $detilEvent['nama'];
+        $judul = $detilEvent['event']['nama'];
         $data = [
             'judulHalaman' => $judul,
-            'detilEvent' => $detilEvent,
+            'detilEvent' => $detilEvent['event'],
             'detilPeserta' => $detilPesertaPerEvent,
             'allPerwakilanLombaKelompok' => $allPerwakilanLombaKelompok,
             'allAnggota' => $allAnggota
@@ -62,7 +62,7 @@ class Admin extends Controller
     public function tambahEvent()
     {
         // die(var_dump($_FILES));
-        if ($this->model('Event_model')->insertEvent($_POST) > 0) {
+        if ($this->model('Event_model')->insertEvent($_POST, $_FILES) > 0) {
             header('Location: ' . BASEURL . '/admin/event');
         }
         die(var_dump($_POST));
@@ -70,9 +70,12 @@ class Admin extends Controller
 
     public function updateEvent()
     {
-        if ($this->model('Event_model')->updateEvent($_POST) > 0) {
+        // var_dump($_FILES);
+        // die(var_dump($_POST));
+        if ($this->model('Event_model')->updateEvent($_POST, $_FILES) >= 0) {
             header('Location: ' . BASEURL . '/admin/event');
         }
+        var_dump($_FILES);
         die(var_dump($_POST));
     }
 
