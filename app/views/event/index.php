@@ -606,8 +606,7 @@
                                             </td>
                                             <td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a class="btn btn-altorange me-5" id="detailRiwayat" data-id="' . $key['id'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent">Detail</a></span>
-                                                    <a href="' . BASEURL . '/user/getDetilRiwayat/' . $key['event_id'] . '">detil</a>
+                                                    <span class="centered-content"><a class="btn btn-altorange me-5" id="detailRiwayat" data-id="' . $key['event_id'] . '" data-jenis="' . $key['jenis'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent">Detail</a></span>
                                                 </div>
                                             </td>';
                                 }
@@ -850,60 +849,65 @@
                 <h5 class="modal-title" id="modalTitle">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div>
+            <div id="modal_lomba_kelompok">
                 <div class="mb-3 row">
-                    <label for="nama" class="col-sm-3 col-form-label">Nama</label>
+                    <label for="nama_tim" class="col-sm-3 col-form-label">Nama Tim</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="nama" name="nama">
+                        <input type="text" class="form-control" id="nama_tim" name="nama_tim" readonly>
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="tgl_mulai" class="col-sm-3 col-form-label">Tanggal Mulai</label>
+                    <label for="id_game_ketua" class="col-sm-3 col-form-label">ID Game Ketua</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" id="tgl_mulai" name="tgl_mulai">
+                        <input type="text" class="form-control" id="id_game_ketua" name="id_game_ketua" readonly>
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="tgl_selesai" class="col-sm-3 col-form-label">Tanggal Selesai</label>
+                    <label for="link_drive_tim" class="col-sm-3 col-form-label">Link Drive Tim</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" id="tgl_selesai" name="tgl_selesai">
+                        <input type="text" class="form-control" id="link_drive_tim" name="link_drive_tim" readonly>
                     </div>
                 </div>
-                <div class="mb-3 row">
-                    <label for="deskripsi" class="col-sm-3 col-form-label">Deskripsi</label>
-                    <div class="col-sm-9">
-                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3"></textarea>
+                <?php for ($i = 1; $i <= 3; $i++) { ?>
+                    <div class="mb-3 row">
+                        <h1>Anggota <?= $i; ?>:</h1><br>
+                        <label for="nama_<?= $i; ?>" class="col-sm-3 col-form-label">Nama</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nama_<?= $i; ?>" name="nama_<?= $i; ?>" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="author" class="col-sm-3 col-form-label">Author</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="author" name="author">
+                    <div class="mb-3 row">
+                        <label for="no_hp_<?= $i; ?>" class="col-sm-3 col-form-label">No HP</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="no_hp_<?= $i; ?>" name="no_hp_<?= $i; ?>" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="syarat" class="col-sm-3 col-form-label">Syarat Ketentuan</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="syarat" name="syarat">
+                    <div class="mb-3 row">
+                        <label for="email_<?= $i; ?>" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="email_<?= $i; ?>" name="email_<?= $i; ?>" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="linkwa" class="col-sm-3 col-form-label">Link WA</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="linkwa" name="linkwa">
+                    <div class="mb-3 row">
+                        <label for="nrp_<?= $i; ?>" class="col-sm-3 col-form-label">NRP</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nrp_<?= $i; ?>" name="nrp_<?= $i; ?>" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3 row">
-                    <label for="linkzoom" class="col-sm-3 col-form-label">Link Zoom</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="linkzoom" name="linkzoom">
+                    <div class="mb-3 row">
+                        <label for="id_game_<?= $i; ?>" class="col-sm-3 col-form-label">ID Game</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="id_game_<?= $i; ?>" name="id_game_<?= $i; ?>" readonly>
+                        </div>
                     </div>
-                </div>
+
+                <?php } ?>
+            </div>
+            <div id="modal_lomba_individu">
                 <div class="mb-3 row">
-                    <label for="" class="col-sm-3 col-form-label">Jenis Event</label>
+                    <label for="link_drive_individu" class="col-sm-3 col-form-label">Link Drive</label>
                     <div class="col-sm-9">
-                        <select class="form-select" aria-label="Default select example" id="selectJenis" name="jenis_id">
-                        </select>
+                        <input type="text" class="form-control" id="link_drive_individu" name="link_drive_individu" readonly>
                     </div>
                 </div>
             </div>
@@ -923,8 +927,7 @@
         $('#modalTitle').html('Detail Riwayat');
 
         const idevent = $(this).data('id');
-        $('input[type="hidden"]').remove();
-        $('form').append('<input type="hidden" name="eid" value="' + idevent + '">')
+        const jenis = $(this).data('jenis');
         $.ajax({
             method: 'post',
             url: '<?= BASEURL; ?>/user/getDetilRiwayat',
@@ -933,6 +936,25 @@
             },
             dataType: 'json',
             success: function(data) {
+                if (jenis == "Lomba Kelompok") {
+                    $('#modal_lomba_kelompok').show();
+                    $('#modal_lomba_individu').hide();
+                    $('#nama_tim').val(data[0]['nama_tim']);
+                    $('#id_game_ketua').val(data[0]['id_game']);
+                    $('#link_drive_tim').val(data[0]['link_drive']);
+
+                    for (let i = 1; i <= 3; i++) {
+                        $('#nama_' + i).val(data[i]['nama']);
+                        $('#no_hp_' + i).val(data[i]['no_hp']);
+                        $('#email_' + i).val(data[i]['email']);
+                        $('#nrp_' + i).val((data[i]['nrp'] == "") ? "-" : data[i]['nrp']);
+                        $('#id_game_' + i).val(data[i]['id_game']);
+                    }
+                } else {
+                    $('#modal_lomba_individu').show();
+                    $('#modal_lomba_kelompok').hide();
+                    $('#link_drive_individu').val(data[0]['link_drive']);
+                }
 
             }
         })

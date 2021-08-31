@@ -157,7 +157,7 @@ class User_model
 
     public function riwayatPendaftaran($data)
     {
-        $sql = "SELECT p.id, p.event_id, p.status, p.nama_tim, p.id_game, p.link_drive, e.nama, e.deskripsi, e.tanggal_mulai, e.tanggal_selesai, e.author, e.link_wa, e.link_zoom from pendaftar p inner join event e on p.event_id = e.id inner join jenis j on j.id = e.jenis_id where p.user_username = :username and j.jenis like :jenis";
+        $sql = "SELECT p.id, p.event_id, p.status, p.nama_tim, p.id_game, p.link_drive, e.nama, e.deskripsi, e.tanggal_mulai, e.tanggal_selesai, e.author, e.link_wa, e.link_zoom, j.jenis from pendaftar p inner join event e on p.event_id = e.id inner join jenis j on j.id = e.jenis_id where p.user_username = :username and j.jenis like :jenis";
         $this->db->query($sql);
         $this->db->bind('username', $_SESSION['username']);
         $this->db->bind('jenis', "%$data%");
@@ -217,9 +217,8 @@ class User_model
         $this->db->query($sql);
         $this->db->bind('username', $_SESSION['username']);
         $this->db->bind('id', $data['eid']);
-        $perwakilan = array();
-        $perwakilan[] = $this->db->resultSet();
-        $anggota[] = $this->getAnggota($perwakilan['id']);
+        $perwakilan = $this->db->resultSet();
+        $anggota = $this->getAnggota($perwakilan[0]['id']);
         return array_merge($perwakilan, $anggota);
     }
 

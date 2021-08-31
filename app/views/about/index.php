@@ -46,7 +46,9 @@
     <div class="divText d-flex justify-content-center align-items-center" style='flex-direction:column; text-align:center; height:100%;'>
         <img style='width:40px;aspect-ratio:1/1;' src="img/about/logoicf.png" alt="">
         <h1 style='color:white;'><b>About ICF</b></h1>
-        <p class="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend lacinia libero, vitae pellentesque sapien dictum a. In in ligula non felis aliquam venenatis ac nec sem. Etiam dictum velit nec accumsan tincidunt. Maecenas ex neque, fermentum at lacinia vitae, bibendum eu metus. Mauris feugiat molestie nisl eget fringilla. Mauris vitae ornare sapien. Etiam sit amet nunc magna. Ut ut nibh eget nisl luctus scelerisque. Nulla imperdiet dui et nibh sodales, eget congue ante sollicitudin.</p>
+        <p class="aboutText">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
+            Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
+            Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
         <br><button type="button" class="btn btn-outline-light">Register Now</button>
     </div>
     <img src="img/about/hero.jpg" width="100%">
