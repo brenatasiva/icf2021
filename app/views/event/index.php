@@ -600,7 +600,7 @@
                         <tr>
                             <?php
                             if ($data['judulHalaman'] == "Seminar") {
-                                $status = (strtotime('now') <= strtotime($tglSelesai)) ? "Closed" : "Open";
+                                $status = (date("d/m/y H:i", strtotime('now')) >= strtotime($tglSelesai)) ? "Closed" : "Open";
                             ?>
                                 <td class="daftar-seminar">
                                     <div class="half-content">
@@ -625,7 +625,7 @@
 
                                 <td class="daftar-seminar">
                                     <div class="half-content" style="text-align: center !important;">
-                                        <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href="<?php echo ($status == "Open") ? "#modalToggle" : ""; ?> <?= $key['id'] ?> " role="button">Sign Up</a></span>
+                                        <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href=<?php echo ($status == "Open") ? "#modalToggle" . $key['id'] : ""; ?> role="button">Sign Up</a></span>
                                     </div>
                                 </td>
                             <?php } else if ($data['judulHalaman'] == "Lomba") {
