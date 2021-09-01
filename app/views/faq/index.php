@@ -8,6 +8,7 @@
 
     .faq-title {
         margin: 0px !important;
+        font-size: 3.5rem;
     }
 
     .accordion {
@@ -35,7 +36,7 @@
     }
 
     .inner-container {
-        padding: 100px 0 150px 0;
+        padding: 100px 0;
     }
 
     .accordion-item {
@@ -108,10 +109,10 @@
 </style>
 <div class="faq-header-bg">
     <div class="container">
-        <div class="row" style="padding-top: 60px; padding-bottom: 10px;">
+        <div class="row" style="padding-top: 60px;">
             <div class="col d-flex justify-content-start align-items-end">
-                <img src="<?= BASEURL; ?>/img/faq/white_dot.png" style="width: 20px; height: 20px; margin-bottom: 5px; margin-left: 15px;">
-                <h1 class="faq-title text-light fw-bold">FAQ's</h1>
+                <img src="<?= BASEURL; ?>/img/faq/white_dot.png" style="width: 20px; height: 20px; margin-bottom: 10px; margin-left: 15px;">
+                <h1 class="faq-title text-light fw-bold circular-icf">FAQ's</h1>
             </div>
         </div>
     </div>

@@ -1,17 +1,14 @@
 <style>
-    .faq-header-bg {
+    .event-header-bg {
         background-image: url("<?= BASEURL; ?>/img/event/judul_event_bg.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
 
-    .faq-title {
+    .event-title {
         margin: 0px !important;
-    }
-
-    .inner-container {
-        padding: 100px 0px 150px 0px;
+        font-size: 3.5rem;
     }
 
     .tanggal-jam {
@@ -432,11 +429,11 @@
         }
     }
 </style>
-<div class="faq-header-bg">
+<div class="event-header-bg">
     <div class="container">
-        <div class="row" style="padding-top: 60px; padding-bottom: 10px;">
+        <div class="row" style="padding-top: 60px;">
             <div class="col d-flex justify-content-center align-items-end">
-                <h1 class="faq-title text-light fw-bold"><?= $data['judulHalaman']; ?></h1>
+                <h1 class="event-title text-light fw-bold circular-icf"><?= $data['judulHalaman']; ?></h1>
             </div>
         </div>
     </div>
