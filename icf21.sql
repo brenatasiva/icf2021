@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 30, 2021 at 10:32 AM
+-- Generation Time: Sep 02, 2021 at 08:16 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -64,10 +64,11 @@ CREATE TABLE `event` (
   `deskripsi` text,
   `author` varchar(255) DEFAULT NULL,
   `syarat_ketentuan` text,
-  `link_wa` varchar(50) DEFAULT NULL,
-  `link_zoom` varchar(45) DEFAULT NULL,
-  `id_zoom` varchar(55) DEFAULT NULL,
-  `pass_zoom` varchar(55) DEFAULT NULL,
+  `link_wa` varchar(255) DEFAULT NULL,
+  `link_zoom` varchar(255) DEFAULT NULL,
+  `id_zoom` varchar(255) DEFAULT NULL,
+  `pass_zoom` varchar(255) DEFAULT NULL,
+  `link_mekanisme` varchar(255) DEFAULT NULL,
   `jenis_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -75,11 +76,11 @@ CREATE TABLE `event` (
 -- Dumping data for table `event`
 --
 
-INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `id_zoom`, `pass_zoom`, `jenis_id`) VALUES
-(1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'grrgsd', 'Leonardo da Vinci', '', '', '', NULL, NULL, 2),
-(2, 'Seminar IoT', '2021-08-27', '2021-08-27', 'lorem lorem', 'Avianto Tiyo', '', '', '', NULL, NULL, 1),
-(3, 'PUBG Competition', '2021-08-04', '2021-08-05', 'lomba dor2', '', '', '', NULL, NULL, NULL, 3),
-(4, 'Character Design', '2021-08-28', '2021-08-30', 'gambar 3d', '', '', '', '', NULL, NULL, 4);
+INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `id_zoom`, `pass_zoom`, `link_mekanisme`, `jenis_id`) VALUES
+(1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'grrgsd', 'Leonardo da Vinci', '', '', '', NULL, NULL, NULL, 2),
+(2, 'Seminar IoT', '2021-08-27', '2021-09-10', 'lorem lorem', 'Avianto Tiyo', '', '', '', '', '', NULL, 1),
+(3, 'PUBG Competition', '2021-08-31', '2021-09-23', 'lomba dor2', '', '', '', '', '', '', NULL, 3),
+(4, 'Character Design', '2021-08-28', '2021-08-30', 'gambar 3d', '', '', '', '', NULL, NULL, NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `faq` (
 INSERT INTO `faq` (`id`, `pertanyaan`, `jawaban`) VALUES
 (1, 'aiuhiauhdi', 'hah?'),
 (2, 'AHIAHIUHHU', 'HAHHH??'),
-(3, 'he..', 'apa?');
+(3, 'hee....', 'apa?');
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ CREATE TABLE `pendaftar` (
   `status` enum('Pending','Diterima','Ditolak') NOT NULL DEFAULT 'Pending',
   `nama_tim` varchar(45) DEFAULT NULL,
   `id_game` varchar(45) DEFAULT NULL,
-  `link_drive` text
+  `link_drive` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -163,7 +164,7 @@ INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `s
 (4, 'dummy2', 4, '2021-08-28', 'Pending', NULL, NULL, 'abcde'),
 (5, 'dummy1', 4, '2021-08-28', 'Pending', NULL, NULL, 'aa'),
 (6, 'dummy3', 3, '2021-08-28', 'Pending', 'tim 3', 'pubg3', '..-3'),
-(7, 'dummy3', 4, '2021-08-28', 'Pending', NULL, NULL, 'dum3');
+(8, 'dummy3', 4, '2021-09-02', 'Pending', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -178,17 +179,18 @@ CREATE TABLE `user` (
   `email` varchar(45) NOT NULL,
   `no_hp` varchar(15) NOT NULL,
   `nrp` varchar(10) DEFAULT NULL,
-  `salt` varchar(55) NOT NULL
+  `salt` varchar(55) NOT NULL,
+  `code` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`, `salt`) VALUES
-('dummy1', '910af55fb4adc1217159f79d860698c76a9ca4cf', 'dummy1', 'dummy1@gmail.com', '08123456789', '123', 'flh4r'),
-('dummy2', 'd8d30c6b86825ec6db7b4a3c7e1fc4689a19bbe3', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', 'flh4r'),
-('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r');
+INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`, `salt`, `code`) VALUES
+('dummy1', '4eb8211165d8a4fa60fc8c5acf66fb53f90f5190', 'dummy1', 'brenatasiva@gmail.com', '08123456789', '123', 'lmtau', '50813252'),
+('dummy2', 'd8d30c6b86825ec6db7b4a3c7e1fc4689a19bbe3', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', 'flh4r', ''),
+('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r', '');
 
 --
 -- Indexes for dumped tables
@@ -279,7 +281,7 @@ ALTER TABLE `jenis`
 -- AUTO_INCREMENT for table `pendaftar`
 --
 ALTER TABLE `pendaftar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
