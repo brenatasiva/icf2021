@@ -26,7 +26,7 @@ class Event_model
     {
         // $event = str_replace('-', ' ', $data);
         // $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where e.nama = :nama";
-        $sql = "SELECT e.*,j.jenis from event e inner join jenis j on e.jenis_id = j.id where e.id = :id";
+        $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where e.id = :id";
         $this->db->query($sql);
         // $this->db->bind('id', $event);
         $this->db->bind('id', $data['eid']);

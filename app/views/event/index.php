@@ -440,6 +440,7 @@
 </div>
 
 <div class="container">
+    <!-- RIWAYAT PENDAFTARAN -->
     <div style="padding-bottom: 7rem;">
         <?php if ($data['judulHalaman'] != "Pameran" && isset($_SESSION['username']) && !empty($data['listRiwayat'])) { ?>
             <div class="pt-5">
@@ -463,8 +464,8 @@
                     </thead>
                     <tbody>
                         <?php foreach ($data['listRiwayat'] as $key) :
-                            $tglMulai = date("d/m/y H:i", strtotime($key['tanggal_mulai']));
-                            $tglSelesai = date("d/m/y H:i", strtotime($key['tanggal_selesai']));
+                            $tglMulai = date("d M Y h:i", strtotime($key['tanggal_mulai']));
+                            $tglSelesai = date("d M Y h:i", strtotime($key['tanggal_selesai']));
                             $paramEvent = strtolower(str_replace(' ', '-', $key['nama']));
                             $tgl = ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai;
                         ?>
@@ -524,7 +525,7 @@
                                             </td>
                                             <td class="riwayat-daftar-lomba wa">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a class="btn btn-sign-up join-wa" id="detailRiwayat" data-id="' . $key['id'] . '" data-bs-toggle="modal" data-bs-target="#modalEvent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
+                                                    <span class="centered-content"><a class="btn btn-sign-up join-wa"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
                                                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                                                     </svg>Join</a></span>
                                                 </div>
@@ -537,38 +538,13 @@
                                 }
                                 ?>
                             </tr>
-
-                            <!-- <div class="modal fade" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="modalToggle<?= $key['id']; ?>Label"><?= $key['nama']; ?></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <?= $key['deskripsi']; ?>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
-                                                <form action="<?= BASEURL; ?>/event/formLomba" method="post">
-                                                    <button type="submit" class="btn btn-primary" name="eid" value="<?= $key['id']; ?>">Register</button>
-                                                </form>
-                                            <?php } else { ?>
-                                                <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
-                                                    <input type="hidden" name="eid" value="<?= $key['id']; ?>">
-                                                    <input type="submit" class="btn btn-primary" value="Register">
-                                                </form>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         <?php } ?>
-
+        <!-- END OF RIWAYAT PENDAFTARAN -->
+        <!-- DAFTAR EVENT -->
         <div class="pt-5">
             <h6><b>Daftar <?= $data['judulHalaman'] ?></b></h6>
             <table class="table table-border">
@@ -593,14 +569,14 @@
                 </thead>
                 <tbody>
                     <?php foreach ($data['listAllEvent'] as $key) :
-                        $tglMulai = date("d/m/y H:i", strtotime($key['tanggal_mulai']));
-                        $tglSelesai = date("d/m/y H:i", strtotime($key['tanggal_selesai']));
+                        $tglMulai = date("d M Y", strtotime($key['tanggal_mulai']));
+                        $tglSelesai = date("d M Y", strtotime($key['tanggal_selesai']));
                         $paramEvent = strtolower(str_replace(' ', '-', $key['nama']));
+                        $status = (date("d M Y", strtotime('now')) > $tglSelesai) ? "Closed" : "Open";
                     ?>
                         <tr>
                             <?php
                             if ($data['judulHalaman'] == "Seminar") {
-                                $status = (date("d/m/y H:i", strtotime('now')) >= strtotime($tglSelesai)) ? "Closed" : "Open";
                             ?>
                                 <td class="daftar-seminar">
                                     <div class="half-content">
@@ -628,28 +604,28 @@
                                         <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href=<?php echo ($status == "Open") ? "#modalToggle" . $key['id'] : ""; ?> role="button">Sign Up</a></span>
                                     </div>
                                 </td>
-                            <?php } else if ($data['judulHalaman'] == "Lomba") {
-                                echo '<td class="daftar-lomba">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key['nama'] . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-lomba">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . (($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai) . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-lomba">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key['jenis'] . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-lomba">
-                                            <div class="half-content" style="text-align: center !important;">
-                                                <span class="centered-content"><a class="btn btn-outline-success btn-sign-up" data-bs-toggle="modal" href="#modalToggle' . $key['id'] . '" role="button">Sign Up</a></span>
-                                            </div>
-                                        </td>';
-                            } else if ($data['judulHalaman'] == "Pameran") {
+                            <?php } else if ($data['judulHalaman'] == "Lomba") { ?>
+                                <td class="daftar-lomba">
+                                    <div class="half-content">
+                                        <span class="centered-content"><?= $key['nama'] ?></span>
+                                    </div>
+                                </td>
+                                <td class="daftar-lomba">
+                                    <div class="half-content">
+                                        <span class="centered-content"><?= (($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai) ?></span>
+                                    </div>
+                                </td>
+                                <td class="daftar-lomba">
+                                    <div class="half-content">
+                                        <span class="centered-content"><?= $key['jenis'] ?></span>
+                                    </div>
+                                </td>
+                                <td class="daftar-lomba">
+                                    <div class="half-content" style="text-align: center !important;">
+                                        <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href="#modalToggle<?= $key['id'] ?>" role="button">Sign Up</a></span>
+                                    </div>
+                                </td>
+                            <?php } else if ($data['judulHalaman'] == "Pameran") {
                                 echo '<td class="daftar-pameran">
                                             <div class="half-content">
                                                 <span class="centered-content">' . $key['nama'] . '</span>
@@ -668,7 +644,7 @@
                             }
                             ?>
                         </tr>
-
+                        <!-- MODAL PENDAFTARAN -->
                         <div class="modal fade" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -686,12 +662,12 @@
                                     <div class="modal-body">
                                         <div class="modal-body-content modal-body-desc"><?= $key['deskripsi']; ?></div>
                                         <div class="modal-body-content modal-body-info">
-                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;">Seminar</span>
+                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;"><?= $key['jenis']; ?></span>
                                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-info-circle" viewBox="0 -1 18 18">
                                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                                                     </svg></span></span>
-                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;">25 Sep 2021</span>
+                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;"><?php echo ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai; ?></span>
                                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-calendar" viewBox="0 -1 18 18">
                                                         <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                                     </svg></span></span>
@@ -707,62 +683,23 @@
                                             <?php } else { ?>
                                                 <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
                                                     <input type="hidden" name="eid" value="<?= $key['id']; ?>">
+                                                    <?php if ($key['jenis'] == 'Lomba Individu') { ?>
+                                                        <input type="text" class="form-control" placeholder="Link Drive" aria-describedby="button-addon2" name="link" required>
+                                                    <?php } ?>
                                                     <input type="submit" class="btn btn-modal-info btn-sign-up" value="Sign Up">
                                                 </form>
                                             <?php } ?>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
-                                            <form action="<?= BASEURL; ?>/event/formLomba" method="post">
-                                                <button type="submit" class="btn btn-primary" name="eid" value="<?= $key['id']; ?>">Register</button>
-                                            </form>
-                                        <?php } else if ($key['jenis'] == 'Lomba Individu') { ?>
-                                            <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="Link Drive" aria-describedby="button-addon2" name="link" required>
-                                                    <button type="submit" class="btn btn-primary" id="button-addon2" name="eid" value="<?= $key['id']; ?>">Register</button>
-                                                </div>
-
-                                            </form>
-                                        <?php } else { ?>
-                                            <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
-                                                <input type="hidden" name="eid" value="<?= $key['id']; ?>">
-                                                <input type="submit" class="btn btn-primary" value="Register">
-                                            </form>
-                                        <?php } ?>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <?php if ($key['jenis'] == 'Lomba Kelompok') { ?>
-                            <div class="modal fade" id="ModalToggle2" aria-hidden="true" aria-labelledby="ModalToggleLabel2" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="ModalToggleLabel2"><?= $key['nama']; ?></h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
-                                            <div class="modal-body">
-                                                <input type="hidden" name="eid" value="<?= $key['id']; ?>">
-                                                <input type="text" name="nama_tim" placeholder="Nama tim" required><br>
-                                                <label for="">Bukti Transfer </label><input type="file" name="bukti_transfer" required>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <input type="submit" class="btn btn-primary" value="Register">
-                                            </div>
-                                        </form>
-                                        <button class="btn btn-primary" data-bs-target="#modalToggle<?= $key['id']; ?>" data-bs-toggle="modal" data-bs-dismiss="modal">Back</button>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php } ?> -->
+                        <!-- END OF MODAL PENDAFTARAN -->
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
+        <!-- END OF DAFTAR EVENT -->
     </div>
 </div>
 
@@ -775,7 +712,7 @@
                     <h5 class="modal-title" id="modalTitle">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div id="modal_lomba_kelompok">
+                <div class="p-4" id="modal_lomba_kelompok">
                     <div class="mb-3 row">
                         <label for="nama_tim" class="col-sm-3 col-form-label">Nama Tim</label>
                         <div class="col-sm-9">
@@ -829,7 +766,7 @@
 
                     <?php } ?>
                 </div>
-                <div id="modal_lomba_individu">
+                <div class="px-3 pt-4" id="modal_lomba_individu">
                     <div class="mb-3 row">
                         <label for="link_drive_individu" class="col-sm-3 col-form-label">Link Drive</label>
                         <div class="col-sm-9">

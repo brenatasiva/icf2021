@@ -61,7 +61,7 @@
                     if (!isset($_POST['eid'])) {
                         header('Location: ' . BASEURL . '/home');
                     } else {
-                        $data['event'] = $this->model('Event_model')->getEvent($_POST);
+                        $data = $this->model('Event_model')->getEvent($_POST);
                         $this->view('templates/header', $data);
                         $this->view('event/formLomba', $data);
                         $this->view('templates/footer');

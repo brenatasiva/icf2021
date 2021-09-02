@@ -31,7 +31,6 @@
                                     <?= $_SESSION['username']; ?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a class="dropdown-item <?php echo ($data['judulHalaman'] == 'Profile') ? 'active' : '' ?>" href=" <?= BASEURL; ?>/user/profile">Edit Profile</a></li>
                                     <li><a class="dropdown-item" href="<?= BASEURL; ?>/user/logout">Logout</a></li>
                                 </ul>
                             </li>

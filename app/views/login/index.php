@@ -94,10 +94,80 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h1>Hubungi:</h1>
+                <div id="reset1">
+                    <div class="input-group mb-3" id="modalReset">
+                        <input type="text" class="form-control" placeholder="username" aria-describedby="button-addon2" id="usernameReset" required>
+                        <button type="button" class="btn btn-primary" id="buttonSend">Send</button><br>
+                    </div>
+                </div>
+                <div id="reset2">
+                    <div class="input-group mb-3" id="modalReset2">
+                        <form action="<?= BASEURL; ?>/user/reset" method="POST">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+                                <input type="text" class="form-control" readonly name="username" id="modalUsername">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+                                <input type="text" class="form-control" readonly id="modalEmail">
+                            </div>
+                            <input type="text" class="form-control" name="code" placeholder="code" aria-describedby="button-addon2" id="codeReset" required>
+                            <button type="submit" class="btn btn-primary" id="buttonReset">Reset</button>
+                        </form>
+
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
 
             </div>
         </div>
     </div>
+</div>
+<script type="text/javascript">
+    $('#reset2').hide();
+    var username = "";
+
+    $('body').on('click', '#buttonSend', function() {
+
+        username = $('#usernameReset').val();
+
+        if (username != "") {
+            $.ajax({
+                method: 'post',
+                url: '<?= BASEURL; ?>/user/requestReset',
+                data: {
+                    username: username
+                },
+                dataType: 'json',
+                success: function(data) {
+                    $('#reset1').hide();
+                    $('#reset2').show();
+                    $('.modal-header').html("Please check your email for confirmation code");
+                    $('#modalUsername').val(data[0]['username']);
+                    $('#modalEmail').val(data[0]['email']);
+                }
+            });
+        }
+    });
+
+    // $('body').on('click', '#buttonReset', function() {
+
+    //     var code = $('#codeReset').val();
+    //     if (code != "") {
+    //         $.ajax({
+    //             method: 'post',
+    //             url: '<?= BASEURL; ?>/user/checkCode',
+    //             data: {
+    //                 username: username,
+    //                 code: code
+    //             },
+    //             dataType: 'json',
+    //             success: function(data) {
+    //                 $('#reset2').hide();
+    //                 $('#reset1').show();
+    //             }
+    //         });
+    //     }
+
+
+    // });
+</script>
