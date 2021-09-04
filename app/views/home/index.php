@@ -11,6 +11,11 @@
         .carousel-transparant {
             display: none;
         }
+
+        .row {
+            width: 100% !important;
+        }
+
     }
 
     .carousel-inner .carousel-item.active,
@@ -90,10 +95,10 @@
         <h2 style="margin-left: 25px;"><b>Timeline</b></h2>
     </div>
 </div>
-<div style='height:auto; width:100%; justify-content: space-between; background:#efece7;' class='d-flex'>
-    <div style='height: auto; width:5%; background: rgb(1,151,148)'></div>
-    <div style='height: auto; width: 85%; justify-content: space-between; margin-right:-6px;' class='d-flex'>
-        <div style='height: 100%; width:50%; margin : 0 5% 0 15%;'>
+<div class="w-100 d-flex justify-content-between">
+    <div class="d-none d-md-block" style="height: auto; width: 5%; background: rgb(1, 151, 148)"></div>
+    <div class="row" style="width: 85%;">
+        <div class="col-md-6 d-sm-block d-md-flex align-items-center" style="background:#efece7;">
             <style>
                 ul.timeline {
                     list-style-type: none;
@@ -129,8 +134,8 @@
                     z-index: 400;
                 }
             </style>
-            <div class="container">
-                <div class="">
+            <div class=" container">
+                <div class="ms-md-5 mt-md-5 ms-3 mt-3 me-2">
                     <ul class="timeline">
                         <li style='position:relative;'>
                             <div style='width:1px; height:100%; background-color:#0582BC; display:inline-block; position:absolute; left:-10px;'></div>
@@ -180,11 +185,11 @@
                 </div>
             </div>
         </div>
-        <div style=' width:50%;'>
-            <img src="img/home/poster.png" style='height:100%; width:100%;' alt="">
+        <div class="col-md-6 d-none d-md-block">
+            <img src=" img/home/poster.png" style='height:100%; width:100%;' alt="">
         </div>
     </div>
-    <div style='height: auto; width:10%; background: rgb(1,151,148); background: linear-gradient(90deg, rgba(1,151,148,1) 0%, rgba(5,132,187,1) 100%);'></div>
+    <div class="d-none d-md-block" style="height: auto; width: 10%; background: rgb(1, 151, 148); background: linear-gradient(90deg, rgba(1, 151, 148, 1) 0%, rgba(5, 132, 187, 1) 100%)"></div>
 </div>
 <div style='height: auto; width:100%;'>
     <img style='width:100%; aspect-ratio: 1920/366; pointer-events: none;' src='img/home/vectorline.jpg'>
