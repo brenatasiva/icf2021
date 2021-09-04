@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?= $data['judulHalaman']; ?> </title>
-    <link rel="stylesheet" href="<?= BASEURL; ?>/css/main.min.css">
-    <script src="<?= BASEURL; ?>/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= BASEURL; ?>/js/jquery.js"></script>
+    <link rel="stylesheet" href="<?= BASECSS; ?>/css/main.min.css">
+    <script src="<?= BASECSS; ?>/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= BASECSS; ?>/js/jquery.js"></script>
 </head>
 
 <body>

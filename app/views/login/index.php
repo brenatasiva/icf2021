@@ -1,6 +1,6 @@
 <style type="text/css">
     .user-bg {
-        background-image: url("<?= BASEURL; ?>/img/login/login_bg.jpg");
+        background-image: url("<?= BASECSS; ?>/img/login/login_bg.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -60,7 +60,7 @@
         <div class="d-flex flex-column justify-content-center">
             <div class="d-flex justify-content-center inner-container">
                 <div class="crop-login">
-                    <img src="<?= BASEURL; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
+                    <img src="<?= BASECSS; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
                 </div>
             </div>
             <div class="d-flex justify-content-center">

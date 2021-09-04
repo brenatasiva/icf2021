@@ -2,22 +2,24 @@
 
 class App
 {
-    protected $controller = 'Home';
+    protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
 
     public function __construct()
     {
         $url = $this->parseURL();
+        unset($url[0]);
 
         //controller
         if ($url == null) {
-            $url = [$this->controller];
+            $url = array();
+            $url[1] = $this->controller;
         }
-        if (file_exists('../app/controllers/' . $url[0] . '.php')) {
+        if (file_exists('../app/controllers/' . $url[1] . '.php')) {
 
-            $this->controller = $url[0];
-            unset($url[0]);
+            $this->controller = $url[1];
+            unset($url[1]);
         }
 
         require_once '../app/controllers/' . $this->controller . '.php';
@@ -25,10 +27,10 @@ class App
 
         //method
 
-        if (isset($url[1])) {
-            if (method_exists($this->controller, $url[1])) {
-                $this->method = $url[1];
-                unset($url[1]);
+        if (isset($url[2])) {
+            if (method_exists($this->controller, $url[2])) {
+                $this->method = $url[2];
+                unset($url[2]);
             }
         }
 
@@ -44,8 +46,9 @@ class App
 
     public function parseURL()
     {
-        if (isset($_GET['url'])) {
-            $url = rtrim($_GET['url'], '/');
+        $url = null;
+        if (isset($_SERVER['PATH_INFO'])) {
+            $url = rtrim($_SERVER['PATH_INFO'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
             return $url;

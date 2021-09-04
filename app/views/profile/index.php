@@ -1,6 +1,6 @@
 <style type="text/css">
     .user-bg {
-        background-image: url("<?= BASEURL; ?>/img/profile/profile_bg.jpg");
+        background-image: url("<?= BASECSS; ?>/img/profile/profile_bg.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;

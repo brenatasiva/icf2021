@@ -2,9 +2,8 @@
 
     class Event extends Controller
     {
-        public function index($category)
+        public function index($category = null)
         {
-            print_r($category);
             $data['listAllEvent'] = $this->model('Event_model')->getEventPerCategory($category);
             if ($category === "seminar") {
                 if (isset($_SESSION['username']))
@@ -17,7 +16,7 @@
             } else if ($category === "pameran") {
                 $data['judulHalaman'] = "Pameran";
             } else {
-                header('Location: ' . BASEURL);
+                // header('Location: ' . BASEURL);
             }
             $this->view('templates/header', $data);
             $this->view('event/index', $data);
@@ -63,7 +62,6 @@
                         header('Location: ' . BASEURL . '/home');
                     } else {
                         $data = $this->model('Event_model')->getEvent($_POST);
-                        $data['judulHalaman'] = $data['event']['jenis'];
                         $this->view('templates/header', $data);
                         $this->view('event/formLomba', $data);
                         $this->view('templates/footer');

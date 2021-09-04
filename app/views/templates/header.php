@@ -6,23 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> <?= $data['judulHalaman']; ?> </title>
-  <link rel="stylesheet" href="<?= BASEURL; ?>/css/main.min.css">
+  <link rel="stylesheet" href="<?= BASECSS; ?>/css/main.min.css">
   <style type="text/css">
     @font-face {
       font-family: "Circular Icf";
-      src: url('<?= BASEURL ?>/font/CircularStd-Light.otf') format('opentype');
+      src: url('<?= BASECSS ?>/font/CircularStd-Light.otf') format('opentype');
       font-weight: 500;
     }
 
     @font-face {
       font-family: "Circular Icf";
-      src: url('<?= BASEURL ?>/font/CircularStd-Medium.otf') format('opentype');
+      src: url('<?= BASECSS ?>/font/CircularStd-Medium.otf') format('opentype');
       font-weight: 600;
     }
 
     @font-face {
       font-family: "Circular Icf";
-      src: url('<?= BASEURL ?>/font/CircularStd-Bold.otf') format('opentype');
+      src: url('<?= BASECSS ?>/font/CircularStd-Bold.otf') format('opentype');
       font-weight: 800;
     }
 
@@ -118,8 +118,8 @@
       /* Footer height */
     }
   </style>
-  <script src="<?= BASEURL; ?>/js/bootstrap.bundle.min.js"></script>
-  <script src="<?= BASEURL; ?>/js/jquery.js"></script>
+  <script src="<?= BASECSS; ?>/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= BASECSS; ?>/js/jquery.js"></script>
 </head>
 
 <body>
@@ -132,13 +132,13 @@
               <div class="row" style="min-width: 135px;">
                 <div class="col-6">
                   <a class="navbar-brand" href="https://ubaya.ac.id/" style="padding: 0; margin: 0;">
-                    <img style="width: 60px; height: auto;" src="<?= BASEURL; ?>/img/header/logoubaya.png">
+                    <img style="width: 60px; height: auto;" src="<?= BASECSS; ?>/img/header/logoubaya.png">
                   </a>
                 </div>
                 <div class="col-6">
                   <a class="navbar-brand" href="<?= BASEURL; ?>" style="padding: 0; margin: 0;">
                     <div class="crop">
-                      <img style="width: 75px; height: auto;" src="<?= BASEURL; ?>/img/header/logoicf.png">
+                      <img style="width: 75px; height: auto;" src="<?= BASECSS; ?>/img/header/logoicf.png">
                     </div>
                   </a>
                 </div>

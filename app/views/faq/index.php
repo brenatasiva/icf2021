@@ -1,6 +1,6 @@
 <style type="text/css">
     .faq-header-bg {
-        background-image: url("<?= BASEURL; ?>/img/faq/judul_faq_bg.jpg");
+        background-image: url("<?= BASECSS; ?>/img/faq/judul_faq_BG.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -111,7 +111,7 @@
     <div class="container">
         <div class="row" style="padding-top: 60px;">
             <div class="col d-flex justify-content-start align-items-end">
-                <img src="<?= BASEURL; ?>/img/faq/white_dot.png" style="width: 20px; height: 20px; margin-bottom: 10px; margin-left: 15px;">
+                <img src="<?= BASECSS; ?>/img/faq/white_dot.png" style="width: 20px; height: 20px; margin-bottom: 10px; margin-left: 15px;">
                 <h1 class="faq-title text-light fw-bold circular-icf">FAQ's</h1>
             </div>
         </div>

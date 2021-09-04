@@ -1,6 +1,6 @@
 <style type="text/css">
     .user-bg {
-        background-image: url("<?= BASEURL; ?>/img/register/register_bg.jpg");
+        background-image: url("<?= BASECSS; ?>/img/register/register_bg.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -125,7 +125,7 @@
     <div class="container">
         <div class="d-flex flex-column justify-content-center">
             <div class="d-flex justify-content-center inner-container">
-                <img src="<?= BASEURL; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
+                <img src="<?= BASECSS; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
             </div>
             <div class="d-flex justify-content-center">
                 <form class="w-50 form-user-input d-grid" action="<?= BASEURL; ?>/user/registUser" method="post">
