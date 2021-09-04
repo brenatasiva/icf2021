@@ -248,6 +248,7 @@
         overflow-y: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        text-align: justify;
     }
 
     .syarat::-webkit-scrollbar {
@@ -255,7 +256,7 @@
     }
 
     .modal-submit {
-        padding-top: 10%;
+        padding-top: 70px;
     }
 
     .btn-close {
@@ -291,14 +292,14 @@
 
     .text-link-drive {
         position: absolute;
-        left: 6%;
+        left: 40px;
         top: 8px;
         font-weight: lighter;
     }
 
     .input-link-drive {
         flex: unset !important;
-        width: 60%;
+        max-width: 400px;
         min-width: unset !important;
     }
 
@@ -346,10 +347,6 @@
     }
 
     @media (max-width: 991px) {
-        .text-link-drive {
-            display: none;
-        }
-
         .zoom-id {
             min-width: 227px;
             width: 227px;
@@ -367,6 +364,13 @@
             width: 100%;
             display: inline-block;
             text-align: center;
+        }
+    }
+
+    @media (max-width: 1020px) {
+        .text-link-drive {
+            left: auto;
+            top: -35px;
         }
     }
 
@@ -679,7 +683,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                 <th class='pembicara'>Pembicara</th>
                                 <th class='tanggal-jam'>Tanggal & Jam</th>
                                 <th class='status'>Status</th>
-                                <th class='btn-daftar-seminar'></th>";
+                                <th style='width: 40%;'></th>";
                     else if ($data['judulHalaman'] == "Lomba - ICF 2021")
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
@@ -773,10 +777,11 @@ $judul = explode(" - ", $data['judulHalaman']);
                         <!-- MODAL PENDAFTARAN -->
                         <?php
                         $page_name = strtolower(str_replace(' ', '-', $key['jenis']));
+                        $first_name = strtolower(explode(' ', $key['jenis'])[0]);
                         ?>
                         <div class="modal fade <?= $page_name; ?>" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered <?= $page_name; ?>">
-                                <div class="modal-content <?= $page_name; ?>">
+                            <div class="modal-dialog modal-dialog-centered <?= $first_name; ?>">
+                                <div class="modal-content <?= $first_name; ?>">
                                     <div class="modal-header <?= $page_name; ?>">
                                         <div class="modal-header-layer"></div>
                                         <div class="modal-header-content <?= $page_name; ?>">

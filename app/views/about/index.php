@@ -49,7 +49,7 @@
         <p class="aboutText">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
             Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
             Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
-        <br><button type="button" class="btn btn-outline-light">Register Now</button>
+        <br><?php echo (isset($_SESSION['username'])) ? "" : "<a href='" . BASEURL . "/user/login' class='btn btn-outline-light'>Register Now</a>"; ?>
     </div>
     <img src="<?= BASECSS; ?>/img/about/hero.jpg" width="100%">
     <style type="text/css">
