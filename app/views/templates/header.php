@@ -129,6 +129,7 @@
       /* Footer height */
     }
   </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="<?= BASECSS; ?>/js/bootstrap.bundle.min.js"></script>
   <script src="<?= BASECSS; ?>/js/jquery.js"></script>
 </head>

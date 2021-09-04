@@ -11,6 +11,10 @@
         font-size: 3.5rem;
     }
 
+    .nama-cabang-lomba {
+        min-width: 21%;
+    }
+
     .tanggal-jam {
         min-width: 135px;
     }
@@ -47,7 +51,7 @@
     }
 
     .details {
-        width: 40%;
+        width: 33%;
     }
 
     .badge-icf {
@@ -71,7 +75,7 @@
     .btn-sign-up {
         color: #009b8d !important;
         border-color: #009b8d !important;
-        width: 70%;
+        width: 90%;
         border-radius: 10px;
         font-weight: bold !important;
     }
@@ -335,6 +339,13 @@
         color: black !important;
     }
 
+    @media (max-width: 1020px) {
+        .text-link-drive {
+            left: auto;
+            top: -35px;
+        }
+    }
+
     @media (min-width: 992px) and (max-width: 1199px) {
         .zoom-id {
             min-width: 227px;
@@ -365,12 +376,9 @@
             display: inline-block;
             text-align: center;
         }
-    }
 
-    @media (max-width: 1020px) {
-        .text-link-drive {
-            left: auto;
-            top: -35px;
+        .details {
+            width: 150px;
         }
     }
 
@@ -505,6 +513,10 @@
         }
 
         td.daftar-lomba:nth-of-type(4):before {
+            content: "Mekanisme";
+        }
+
+        td.daftar-lomba:nth-of-type(5):before {
             content: "\00a0 ";
         }
 
@@ -688,6 +700,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
                                 <th>Jenis</th>
+                                <th>Mekaninsme</th>
                                 <th class='details'></th>";
                     else if ($data['judulHalaman'] == "Pameran - ICF 2021")
                         echo "<th style='width: 30%;'>Nama/Judul Karya</th>
@@ -750,9 +763,19 @@ $judul = explode(" - ", $data['judulHalaman']);
                                 </td>
                                 <td class="daftar-lomba">
                                     <div class="half-content" style="text-align: center !important;">
+                                        <?php if (!empty($key['link_mekanisme'])) { ?>
+                                            <span class="centered-content"><a href="<?= $key['link_mekanisme'] ?>" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                                                    </svg></a></span>
+                                        <?php } ?>
+                                    </div>
+                                </td>
+                                <td class="daftar-lomba">
+                                    <div class="half-content" style="text-align: center !important;">
                                         <?php
                                         $class_enabled = ($status == "Open") ? 'btn-outline-success btn-sign-up' : 'btn-outline-secondary btn-disabled disabled';
-                                        echo (($key['jenis'] == "Lomba Kelompok") ? '<form action="' . BASEURL . '/event/formLomba" method="post"><button class="btn ' . $class_enabled . '" name="eid" value="' . $key['id'] . '">Sign Up</button></form>' : '<button class="btn ' . $class_enabled . '" data-bs-toggle="modal" href="#modalToggle' . $key['id'] . '" role="button">Sign Up</button>');
+                                        echo (($key['jenis'] == "Lomba Kelompok") ? '<form action="' . BASEURL . '/event/formLomba" method="post" class="centered-content"><button class="btn ' . $class_enabled . '" name="eid" value="' . $key['id'] . '">Sign Up</button></form>' : '<span class="centered-content"><button class="btn ' . $class_enabled . '" data-bs-toggle="modal" href="#modalToggle' . $key['id'] . '" role="button">Sign Up</button></span>');
                                         ?>
                                     </div>
                                 </td>

@@ -1,7 +1,7 @@
 <?php
 
-define('BASEURL', 'http://localhost/icf/icf2021/public/index.php');
-define('BASECSS', 'http://localhost/icf/icf2021/public');
+define('BASEURL', 'http://192.168.100.7/icf/icf2021/public/index.php');
+define('BASECSS', 'http://192.168.100.7/icf/icf2021/public');
 
 //db
 define('DB_HOST', 'localhost');

@@ -85,3 +85,17 @@
         </div>
     </div>
 </div>
+<script>
+    // $("body").on('click', '.btn-eye', function() {
+    //     var passType = $(this).next().attr("type");
+    //     if (passType == "password") {
+    //         $(this).next().attr("type", "text");
+    //         $(this).children("#eyeShow").addClass("show");
+    //         $(this).children("#eyeClose").removeClass("show");
+    //     } else {
+    //         $(this).next().attr("type", "password");
+    //         $(this).children("#eyeShow").removeClass("show");
+    //         $(this).children("#eyeClose").addClass("show");
+    //     }
+    // });
+</script>

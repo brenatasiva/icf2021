@@ -57,13 +57,13 @@
             color: white;
             width: 100%;
             font-size: 80px;
-            font-family: 'Circular Std Bold' !important;
+            font-weight: bold !important;
         }
 
         .aboutText {
             color: white;
             width: 40%;
-            font-family: 'Circular Std Thin' !important;
+            font-weight: lighter !important;
         }
 
         .divText {
@@ -84,7 +84,7 @@
                 ?>
                         <div class="carousel-item active">
                             <div class="col-md-4">
-                                <div class="card" style="border-radius: 0px;">
+                                <div class="card border-0">
                                     <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                     <?php } else { ?>
                         <div class="carousel-item">
                             <div class="col-md-4">
-                                <div class="card">
+                                <div class="card border-0">
                                     <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
