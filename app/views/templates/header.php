@@ -5,8 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="<?= BASECSS; ?>/img/header/ICF 2021 - Logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Informatics Creative Festival 2021" />
+  <meta property="og:url" content="http://icf.ifubaya.id" />
+  <meta property="og:description" content="ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
+            Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
+            Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi." />
+
   <title> <?= $data['judulHalaman']; ?> </title>
   <link rel="stylesheet" href="<?= BASECSS; ?>/css/main.min.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?= BASECSS; ?>/img/header/CS_Logo.png">
   <style type="text/css">
     @font-face {
       font-family: "Circular Icf";

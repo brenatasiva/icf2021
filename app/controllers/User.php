@@ -9,7 +9,7 @@ class User extends Controller
 
     public function profile()
     {
-        $data['judulHalaman'] = "Profile";
+        $data['judulHalaman'] = "Profile - ICF 2021";
         $data['User'] = $this->model('User_model')->getUser($_SESSION['username']);
         $this->view('templates/header', $data);
         $this->view('profile/index', $data);
@@ -17,7 +17,7 @@ class User extends Controller
 
     public function editProfile()
     {
-        $data['judulHalaman'] = "Profile";
+        $data['judulHalaman'] = "Profile - ICF 2021";
         if ($this->model('User_model')->editUser($_POST) > 0)
             Flasher::setFlash("Success", "Your profile has been updated", "success");
         else if ($this->model('User_model')->editUser($_POST) == 0)
@@ -30,7 +30,7 @@ class User extends Controller
 
     public function Login()
     {
-        $data['judulHalaman'] = "Login";
+        $data['judulHalaman'] = "Login - ICF 2021";
 
         $this->view('templates/header', $data);
         $this->view('login/index', $data);
@@ -41,15 +41,15 @@ class User extends Controller
         if ($this->model('User_model')->validateUser($_POST) > 0) {
             $_SESSION['username'] = $_POST['username'];
             if ($_POST['username'] == "adminduongz") {
-                $data['judulHalaman'] = "Admin";
+                $data['judulHalaman'] = "Admin - ICF 2021";
                 header('location: ' . BASEURL . '/admin');
             } else {
-                $data['judulHalaman'] = "Home";
+                $data['judulHalaman'] = "ICF 2021";
                 header('location: ' . BASEURL);
             }
         } else {
             Flasher::setFlash("Error", "Login failed", "danger");
-            $data['judulHalaman'] = "Login";
+            $data['judulHalaman'] = "Login - ICF 2021";
             header('location: ' . BASEURL . '/user/login');
         }
     }
@@ -57,13 +57,13 @@ class User extends Controller
     public function logout()
     {
         unset($_SESSION['username']);
-        $data['judulHalaman'] = "Home";
+        $data['judulHalaman'] = "ICF 2021";
         header('location: ' . BASEURL . '/user/login');
     }
 
     public function register()
     {
-        $data['judulHalaman'] = "Register";
+        $data['judulHalaman'] = "Register - ICF 2021";
 
         $this->view('templates/header', $data);
         $this->view('register/index', $data);
@@ -92,7 +92,7 @@ class User extends Controller
                     //     Flasher::setFlash('gagal', 'terdaftar', 'danger');
                     //     header('Location: ' . BASEURL . '/user/register');
                 } else if ($this->model('User_model')->insertUser($_POST) > 0) {
-                    Flasher::setFlash('Success', 'Registration success', 'success');
+                    Flasher::setFlash('Success', 'Registration succeeded', 'success');
                     header('Location: ' . BASEURL . '/user/login');
                 } else {
                     Flasher::setFlash('Error', 'Registration failed', 'danger');
@@ -134,7 +134,7 @@ class User extends Controller
         //         $this->view('login/resetPassword', $data);
         //     }
         // }
-        $data['judulHalaman'] = "Reset Password";
+        $data['judulHalaman'] = "Reset Password - ICF 2021";
         $this->view('templates/header', $data);
         $this->view('login/resetPassword', $data);
     }
@@ -148,7 +148,7 @@ class User extends Controller
             Flasher::setFlash('Gagal', 'Please insert code', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } else if (!isset($_POST['password']) || $_POST['password'] == "") {
-            Flasher::setFlash('Gagal', 'Please insert password', 'danger');
+            Flasher::setFlash('Gagal', 'Please insert new password', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } elseif (!isset($_POST['repassword']) || $_POST['repassword'] == "") {
             Flasher::setFlash('Gagal', 'Please insert re-password', 'danger');

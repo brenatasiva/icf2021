@@ -8,13 +8,13 @@
             if ($category === "seminar") {
                 if (isset($_SESSION['username']))
                     $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
-                $data['judulHalaman'] = "Seminar";
+                $data['judulHalaman'] = "Seminar - ICF 2021";
             } else if ($category === "lomba") {
                 if (isset($_SESSION['username']))
                     $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
-                $data['judulHalaman'] = "Lomba";
+                $data['judulHalaman'] = "Lomba - ICF 2021";
             } else if ($category === "pameran") {
-                $data['judulHalaman'] = "Pameran";
+                $data['judulHalaman'] = "Pameran - ICF 2021";
             } else {
                 header('Location: ' . BASEURL);
             }
@@ -63,7 +63,7 @@
                         header('Location: ' . BASEURL);
                     } else {
                         $data = $this->model('Event_model')->getEvent($_POST);
-                        $data['judulHalaman'] = $data['event']['jenis'];
+                        $data['judulHalaman'] = $data['event']['jenis'] . " - ICF 2021";
                         $this->view('templates/header', $data);
                         $this->view('event/formLomba', $data);
                         $this->view('templates/footer');

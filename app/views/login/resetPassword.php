@@ -72,7 +72,7 @@
                         <input type="text" class="form-control user-input" id="code" name="code" placeholder="Code" required>
                     </div>
                     <div class="pb-2">
-                        <input type="password" class="form-control user-input" id="password1" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control user-input" id="password1" name="password" placeholder="New Password" required>
                     </div>
                     <div class="pb-2">
                         <input type="password" class="form-control user-input" id="password2" name="repassword" placeholder="Re-type Password" required>

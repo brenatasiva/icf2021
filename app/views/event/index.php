@@ -68,16 +68,20 @@
         color: #0d6efd;
     }
 
-    .btn-details:hover {
-        color: #0a58ca;
-    }
-
     .btn-sign-up {
         color: #009b8d !important;
         border-color: #009b8d !important;
         width: 70%;
         border-radius: 10px;
         font-weight: bold !important;
+    }
+
+    .btn-details:hover {
+        color: #0a58ca;
+    }
+
+    .btn-sign-up.join-wa:hover .bi-whatsapp {
+        fill: white !important;
     }
 
     .btn-sign-up:hover {
@@ -548,11 +552,14 @@
         }
     }
 </style>
+<?php
+$judul = explode(" - ", $data['judulHalaman']);
+?>
 <div class="event-header-bg">
     <div class="container">
         <div class="row" style="padding-top: 60px;">
             <div class="col d-flex justify-content-center align-items-end">
-                <h1 class="event-title text-light fw-bold circular-icf"><?= $data['judulHalaman']; ?></h1>
+                <h1 class="event-title text-light fw-bold circular-icf"><?= $judul[0]; ?></h1>
             </div>
         </div>
     </div>
@@ -561,19 +568,19 @@
 <div class="container">
     <!-- RIWAYAT PENDAFTARAN -->
     <div style="padding-bottom: 7rem;">
-        <?php if ($data['judulHalaman'] != "Pameran" && isset($_SESSION['username']) && !empty($data['listRiwayat'])) { ?>
+        <?php if ($data['judulHalaman'] != "Pameran - ICF 2021" && isset($_SESSION['username']) && !empty($data['listRiwayat'])) { ?>
             <div class="pt-5">
                 <h6><b>Riwayat Daftar</b></h6>
                 <table class="table table-border">
                     <thead>
                         <?php
-                        if ($data['judulHalaman'] == "Seminar")
+                        if ($data['judulHalaman'] == "Seminar - ICF 2021")
                             echo "<th class='nama-seminar'>Nama Seminar</th>
                                     <th class='pembicara'>Pembicara</th>
                                     <th class='tanggal-jam'>Tanggal & Jam</th>
                                     <th class='zoom-id'>Zoom ID</th>
                                     <th class='link-zoom'>Link Zoom</th>";
-                        else if ($data['judulHalaman'] == "Lomba")
+                        else if ($data['judulHalaman'] == "Lomba - ICF 2021")
                             echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                     <th class='tanggal-jam-lomba'>Tanggal & Jam</th>
                                     <th class='status'>Status</th>
@@ -590,7 +597,7 @@
                         ?>
                             <tr>
                                 <?php
-                                if ($data['judulHalaman'] == "Seminar") {
+                                if ($data['judulHalaman'] == "Seminar - ICF 2021") {
                                     echo '<td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
                                                     <span class="centered-content">' . $key['nama'] . '</span>
@@ -626,7 +633,7 @@
                                                     </span>
                                                 </div>
                                             </td>';
-                                } else if ($data['judulHalaman'] == "Lomba") {
+                                } else if ($data['judulHalaman'] == "Lomba - ICF 2021") {
                                     echo '<td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
                                                     <span class="centered-content">' . $key['nama'] . '</span>
@@ -665,22 +672,22 @@
         <!-- END OF RIWAYAT PENDAFTARAN -->
         <!-- DAFTAR EVENT -->
         <div class="pt-5">
-            <h6><b>Daftar <?= $data['judulHalaman'] ?></b></h6>
+            <h6><b>Daftar <?= $judul[0]; ?></b></h6>
             <table class="table table-border">
                 <thead style="font-weight: normal;">
                     <?php
-                    if ($data['judulHalaman'] == "Seminar")
+                    if ($data['judulHalaman'] == "Seminar - ICF 2021")
                         echo "<th class='nama-seminar daftar-nama-seminar'>Nama Seminar</th>
                                 <th class='pembicara'>Pembicara</th>
                                 <th class='tanggal-jam'>Tanggal & Jam</th>
                                 <th class='status'>Status</th>
                                 <th class='btn-daftar-seminar'></th>";
-                    else if ($data['judulHalaman'] == "Lomba")
+                    else if ($data['judulHalaman'] == "Lomba - ICF 2021")
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
                                 <th>Jenis</th>
                                 <th class='details'></th>";
-                    else if ($data['judulHalaman'] == "Pameran")
+                    else if ($data['judulHalaman'] == "Pameran - ICF 2021")
                         echo "<th style='width: 30%;'>Nama/Judul Karya</th>
                                 <th style='width: 20%;'>Author</th>
                                 <th>Deskripsi</th>";
@@ -695,7 +702,7 @@
                     ?>
                         <tr>
                             <?php
-                            if ($data['judulHalaman'] == "Seminar") {
+                            if ($data['judulHalaman'] == "Seminar - ICF 2021") {
                             ?>
                                 <td class="daftar-seminar">
                                     <div class="half-content">
@@ -723,7 +730,7 @@
                                         <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href="<?php echo ($status == "Open") ? "#modalToggle" . $key['id'] : ""; ?>" role="button">Sign Up</a></span>
                                     </div>
                                 </td>
-                            <?php } else if ($data['judulHalaman'] == "Lomba") { ?>
+                            <?php } else if ($data['judulHalaman'] == "Lomba - ICF 2021") { ?>
                                 <td class="daftar-lomba">
                                     <div class="half-content">
                                         <span class="centered-content"><?= $key['nama'] ?></span>
@@ -747,36 +754,34 @@
                                         ?>
                                     </div>
                                 </td>
-                            <?php } else if ($data['judulHalaman'] == "Pameran") {
-                                echo '<td class="daftar-pameran">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key['nama'] . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-pameran"">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key['author'] . '</span>
-                                            </div>
-                                        </td>
-                                        <td class="daftar-pameran">
-                                            <div class="half-content">
-                                                <span class="centered-content">' . $key['deskripsi'] . '</span>
-                                            </div>
-                                        </td>';
-                            }
-                            ?>
+                            <?php } else if ($data['judulHalaman'] == "Pameran") { ?>
+                                <td class="daftar-pameran">
+                                    <div class="half-content">
+                                        <span class="centered-content"><?= $key['nama']; ?></span>
+                                    </div>
+                                </td>
+                                <td class="daftar-pameran">
+                                    <div class="half-content">
+                                        <span class="centered-content"><?= $key['author']; ?></span>
+                                    </div>
+                                </td>
+                                <td class="daftar-pameran">
+                                    <div class="half-content">
+                                        <span class="centered-content"><?= $key['deskripsi']; ?></span>
+                                    </div>
+                                </td>
+                            <?php } ?>
                         </tr>
                         <!-- MODAL PENDAFTARAN -->
                         <?php
-                        $first_name = strtolower($data['judulHalaman']);
-                        $full_name = strtolower(str_replace(' ', '-', $key['jenis']));
+                        $page_name = strtolower(str_replace(' ', '-', $key['jenis']));
                         ?>
-                        <div class="modal fade <?= $full_name; ?>" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered <?= strtolower($data['judulHalaman']); ?>">
-                                <div class="modal-content <?= $first_name; ?>">
-                                    <div class="modal-header <?= $full_name; ?>">
+                        <div class="modal fade <?= $page_name; ?>" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered <?= $page_name; ?>">
+                                <div class="modal-content <?= $page_name; ?>">
+                                    <div class="modal-header <?= $page_name; ?>">
                                         <div class="modal-header-layer"></div>
-                                        <div class="modal-header-content <?= $full_name; ?>">
+                                        <div class="modal-header-content <?= $page_name; ?>">
                                             <button type="button" class="btn-close btn-modal-close" data-bs-dismiss="modal" aria-label="Close">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                     <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
@@ -785,7 +790,7 @@
                                             <h3 class="modal-title" id="modalToggle<?= $key['id']; ?>Label"><?= $key['nama']; ?><?php echo ($key['jenis'] == "Lomba Individu") ? ' Registration<br>Syarat & Ketentuan' : ''; ?></h3>
                                         </div>
                                     </div>
-                                    <div class="modal-body <?= $full_name; ?>">
+                                    <div class="modal-body <?= $page_name; ?>">
                                         <div class="lomba">
                                             <div class="container lomba-content">
                                                 <div class="syarat">
