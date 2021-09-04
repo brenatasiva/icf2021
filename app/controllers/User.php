@@ -115,13 +115,10 @@ class User extends Controller
     public function requestReset()
     {
         $hasil = $this->model('User_model')->requestReset($_POST);
-        print_r($hasil);
-        exit;
         if ($hasil == null)
             Flasher::setFlash('Error', 'Username does not exist', 'danger');
         else {
-            echo json_encode($hasil);
-            Flasher::setFlash('Information', 'Please check your email for confirmation code', 'primary');
+            Flasher::setFlash('Information', 'Please check your email: <u><b>' . $hasil[0]['email'] . '</b></u> for confirmation code', 'warning');
             $data['judulHalaman'] = "Reset Password - ICF 2021";
             $this->view('templates/header', $data);
             $this->view('login/resetPassword', $data);
@@ -130,15 +127,6 @@ class User extends Controller
 
     public function reset()
     {
-        // if ($_POST['username'] != "" && $_POST['code'] != "") {
-        //     $res = $this->model('User_model')->checkCode($_POST);
-        //     if ($res != "") {
-        //         $data['judulHalaman'] = "Reset Password";
-        //         $data['username'] = $res;
-        //         $this->view('templates/header', $data);
-        //         $this->view('login/resetPassword', $data);
-        //     }
-        // }
         $data['judulHalaman'] = "Reset Password - ICF 2021";
         $this->view('templates/header', $data);
         $this->view('login/resetPassword', $data);
@@ -147,36 +135,36 @@ class User extends Controller
     public function resetPassword()
     {
         if (!isset($_POST['username']) || $_POST['username'] == "") {
-            Flasher::setFlash('Gagal', 'Please insert username', 'danger');
+            Flasher::setFlash('Failed', 'Please insert username', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } else if (!isset($_POST['code']) || $_POST['code'] == "") {
-            Flasher::setFlash('Gagal', 'Please insert code', 'danger');
+            Flasher::setFlash('Failed', 'Please insert code', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } else if (!isset($_POST['password']) || $_POST['password'] == "") {
-            Flasher::setFlash('Gagal', 'Please insert new password', 'danger');
+            Flasher::setFlash('Failed', 'Please insert new password', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } elseif (!isset($_POST['repassword']) || $_POST['repassword'] == "") {
-            Flasher::setFlash('Gagal', 'Please insert re-password', 'danger');
+            Flasher::setFlash('Failed', 'Please insert re-password', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } else if ($_POST['password'] != $_POST['repassword']) {
-            Flasher::setFlash('Error', 'Password and re-password ', 'danger');
+            Flasher::setFlash('Failed', 'Password and re-password are not the same', 'danger');
             header('Location: ' . BASEURL . '/user/reset');
         } else {
             $checkUsername = $this->model('User_model')->checkUsername($_POST);
             $checkCode = $this->model('User_model')->checkCode($_POST);
 
             if ($checkUsername <= 0) {
-                Flasher::setFlash('Gagal', 'Username not found', 'danger');
+                Flasher::setFlash('Failed', 'Username not found', 'danger');
                 header('Location: ' . BASEURL . '/user/reset');
             } else if ($checkCode == "") {
-                Flasher::setFlash('Gagal', 'Code does not match', 'danger');
+                Flasher::setFlash('Failed', 'Code does not match', 'danger');
                 header('Location: ' . BASEURL . '/user/reset');
             } else {
                 if ($this->model('User_model')->resetPassword($_POST) > 0) {
-                    Flasher::setFlash('Berhasil', 'Reset password succeeded', 'success');
+                    Flasher::setFlash('Success', 'Reset password succeeded', 'success');
                     header('Location: ' . BASEURL . '/user/login');
                 } else {
-                    Flasher::setFlash('Gagal', 'Reset password failed', 'danger');
+                    Flasher::setFlash('Failed', 'Reset password failed', 'danger');
                     header('Location: ' . BASEURL . '/user/login');
                 }
             }
