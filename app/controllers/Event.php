@@ -4,7 +4,6 @@
     {
         public function index($category)
         {
-            print_r($category);
             $data['listAllEvent'] = $this->model('Event_model')->getEventPerCategory($category);
             if ($category === "seminar") {
                 if (isset($_SESSION['username']))
@@ -27,22 +26,23 @@
         public function daftarEvent()
         {
             if (!isset($_SESSION['username'])) {
-                Flasher::setFlash("Information", "Please login first, before you register this event", "primary");
+                Flasher::setFlash("Information", "Please login first before you register to this event", "primary");
                 header('Location: ' . BASEURL . '/user/login');
             } else {
                 if ($this->model('User_model')->cekPendaftar($_POST) > 0) {
-                    Flasher::setFlash("Error", "You already have been registered for this event", "danger");
-                    header('Location: ' . BASEURL . '/home');
+                    Flasher::setFlash("Error", "You have already registered for this event", "danger");
+                    header('Location: ' . BASEURL);
                 } else {
                     if ($_POST['eid'] == null) {
-                        header('Location: ' . BASEURL . '/home');
+                        Flasher::setFlash("Error", "Event not found", "danger");
+                        header('Location: ' . BASEURL);
                     } else {
                         if ($this->model('User_model')->insertPendaftar($_POST) > 0) {
-                            Flasher::setFlash("Success", "Registration success", "success");
-                            header('Location: ' . BASEURL . '/home');
+                            Flasher::setFlash("Success", "Registration succeeded", "success");
+                            header('Location: ' . BASEURL);
                         } else {
-                            Flasher::setFlash("Error", "Registratin failed", "danger");
-                            header('Location: ' . BASEURL . '/home');
+                            Flasher::setFlash("Error", "Registation failed", "danger");
+                            header('Location: ' . BASEURL);
                         }
                     }
                 }
@@ -52,15 +52,15 @@
         public function formLomba()
         {
             if (!isset($_SESSION['username'])) {
-                Flasher::setFlash("Information", "Please login first, before you register this event", "primary");
+                Flasher::setFlash("Information", "Please login first before you register to this event", "primary");
                 header('Location: ' . BASEURL . '/user/login');
             } else {
                 if ($this->model('User_model')->cekPendaftar($_POST) > 0) {
-                    Flasher::setFlash("Error", "You already have been registered for this event", "danger");
-                    header('Location: ' . BASEURL . '/home');
+                    Flasher::setFlash("Error", "You have already registered for this event", "danger");
+                    header('Location: ' . BASEURL);
                 } else {
                     if (!isset($_POST['eid'])) {
-                        header('Location: ' . BASEURL . '/home');
+                        header('Location: ' . BASEURL);
                     } else {
                         $data = $this->model('Event_model')->getEvent($_POST);
                         $data['judulHalaman'] = $data['event']['jenis'];

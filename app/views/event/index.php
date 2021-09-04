@@ -1,6 +1,6 @@
 <style>
     .event-header-bg {
-        background-image: url("<?= BASEURL; ?>/img/event/judul_event_bg.jpg");
+        background-image: url("<?= BASECSS; ?>/img/event/judul_event_BG.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -104,7 +104,7 @@
     }
 
     .modal-header.seminar {
-        background-image: url("<?= BASEURL; ?>/img/event/avianto_tryo.png");
+        background-image: url("<?= BASECSS; ?>/img/event/avianto_tryo.png");
         background-position: 0px -72px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -796,7 +796,7 @@
                                                         <div class="input-group mb-3">
                                                             <div class="container-link-drive">
                                                                 <span class="text-link-drive">Drive Link</span>
-                                                                <input type="text" class="form-control input-link-drive" placeholder="Link Drive" aria-describedby="button-addon2" name="link" required>
+                                                                <input type="text" class="form-control input-link-drive" aria-describedby="button-addon2" name="link" required>
                                                             </div>
                                                             <button type="submit" class="btn btn-modal-info btn-sign-up" id="button-addon2" name="eid" value="<?= $key['id']; ?>">Submit</button>
                                                         </div>

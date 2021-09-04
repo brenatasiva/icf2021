@@ -28,7 +28,7 @@
 
     @font-face {
       font-family: "Bahnschrift Icf";
-      src: url('<?= BASEURL ?>/font/BAHNSCHRIFT.TTF');
+      src: url('<?= BASECSS ?>/font/BAHNSCHRIFT.TTF');
     }
 
     body {

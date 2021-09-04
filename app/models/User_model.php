@@ -71,7 +71,16 @@ class User_model
             $this->db->bind('username', $data['username']);
             $this->db->bind('pass', $saltedPwd);
             $this->db->execute();
-            return $this->db->rowCount();
+            $hasil = $this->db->rowCount();
+
+            if ($hasil > 0) {
+                $sql2 = "UPDATE user set code = :code where username = :username";
+                $this->db->query($sql2);
+                $this->db->bind('code', null);
+                $this->db->bind('username', $data['username']);
+                $this->db->execute();
+            }
+            return $hasil;
         }
     }
 

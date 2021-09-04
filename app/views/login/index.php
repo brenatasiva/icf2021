@@ -8,13 +8,13 @@
     }
 
     .user-input {
-        background: #2b313d;
+        background: transparent;
         color: white;
         border-radius: 10px !important;
     }
 
     .user-input:focus {
-        background: #2b313d;
+        background: transparent;
         color: white;
     }
 
@@ -99,6 +99,9 @@
                         <input type="text" class="form-control" placeholder="username" aria-describedby="button-addon2" id="usernameReset" required>
                         <button type="button" class="btn btn-primary" id="buttonSend">Send</button><br>
                     </div>
+                    <div class="pt-4 pb-5 text-dark d-flex justify-content-center">
+                        <label class="form-label">Already have the code? <a href="<?= BASEURL; ?>/user/reset" style="color: orange !important;" id="insertCode">Insert Code</a></label>
+                    </div>
                 </div>
                 <div id="reset2">
                     <div class="input-group mb-3" id="modalReset2">
@@ -139,35 +142,15 @@
                 },
                 dataType: 'json',
                 success: function(data) {
-                    $('#reset1').hide();
-                    $('#reset2').show();
-                    $('.modal-header').html("Please check your email for confirmation code");
-                    $('#modalUsername').val(data[0]['username']);
-                    $('#modalEmail').val(data[0]['email']);
+                    // $('#modalToggle').modal('hide');
+                    // $('#reset1').hide();
+                    // $('#reset2').show();
+                    // $('.modal-header').html("Please check your email for confirmation code");
+                    // $('#modalUsername').val(data[0]['username']);
+                    // $('#modalEmail').val(data[0]['email']);
+                    window.location.href = '<?= BASEURL; ?>/user/reset';
                 }
             });
         }
     });
-
-    // $('body').on('click', '#buttonReset', function() {
-
-    //     var code = $('#codeReset').val();
-    //     if (code != "") {
-    //         $.ajax({
-    //             method: 'post',
-    //             url: '<?= BASEURL; ?>/user/checkCode',
-    //             data: {
-    //                 username: username,
-    //                 code: code
-    //             },
-    //             dataType: 'json',
-    //             success: function(data) {
-    //                 $('#reset2').hide();
-    //                 $('#reset1').show();
-    //             }
-    //         });
-    //     }
-
-
-    // });
 </script>

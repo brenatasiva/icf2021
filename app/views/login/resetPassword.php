@@ -66,13 +66,16 @@
             <div class="d-flex justify-content-center">
                 <form class="w-50 form-user-input" method="post" action="<?= BASEURL; ?>/user/resetPassword">
                     <div class="pb-4">
-                        <input type="text" class="form-control user-input" id="username" name="username" readonly value="<?= $data['username']; ?>">
+                        <input type="text" class="form-control user-input" id="username" name="username" placeholder="Username" required>
                     </div>
                     <div class="pb-2">
-                        <input type="password" class="form-control user-input" id="password1" name="password" placeholder="Password">
+                        <input type="text" class="form-control user-input" id="code" name="code" placeholder="Code" required>
                     </div>
                     <div class="pb-2">
-                        <input type="password" class="form-control user-input" id="password2" name="repassword" placeholder="Re-type Password">
+                        <input type="password" class="form-control user-input" id="password1" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="pb-2">
+                        <input type="password" class="form-control user-input" id="password2" name="repassword" placeholder="Re-type Password" required>
                     </div>
                     <div class="pt-4 pb-5">
                         <button type="submit" class="btn btn-primary btn-user-submit"><b>RESET</b></button>

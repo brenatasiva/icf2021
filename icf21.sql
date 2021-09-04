@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2021 at 08:16 PM
+-- Generation Time: Sep 04, 2021 at 05:53 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -190,7 +190,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`, `salt`, `code`) VALUES
 ('dummy1', '4eb8211165d8a4fa60fc8c5acf66fb53f90f5190', 'dummy1', 'brenatasiva@gmail.com', '08123456789', '123', 'lmtau', '50813252'),
 ('dummy2', 'd8d30c6b86825ec6db7b4a3c7e1fc4689a19bbe3', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', 'flh4r', ''),
-('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r', '');
+('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r', ''),
+('dummy4', 'bdeb75a1fad64ee027fdde3f41861d8256749131', 'dummy4', 'brenatasiva@gmail.com', '081333', '', 'flh4r', '38702117');
 
 --
 -- Indexes for dumped tables

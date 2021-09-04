@@ -8,13 +8,13 @@
     }
 
     .user-input {
-        background: #2b313d;
+        background: transparent;
         color: white;
         border-radius: 10px !important;
     }
 
     .user-input:focus {
-        background: #2b313d;
+        background: transparent;
         color: white;
     }
 

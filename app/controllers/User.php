@@ -58,7 +58,7 @@ class User extends Controller
     {
         unset($_SESSION['username']);
         $data['judulHalaman'] = "Home";
-        header('location: ' . BASEURL);
+        header('location: ' . BASEURL . '/user/login');
     }
 
     public function register()
@@ -93,13 +93,13 @@ class User extends Controller
                     //     header('Location: ' . BASEURL . '/user/register');
                 } else if ($this->model('User_model')->insertUser($_POST) > 0) {
                     Flasher::setFlash('Success', 'Registration success', 'success');
-                    header('Location: ' . BASEURL . '/user/register');
+                    header('Location: ' . BASEURL . '/user/login');
                 } else {
                     Flasher::setFlash('Error', 'Registration failed', 'danger');
                     header('Location: ' . BASEURL . '/user/register');
                 }
             } else {
-                Flasher::setFlash('Error', 'Username already exists', 'danger');
+                Flasher::setFlash('Error', 'Username already exist', 'danger');
                 header('Location: ' . BASEURL . '/user/register');
             }
         } else {
@@ -114,34 +114,67 @@ class User extends Controller
 
     public function requestReset()
     {
-        echo json_encode($this->model('User_model')->requestReset($_POST));
+        $hasil = $this->model('User_model')->requestReset($_POST);
+        print_r($hasil);
+        exit;
+        if ($hasil == null)
+            Flasher::setFlash('Error', 'Username does not exist', 'danger');
+        else
+            echo json_encode($hasil);
     }
 
     public function reset()
     {
-        if ($_POST['username'] != "" && $_POST['code'] != "") {
-            $res = $this->model('User_model')->checkCode($_POST);
-            if ($res != "") {
-                $data['judulHalaman'] = "Reset Password";
-                $data['username'] = $res;
-                $this->view('templates/header', $data);
-                $this->view('login/resetPassword', $data);
-            }
-        }
+        // if ($_POST['username'] != "" && $_POST['code'] != "") {
+        //     $res = $this->model('User_model')->checkCode($_POST);
+        //     if ($res != "") {
+        //         $data['judulHalaman'] = "Reset Password";
+        //         $data['username'] = $res;
+        //         $this->view('templates/header', $data);
+        //         $this->view('login/resetPassword', $data);
+        //     }
+        // }
+        $data['judulHalaman'] = "Reset Password";
+        $this->view('templates/header', $data);
+        $this->view('login/resetPassword', $data);
     }
 
     public function resetPassword()
     {
-        if ($_POST['password'] == $_POST['repassword']) {
-            if ($this->model('User_model')->resetPassword($_POST) > 0) {
-                Flasher::setFlash('Berhasil', 'Password berhasil direset, silahkan login', 'success');
-                header('Location: ' . BASEURL . '/user/login');
-            } else {
-                Flasher::setFlash('Gagal', 'Password gagal direset, silahkan ulangi', 'danger');
-                header('Location: ' . BASEURL . '/user/login');
-            }
+        if (!isset($_POST['username']) || $_POST['username'] == "") {
+            Flasher::setFlash('Gagal', 'Please insert username', 'danger');
+            header('Location: ' . BASEURL . '/user/reset');
+        } else if (!isset($_POST['code']) || $_POST['code'] == "") {
+            Flasher::setFlash('Gagal', 'Please insert code', 'danger');
+            header('Location: ' . BASEURL . '/user/reset');
+        } else if (!isset($_POST['password']) || $_POST['password'] == "") {
+            Flasher::setFlash('Gagal', 'Please insert password', 'danger');
+            header('Location: ' . BASEURL . '/user/reset');
+        } elseif (!isset($_POST['repassword']) || $_POST['repassword'] == "") {
+            Flasher::setFlash('Gagal', 'Please insert re-password', 'danger');
+            header('Location: ' . BASEURL . '/user/reset');
+        } else if ($_POST['password'] != $_POST['repassword']) {
+            Flasher::setFlash('Error', 'Password and re-password ', 'danger');
+            header('Location: ' . BASEURL . '/user/reset');
         } else {
-            Flasher::setFlash('Error', 'Password tidak sama', 'danger');
+            $checkUsername = $this->model('User_model')->checkUsername($_POST);
+            $checkCode = $this->model('User_model')->checkCode($_POST);
+
+            if ($checkUsername <= 0) {
+                Flasher::setFlash('Gagal', 'Username not found', 'danger');
+                header('Location: ' . BASEURL . '/user/reset');
+            } else if ($checkCode == "") {
+                Flasher::setFlash('Gagal', 'Code does not match', 'danger');
+                header('Location: ' . BASEURL . '/user/reset');
+            } else {
+                if ($this->model('User_model')->resetPassword($_POST) > 0) {
+                    Flasher::setFlash('Berhasil', 'Reset password succeeded', 'success');
+                    header('Location: ' . BASEURL . '/user/login');
+                } else {
+                    Flasher::setFlash('Gagal', 'Reset password failed', 'danger');
+                    header('Location: ' . BASEURL . '/user/login');
+                }
+            }
         }
     }
 }
