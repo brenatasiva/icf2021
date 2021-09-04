@@ -148,7 +148,7 @@
                     // $('.modal-header').html("Please check your email for confirmation code");
                     // $('#modalUsername').val(data[0]['username']);
                     // $('#modalEmail').val(data[0]['email']);
-                    window.location.href = '<?= BASEURL; ?>/user/reset';
+                    // window.location.href = '<?= BASEURL; ?>/user/reset';
                 }
             });
         }

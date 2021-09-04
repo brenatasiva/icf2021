@@ -119,8 +119,13 @@ class User extends Controller
         exit;
         if ($hasil == null)
             Flasher::setFlash('Error', 'Username does not exist', 'danger');
-        else
+        else {
             echo json_encode($hasil);
+            Flasher::setFlash('Information', 'Please check your email for confirmation code', 'primary');
+            $data['judulHalaman'] = "Reset Password - ICF 2021";
+            $this->view('templates/header', $data);
+            $this->view('login/resetPassword', $data);
+        }
     }
 
     public function reset()

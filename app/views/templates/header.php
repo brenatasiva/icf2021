@@ -17,7 +17,7 @@
 
   <title> <?= $data['judulHalaman']; ?> </title>
   <link rel="stylesheet" href="<?= BASECSS; ?>/css/main.min.css">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?= BASECSS; ?>/img/header/CS_Logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?= BASECSS; ?>/img/header/CS_Logo.jpg">
   <style type="text/css">
     @font-face {
       font-family: "Circular Icf";

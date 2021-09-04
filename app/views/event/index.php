@@ -616,9 +616,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             <td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
                                                     <span class="centered-content">
-                                                        <div>
-                                                            <span style="padding-right: 62px;">ID</span>: <span>935 7544 9633</span><br><span style="padding-right: 6px;">Password</span>: <span>10295</span>
-                                                        </div>
+                                                        <div>' . (($key['id_zoom'] != "" && $key['pass_zoom'] != "") ? ('<span style="padding-right: 62px;">ID</span>: <span>' . $key['id_zoom'] . '</span><br><span style="padding-right: 6px;">Password</span>: <span>' . $key['pass_zoom'] . '</span>') : '-') . '</div>
                                                     </span>
                                                 </div>                                    
                                             </td>
@@ -754,7 +752,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                         ?>
                                     </div>
                                 </td>
-                            <?php } else if ($data['judulHalaman'] == "Pameran") { ?>
+                            <?php } else if ($data['judulHalaman'] == "Pameran - ICF 2021") { ?>
                                 <td class="daftar-pameran">
                                     <div class="half-content">
                                         <span class="centered-content"><?= $key['nama']; ?></span>
