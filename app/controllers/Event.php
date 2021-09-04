@@ -2,8 +2,9 @@
 
     class Event extends Controller
     {
-        public function index($category = null)
+        public function index($category)
         {
+            print_r($category);
             $data['listAllEvent'] = $this->model('Event_model')->getEventPerCategory($category);
             if ($category === "seminar") {
                 if (isset($_SESSION['username']))
@@ -61,7 +62,8 @@
                     if (!isset($_POST['eid'])) {
                         header('Location: ' . BASEURL . '/home');
                     } else {
-                        $data['event'] = $this->model('Event_model')->getEvent($_POST);
+                        $data = $this->model('Event_model')->getEvent($_POST);
+                        $data['judulHalaman'] = $data['event']['jenis'];
                         $this->view('templates/header', $data);
                         $this->view('event/formLomba', $data);
                         $this->view('templates/footer');

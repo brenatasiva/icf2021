@@ -2,6 +2,13 @@
 
 class Admin extends Controller
 {
+    public function __construct()
+    {
+        if ($_SESSION['username'] != "adminduongz") {
+            header('location: ' . BASEURL);
+        }
+    }
+
     public function index()
     {
         $data['judulHalaman'] = "Peserta";

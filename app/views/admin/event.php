@@ -221,7 +221,7 @@
                 data.images.forEach(e => {
                     $('#images').append(`<div class="col-md-6">
                                             <div>
-                                                <img class="img-thumbnail" src="<?= BASEURL; ?>/img/uploadedEventImage/${e.id}.${e.extension}">
+                                                <img class="img-thumbnail" src="<?= BASECSS; ?>/img/uploadedEventImage/${e.id}.${e.extension}">
                                             </div>
                                             <div>
                                                 <input type="checkbox" class="form-check-input" name="deleted_poster[]" value='${e.id}.${e.extension}'>Delete this poster

@@ -2,7 +2,7 @@
     </div> <!-- content wrap -->
     <style type="text/css">
         .footer-bg {
-            background-image: url("<?= BASEURL; ?>/img/footer/Footer_BG.jpg");
+            background-image: url("<?= BASECSS; ?>/img/footer/Footer_BG.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: 100% 100%;
@@ -90,7 +90,7 @@
                 </li>
             </ul>
             <div class="crop-footer">
-                <img src="<?= BASEURL; ?>/img/footer/logoicf_footer.png" style="width: 210px;">
+                <img src="<?= BASECSS; ?>/img/footer/logoicf_footer.png" style="width: 210px;">
             </div>
         </div>
     </footer>

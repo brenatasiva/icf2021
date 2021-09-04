@@ -1,4 +1,12 @@
 <?php
+require_once('phpmailer/PHPMailer.php');
+require_once('phpmailer/SMTP.php');
+require_once('phpmailer/Exception.php');
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 class User_model
 {
     private $db;
@@ -230,7 +238,64 @@ class User_model
         return $this->db->resultSet();
     }
 
-    public function deletePendaftar()
+    public function requestReset($data)
     {
+        $code = rand(10000000, 99999999);
+        $sql = "UPDATE user set code = :code where username = :username";
+        $this->db->query($sql);
+        $this->db->bind('code', $code);
+        $this->db->bind('username', $data['username']);
+        $this->db->execute();
+
+        $sql = "SELECT username, email from user where username = :username";
+        $this->db->query($sql);
+        $this->db->bind('username', $data['username']);
+
+        $data = $this->db->resultSet();
+
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = "true";
+        $mail->SMTPSecure = "tls";
+        $mail->Port = "587";
+        $mail->Username = "si.icf.ubaya@gmail.com";
+        $mail->Password = "KerjaTerusHiyaHiya";
+        $mail->Subject = "ICF 2021 - Password Reset";
+        $mail->setFrom("si.icf.ubaya@gmail.com");
+        $mail->Body = '' . $code . '';
+        $mail->addAddress($data[0]['email']);
+        $mail->Send();
+        $mail->smtpClose();
+
+        return $data;
+    }
+
+    public function checkCode($data)
+    {
+        $sql = "SELECT code from user where username = :username";
+        $this->db->query($sql);
+        $this->db->bind('username', $data['username']);
+        $data2 = $this->db->single();
+
+        if ($data2['code'] == $data['code']) {
+            return $data['username'];
+        } else {
+            return "";
+        }
+    }
+
+    public function resetPassword($data)
+    {
+        $salt = $this->generateSalt();
+        $saltedPwd = $this->generateSaltedPwd($data['password'], $salt);
+
+        $sql = "UPDATE user set password = :pass, salt = :salt where username = :username";
+        $this->db->query($sql);
+        $this->db->bind('pass', $saltedPwd);
+        $this->db->bind('salt', $salt);
+        $this->db->bind('username', $data['username']);
+        $this->db->execute();
+        return $this->db->rowCount();
     }
 }

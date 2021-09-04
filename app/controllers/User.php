@@ -111,4 +111,37 @@ class User extends Controller
     {
         echo json_encode($this->model('User_model')->riwayatDetil($_POST));
     }
+
+    public function requestReset()
+    {
+        echo json_encode($this->model('User_model')->requestReset($_POST));
+    }
+
+    public function reset()
+    {
+        if ($_POST['username'] != "" && $_POST['code'] != "") {
+            $res = $this->model('User_model')->checkCode($_POST);
+            if ($res != "") {
+                $data['judulHalaman'] = "Reset Password";
+                $data['username'] = $res;
+                $this->view('templates/header', $data);
+                $this->view('login/resetPassword', $data);
+            }
+        }
+    }
+
+    public function resetPassword()
+    {
+        if ($_POST['password'] == $_POST['repassword']) {
+            if ($this->model('User_model')->resetPassword($_POST) > 0) {
+                Flasher::setFlash('Berhasil', 'Password berhasil direset, silahkan login', 'success');
+                header('Location: ' . BASEURL . '/user/login');
+            } else {
+                Flasher::setFlash('Gagal', 'Password gagal direset, silahkan ulangi', 'danger');
+                header('Location: ' . BASEURL . '/user/login');
+            }
+        } else {
+            Flasher::setFlash('Error', 'Password tidak sama', 'danger');
+        }
+    }
 }

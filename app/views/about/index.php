@@ -44,14 +44,14 @@
 </style>
 <div style='position:relative; height:auto;'>
     <div class="divText d-flex justify-content-center align-items-center" style='flex-direction:column; text-align:center; height:100%;'>
-        <img style='width:40px;aspect-ratio:1/1;' src="img/about/logoicf.png" alt="">
+        <img style='width:40px;aspect-ratio:1/1;' src="<?= BASECSS; ?>/img/about/logoicf.png" alt="">
         <h1 style='color:white;'><b>About ICF</b></h1>
         <p class="aboutText">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
             Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
             Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
         <br><button type="button" class="btn btn-outline-light">Register Now</button>
     </div>
-    <img src="img/about/hero.jpg" width="100%">
+    <img src="<?= BASECSS; ?>/img/about/hero.jpg" width="100%">
     <style type="text/css">
         .aboutJudul {
             color: white;
@@ -85,7 +85,7 @@
                         <div class="carousel-item active">
                             <div class="col-md-4">
                                 <div class="card" style="border-radius: 0px;">
-                                    <img src="img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
+                                    <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                         <div class="carousel-item">
                             <div class="col-md-4">
                                 <div class="card">
-                                    <img src="img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
+                                    <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
 <!-- The Speakers -->
 <div style='height: 24vh; width:100%; background:#efece7;'>
     <div style='position:relative; display: flex; top: 120px; left: 22%; width:fit-content;'>
-        <img src="img/home/dotted.png" width="25px" height="25px" style="margin-top: 8px;" alt="">
+        <img src="<?= BASECSS; ?>/img/home/dotted.png" width="25px" height="25px" style="margin-top: 8px;" alt="">
         <h2 style="margin-left: 25px;"><b>The Speakers</b></h2>
     </div>
 </div>
@@ -123,7 +123,7 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
-                <img src="img/about/speaker1.jpg" class="card-img-top" alt="...">
+                <img src="<?= BASECSS; ?>/img/about/speaker1.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Avianto Tiyo</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -134,7 +134,7 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
-                <img src="img/about/speaker2.jpg" class="card-img-top" alt="...">
+                <img src="<?= BASECSS; ?>/img/about/speaker2.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Gerdy WK</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -145,7 +145,7 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
-                <img src="img/about/speaker3.jpg" class="card-img-top" alt="...">
+                <img src="<?= BASECSS; ?>/img/about/speaker3.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Is Yuniarto</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -156,7 +156,7 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
-                <img src="img/about/speaker4.jpg" class="card-img-top" alt="...">
+                <img src="<?= BASECSS; ?>/img/about/speaker4.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Yohanes D.P</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -167,7 +167,7 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
-                <img src="img/about/speaker5.jpg" class="card-img-top" alt="...">
+                <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Vincentius R.P</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -178,7 +178,7 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
-                <img src="img/about/speaker5.jpg" class="card-img-top" alt="...">
+                <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Lorem Ipsum</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -192,30 +192,30 @@
 
 <!-- Competitions -->
 <div style='height: auto; width:100%; position: relative;'>
-    <img src="img/about/Competition.jpg" width='100%'>
+    <img src="<?= BASECSS; ?>/img/about/competition.jpg" width='100%'>
     <div style='height:12.5%; width:100%; position:absolute; top:0;' class='d-flex justify-content-center align-items-center'>
         <h1 style='color:white;'><b>Competitions</b></h1>
     </div>
     <div style='height:42.5%; width:100%; position:absolute; top:12.5%;'>
-        <div style='height:35%; background: url("img/about/pubg.jpg"); background-size: cover;' class='d-flex justify-content-center align-items-center'>
+        <div style='height:35%; background: url("<?= BASECSS; ?>/img/about/pubg.jpg"); background-size: cover;' class='d-flex justify-content-center align-items-center'>
             <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
-            <img style='position:relative;' src="img/about/pubg.png" alt="">
+            <img style='position:relative;' src="<?= BASECSS; ?>/img/about/pubg.png" alt="">
             <h1 style='position:relative; color:white;'><b>PUBG Battles</b></h1>
         </div>
         <div style='margin: 0 15%; width:70%;'>
             <div class="row">
                 <div class="col">
-                    <img src="img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <img src="<?= BASECSS; ?>/img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
                 </div>
                 <div class="col">
-                    <img src="img/about/pubg2.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <img src="<?= BASECSS; ?>/img/about/pubg2.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
                 </div>
                 <div class="col">
-                    <img src="img/about/pubg3.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <img src="<?= BASECSS; ?>/img/about/pubg3.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
                 </div>
@@ -223,25 +223,25 @@
         </div>
     </div>
     <div style='height:45%; width:100%; position:absolute; top:55%;'>
-        <div style='height:35%; background: url("img/about/drawing.jpg"); background-size: cover; background-position:0% 40%;' class='d-flex justify-content-center align-items-center'>
+        <div style='height:35%; background: url("<?= BASECSS; ?>/img/about/drawing.jpg"); background-size: cover; background-position:0% 40%;' class='d-flex justify-content-center align-items-center'>
             <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
-            <img style='position:relative;' src="img/about/pencil.png" alt="">
+            <img style='position:relative;' src="<?= BASECSS; ?>/img/about/pencil.png" alt="">
             <h1 style='position:relative; color:white;'><b>Character Design<br>Competition</b></h1>
         </div>
         <div style='margin: 0 15%; width:70%;'>
             <div class="row">
                 <div class="col" style='margin: 0 3%'>
-                    <img src="img/about/chardes1.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <img src="<?= BASECSS; ?>/img/about/chardes1.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
                 </div>
                 <div class="col" style='margin: 0 3%'>
-                    <img src="img/about/chardes2.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <img src="<?= BASECSS; ?>/img/about/chardes2.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
                 </div>
                 <div class="col" style='margin: 0 3%'>
-                    <img src="img/about/chardes3.png" style='width:100%; aspect-ratio:1/1;' alt="">
+                    <img src="<?= BASECSS; ?>/img/about/chardes3.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
                 </div>
