@@ -145,6 +145,7 @@
         width: 100%;
         height: 100%;
         background-color: green;
+        background-image: url("<?= BASECSS; ?>/img/uploadedEventImage/pop up bg-02.png");
         opacity: 0.1;
     }
 
@@ -311,9 +312,15 @@
 
     .container-link-drive {
         text-align: center;
-        justify-content: center;
+        align-items: center;
         display: flex;
         width: 100%;
+        flex-direction: column;
+    }
+
+    .inner-link-drive {
+        width: 60%;
+        position: relative;
     }
 
     .text-link-drive {
@@ -685,12 +692,13 @@ $judul = explode(" - ", $data['judulHalaman']);
                         if ($data['judulHalaman'] == "Seminar - ICF 2021")
                             echo "<th class='nama-seminar'>Nama Seminar</th>
                                     <th class='pembicara'>Pembicara</th>
-                                    <th class='tanggal-jam'>Tanggal & Jam</th>
+                                    <th class='tanggal-jam'>Tanggal</th>
+                                    <th class='wa-group'>Whatsapp Group</th>
                                     <th class='zoom-id'>Zoom ID</th>
                                     <th class='link-zoom'>Link Zoom</th>";
                         else if ($data['judulHalaman'] == "Lomba - ICF 2021")
                             echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
-                                    <th class='tanggal-jam-lomba'>Tanggal & Jam</th>
+                                    <th class='tanggal-jam-lomba'>Tanggal</th>
                                     <th class='status'>Status</th>
                                     <th class='wa-group'>Whatsapp Group</th>
                                     <th></th> ";
@@ -698,8 +706,8 @@ $judul = explode(" - ", $data['judulHalaman']);
                     </thead>
                     <tbody>
                         <?php foreach ($data['listRiwayat'] as $key) :
-                            $tglMulai = date("d M Y h:i", strtotime($key['tanggal_mulai']));
-                            $tglSelesai = date("d M Y h:i", strtotime($key['tanggal_selesai']));
+                            $tglMulai = date("d M Y", strtotime($key['tanggal_mulai']));
+                            $tglSelesai = date("d M Y", strtotime($key['tanggal_selesai']));
                             $paramEvent = strtolower(str_replace(' ', '-', $key['nama']));
                             $tgl = ($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai;
                         ?>
@@ -721,6 +729,13 @@ $judul = explode(" - ", $data['judulHalaman']);
                                                     <span class="centered-content">' . $tgl . '</span>
                                                 </div>
                                             </td>
+                                             <td class="riwayat-daftar-lomba wa">
+                                                <div class="half-content">
+                                                    <span class="centered-content"><a href="' . $key['link_wa'] . '"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
+                                                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                                                    </svg></a></span>
+                                                </div>
+                                            </td>
                                             <td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
                                                     <span class="centered-content">
@@ -730,7 +745,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             </td>
                                             <td class="riwayat-daftar-seminar container-link-zoom">
                                                 <div class="half-content">
-                                                    <span class="centered-content">' . ((!empty($key['link_zoom'])) ? '<span class="link-text text-truncate link-zoom-text" style="width: 90%;display: inline-block;">' . $key['link_zoom'] . '</span>
+                                                    <span class="centered-content">' . ((!empty($key['link_zoom'])) ? '<span class="link-text text-truncate link-zoom-text" style="width: 90%;display: inline-block;" id="textLinkZoom">' . $key['link_zoom'] . '</span>
                                                         <span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-files icon-copy copy-text" style="cursor: pointer;" viewBox="0 0 16 16">
                                                                 <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
@@ -751,7 +766,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             </td>
                                             <td class="riwayat-daftar-lomba">
                                                 <div class="half-content">
-                                                    <span class="centered-content">' . $tglSelesai . '</span>
+                                                    <span class="centered-content">' . (($tglMulai == $tglSelesai) ? $tglMulai : $tglMulai . ' - ' . $tglSelesai)  . '</span>
                                                 </div>
                                             </td>
                                             <td class="riwayat-daftar-lomba">
@@ -875,19 +890,19 @@ $judul = explode(" - ", $data['judulHalaman']);
                     if ($data['judulHalaman'] == "Seminar - ICF 2021")
                         echo "<th class='nama-seminar daftar-nama-seminar'>Nama Seminar</th>
                                 <th class='pembicara'>Pembicara</th>
-                                <th class='tanggal-jam'>Tanggal & Jam</th>
+                                <th class='tanggal-jam'>Tanggal</th>
                                 <th class='status'>Status</th>
                                 <th style='width: 40%;'></th>";
                     else if ($data['judulHalaman'] == "Lomba - ICF 2021")
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
-                                <th>Tanggal & Jam</th>
+                                <th>Tanggal</th>
                                 <th>Jenis</th>
                                 <th class='text-center'>Mekanisme</th>
                                 <th class='details'></th>";
                     else if ($data['judulHalaman'] == "Pameran - ICF 2021")
-                        echo "<th style='width: 30%;'>Nama/Judul Karya</th>
+                        echo "<th style='width: 30%;'>Stand</th>
                                 <th style='width: 20%;'>Author</th>
-                                <th>Deskripsi</th>";
+                                <th>Judul</th>";
                     ?>
                 </thead>
                 <tbody>
@@ -1032,11 +1047,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-calendar" viewBox="0 -1 18 18">
                                                         <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                                                     </svg></span></span>
-                                            <span class="modal-info"><span class="icf-color" style="margin-right: 7px;">15.10 WIB</span>
-                                                <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-clock" viewBox="0 -1 18 18">
-                                                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
-                                                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
-                                                    </svg></span></span>
+                                            </span>
                                             <?php if ($key['jenis'] == 'Seminar') { ?>
                                                 <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
                                                     <input type="hidden" name="eid" value="<?= $key['id']; ?>">
@@ -1059,11 +1070,37 @@ $judul = explode(" - ", $data['judulHalaman']);
 </div>
 
 <script type="text/javascript">
-    $('body').on('click', '.copy-text', function() {
-        var firstChild = $(this).parent().parent().children()[0];
-        var copiedValue = firstChild.innerHTML;
-        navigator.clipboard.writeText(copiedValue);
-        alert("Link copied!");
+    $(document).ready(function() {
+        $('body').on('click', '.copy-text', function() {
+            copy();
+        });
+
+        function copy() {
+            var textArea = document.createElement("textarea");
+            var linkZoom = document.getElementById('textLinkZoom').innerHTML;
+            var msg = "";
+            textArea.value = linkZoom;
+
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                msg = "Link Copied!";
+            } catch (err) {
+                msg = "Error";
+            }
+            document.body.removeChild(textArea);
+
+            if (msg != "") {
+                alert(msg);
+            }
+        }
     });
 
     $('body').on('click', '#detailRiwayat', function() {

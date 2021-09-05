@@ -24,7 +24,8 @@
         </div>
         <?php if ($data['detilEvent']['jenis'] == 'Lomba Kelompok') : ?>
             <div class="tab-pane fade" id="anggota" role="tabpanel" aria-labelledby="profile-tab">
-                <table class="table">
+                <button id="exportTableToExcel" data-id="tableLomba">Export table to excel</button>
+                <table class="table" id="tableLomba">
                     <thead>
                         <tr>
                             <th>Nama</th>
@@ -80,7 +81,8 @@
         <div class="tab-pane fade <?= (isset($_SESSION['updatedDetil'])) ? 'active show' : ''; ?>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <form action="<?= BASEURL; ?>/admin/updateDetil" method="POST">
                 <input type="hidden" name="idevent" value="<?= $data['detilEvent']['id']; ?>">
-                <table class="table table-striped">
+                <button id="exportTableToExcel" data-id="tableSeminar">Export table to excel</button>
+                <table class="table table-striped" id="tableSeminar">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
@@ -127,5 +129,27 @@
 </div>
 <?php unset($_SESSION['updatedDetil']); ?>
 <div style="clear:both;"></div>
+
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
 <script>
+    var elt = "";
+    $('body').on('click', '#exportTableToExcel', function() {
+        elt = document.getElementById($(this).data('id'));
+        ExportToExcel('xlsx');
+    })
+
+
+    function ExportToExcel(type, fn, dl) {
+        var wb = XLSX.utils.table_to_book(elt, {
+            sheet: "sheet1"
+        });
+        return dl ?
+            XLSX.write(wb, {
+                bookType: type,
+                bookSST: true,
+                type: 'base64'
+            }) :
+            XLSX.writeFile(wb, fn || ('MySheetName.' + (type || 'xlsx')));
+    }
 </script>

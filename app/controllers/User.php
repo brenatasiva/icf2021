@@ -30,10 +30,14 @@ class User extends Controller
 
     public function Login()
     {
-        $data['judulHalaman'] = "Login - ICF 2021";
+        if (isset($_SESSION['username'])) {
+            header('location: ' . BASEURL);
+        } else {
+            $data['judulHalaman'] = "Login - ICF 2021";
 
-        $this->view('templates/header', $data);
-        $this->view('login/index', $data);
+            $this->view('templates/header', $data);
+            $this->view('login/index', $data);
+        }
     }
 
     public function cekLogin()
@@ -63,10 +67,14 @@ class User extends Controller
 
     public function register()
     {
-        $data['judulHalaman'] = "Register - ICF 2021";
+        if (isset($_SESSION['username'])) {
+            header('location: ' . BASEURL);
+        } else {
+            $data['judulHalaman'] = "Register - ICF 2021";
 
-        $this->view('templates/header', $data);
-        $this->view('register/index', $data);
+            $this->view('templates/header', $data);
+            $this->view('register/index', $data);
+        }
     }
 
     public function registUser()

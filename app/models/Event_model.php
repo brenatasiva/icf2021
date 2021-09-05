@@ -45,7 +45,7 @@ class Event_model
     public function getEventPerCategory($data)
     {
         $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where j.jenis like :jenis";
-        if ($data === 'Seminar') {
+        if ($data === 'seminar') {
             $sql = "SELECT e.*, j.jenis, g.id as idgambar, g.extension from event e inner join jenis j on e.jenis_id = j.id inner join gambar g on g.event_id = e.id where j.jenis like :jenis";
         }
         $this->db->query($sql);

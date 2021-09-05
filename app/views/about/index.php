@@ -182,60 +182,60 @@
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker1.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Avianto Tiyo</b></h2>
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Liliana</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-                <p class="card-text">Internet of Things: Future Concept</p>
+                <p class="card-text">Informatics: Link & Think</p>
             </div>
         </div>
     </div>
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker2.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Gerdy WK</b></h2>
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Fini Charisa</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-                <p class="card-text">Komik Indonesia dari Masa ke Masa</p>
+                <p class="card-text">Digitalize your roadmap through UI/UX</p>
             </div>
         </div>
     </div>
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker3.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Is Yuniarto</b></h2>
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Marcellinus Ferdinand Suciadi</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-                <p class="card-text">Komik Indonesia dari Masa ke Masa</p>
+                <p class="card-text">Dive Into Another World: Anytime, Anywhere, on Your Fingertips</p>
             </div>
         </div>
     </div>
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker4.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Yohanes D.P</b></h2>
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Bani Adil</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-                <p class="card-text">Solusi Ekonomi, <br>Memiliki Lapak Online</p>
+                <p class="card-text">Secret Knowledge of Content Creating</p>
             </div>
         </div>
     </div>
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Vincentius R.P</b></h2>
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Mikhael Ming Khosasih</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-                <p class="card-text">AI in Our Everyday Life and<br>How They Improve Our Lives</p>
+                <p class="card-text">So you want to be a Motion Grapher?</p>
             </div>
         </div>
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Lorem Ipsum</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker6.jpg" class="card-img-top" alt="...">
+                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Ario Anindito</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
-                <p class="card-text">AI in Our Everyday Life and<br>How They Improve Our Lives</p>
+                <p class="card-text">The Process of Creating a Marvel Comic</p>
             </div>
         </div>
     </div>
@@ -371,17 +371,17 @@
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
-                    <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
+                    <h3 style='text-align:center; color:white;'>Rp. 1.000.000</h3>
                 </div>
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/pubg2.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
-                    <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
+                    <h3 style='text-align:center; color:white;'>Rp. 750.000</h3>
                 </div>
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/pubg3.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
-                    <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
+                    <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
                 </div>
             </div>
         </div>
@@ -397,17 +397,17 @@
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/chardes1.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
-                    <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
+                    <h3 style='text-align:center; color:white;'>Rp. 1.000.000</h3>
                 </div>
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/chardes2.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
-                    <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
+                    <h3 style='text-align:center; color:white;'>Rp. 750.000</h3>
                 </div>
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/chardes3.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
-                    <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
+                    <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
                 </div>
             </div>
         </div>

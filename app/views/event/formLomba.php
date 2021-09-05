@@ -205,35 +205,8 @@
                 <h1 class="title-lomba circular-icf"><?= $data['event']['nama']; ?> Registration<br>Syarat & Ketentuan</h1>
             </div>
             <div class="container-syarat-ketentuan">
-                <div class="syarat-ketentuan">
-                    1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br>
-                    2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br>
-                    3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <br><br>
-                    4. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    <!-- <?= $key['syarat_ketentuan']; ?> -->
+                <div class="syarat-ketentuan ps-2 pe-2">
+                    <?= $data['event']['syarat_ketentuan']; ?>
                 </div>
             </div>
             <div class="container-input-lomba">
@@ -271,7 +244,7 @@
                                                 <input type="text" class="form-control" id="nomor<?= $i; ?>" name="nomor<?= $i; ?>" placeholder="Nomor WA" required>
                                             </div>
                                             <div class="mb-3">
-                                                <input type="text" minlength="10" maxlength="10" class="form-control" id="nrp<?= $i; ?>" name="nrp<?= $i; ?>" placeholder="NRP">
+                                                <input type="text" minlength="9" maxlength="9" class="form-control" id="nrp<?= $i; ?>" name="nrp<?= $i; ?>" placeholder="NRP">
                                             </div>
                                             <div class="mb-3">
                                                 <input type="text" class="form-control" id="idPubg<?= $i; ?>" name="idPubg<?= $i; ?>" placeholder="ID PUBG" required>

@@ -56,19 +56,14 @@
                 Flasher::setFlash("Information", "Please login first before you register to this event", "primary");
                 header('Location: ' . BASEURL . '/user/login');
             } else {
-                if ($this->model('User_model')->cekPendaftar($_POST) > 0) {
-                    Flasher::setFlash("Error", "You have already registered for this event", "danger");
+                if (!isset($_POST['eid'])) {
                     header('Location: ' . BASEURL);
                 } else {
-                    if (!isset($_POST['eid'])) {
-                        header('Location: ' . BASEURL);
-                    } else {
-                        $data = $this->model('Event_model')->getEvent($_POST);
-                        $data['judulHalaman'] = $data['event']['jenis'] . " - ICF 2021";
-                        $this->view('templates/header', $data);
-                        $this->view('event/formLomba', $data);
-                        $this->view('templates/footer');
-                    }
+                    $data = $this->model('Event_model')->getEvent($_POST);
+                    $data['judulHalaman'] = $data['event']['jenis'] . " - ICF 2021";
+                    $this->view('templates/header', $data);
+                    $this->view('event/formLomba', $data);
+                    $this->view('templates/footer');
                 }
             }
         }

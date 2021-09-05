@@ -120,7 +120,7 @@
         </div>
     </div>
     <div class='h-100 d-flex justify-content-center container' style='position: absolute; top:0; align-items:flex-start !important; flex-direction: column; margin-left: 15%; width:auto;'>
-        <img src="img/home/welcome.png" style='height:40%;' alt="">
+        <img src="<?= BASECSS; ?>/img/home/welcome.png" style='height:40%;' alt="">
     </div>
 </div>
 <!-- END OF HERO -->
@@ -208,13 +208,16 @@
                                 <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
                                     <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32" />
                                 </svg>
-                                <p style='position:absolute; color: white; top: -5px; left: 30px; font-size:x-large;'>
-                                    20 Sep '21
+                                <p style='position:absolute; color: white; top: -1px; left: 30px; font-size:x-large;'>
+                                    6 Sep '21
                                 </p>
                             </div>
                             <div style='margin-left:2.5%;'>
-                                <h3><b>Lorem Ipsum</b></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                                <h3>
+                                    <b>Pendaftaran dibuka</b>
+                                </h3>
+                                <p class="text-justify pe-4">ICF 2021 membuka pendaftaran untuk Seminar dan untuk berbagai Lomba yaitu PUBG dan Character Desain
+                                </p>
                             </div>
                         </li>
                         <li style='position:relative;'>
@@ -223,13 +226,55 @@
                                 <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
                                     <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32" />
                                 </svg>
-                                <p style='position:absolute; color: white; top: -5px; left: 30px; font-size:x-large;'>
-                                    20 Sep '21
+                                <p style='position:absolute; color: white; top: -1px; left: 30px; font-size:x-large;'>
+                                    22 Sep '21
                                 </p>
                             </div>
                             <div style='margin-left:2.5%;'>
-                                <h3><b>Lorem Ipsum</b></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                                <h3>
+                                    <b>Pendaftaran ditutup</b>
+                                </h3>
+                                <p>
+                                    ICF 2021 hanya menutup pendaftaran Lomba yaitu PUBG dan Character Desain.
+                                </p>
+                            </div>
+                        </li>
+                        <li style='position:relative;'>
+                            <div style='width:1px; height:100%; background-color:#0582BC; display:inline-block; position:absolute; left:-10px;'></div>
+                            <div style='position:relative;'>
+                                <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
+                                    <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32" />
+                                </svg>
+                                <p style='position:absolute; color: white; top: -1px; left: 30px; font-size:x-large;'>
+                                    24 Sep '21
+                                </p>
+                            </div>
+                            <div style='margin-left:2.5%;'>
+                                <h3>
+                                    <b>Day 1 ICF 2021</b>
+                                </h3>
+                                <p class="text-justify pe-4">
+                                    Seminar “Informatics : Link & Think” dan “Digitalize Your Roadmap Through UI/UX”
+                                </p>
+                            </div>
+                        </li>
+                        <li style='position:relative;'>
+                            <div style='width:1px; height:100%; background-color:#0582BC; display:inline-block; position:absolute; left:-10px;'></div>
+                            <div style='position:relative;'>
+                                <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
+                                    <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32" />
+                                </svg>
+                                <p style='position:absolute; color: white; top: -1px; left: 30px; font-size:x-large;'>
+                                    25 Sep '21
+                                </p>
+                            </div>
+                            <div style='margin-left:2.5%;'>
+                                <h3>
+                                    <b>Day 2 ICF 2021</b>
+                                </h3>
+                                <p class="text-justify pe-4">
+                                    Seminar “Dive Into Another World: Anytime, Anywhere, on Your Fingertips” dan “Secret Knowledge of Content Creating”
+                                </p>
                             </div>
                         </li>
                         <li style='position:relative;'>
@@ -237,13 +282,17 @@
                                 <svg style="position:relative;" height='30px' data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.18 25.18">
                                     <polygon class="cls-1" fill='#0582BC' points="0 12.32 13.29 0 133.18 0 133.18 25.18 13.5 25.18 0 12.32" />
                                 </svg>
-                                <p style='position:absolute; color: white; top: -5px; left: 30px; font-size:x-large;'>
-                                    20 Sep '21
+                                <p style='position:absolute; color: white; top: -1px; left: 30px; font-size:x-large;'>
+                                    26 Sep '21
                                 </p>
                             </div>
                             <div style='margin-left:2.5%;'>
-                                <h3><b>Lorem Ipsum</b></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et </p>
+                                <h3>
+                                    <b>Last day ICF 2021</b>
+                                </h3>
+                                <p class="text-justify pe-4">
+                                    Seminar “So you want to be a Motion Grapher?” dan “The Process of Creating a Marvel Comic”
+                                </p>
                             </div>
                         </li>
                     </ul>
@@ -257,7 +306,7 @@
     <div class="d-none d-md-block" style="height: auto; width: 10%; background: rgb(1, 151, 148); background: linear-gradient(90deg, rgba(1, 151, 148, 1) 0%, rgba(5, 132, 187, 1) 100%)"></div>
 </div>
 <div style='height: auto; width:100%;'>
-    <img style='width:100%; aspect-ratio: 1920/366; pointer-events: none;' src='img/home/vectorline.jpg'>
+    <img style='width:100%; aspect-ratio: 1920/366; pointer-events: none;' src='<?= BASECSS; ?>/img/home/vectorline.jpg'>
 </div>
 <!-- END OF TIMELINE -->
 
