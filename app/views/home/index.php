@@ -1,4 +1,9 @@
 <style>
+    div.desc {
+        background-image: url("img/home/bgvideo.jpg");
+        background-size: cover;
+    }
+
     @media (max-width: 767px) {
         .carousel-inner .carousel-item>div {
             display: none;
@@ -12,9 +17,10 @@
             display: none;
         }
 
-        .row {
-            width: 100% !important;
+        .row.timeline-img {
+            width: 100%;
         }
+
 
     }
 
@@ -40,11 +46,67 @@
         .carousel-transparant {
             display: block;
         }
+
+        .row.timeline-img {
+            width: 85%;
+        }
+
+        .desc {
+            height: 100vh;
+        }
+
+        div.video-desc {
+            width: 100%;
+            height: 50vh;
+        }
+
+
     }
 
     .carousel-inner .carousel-item-end,
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
+    }
+
+
+    @media (min-height: 1366px) {
+
+
+        .desc,
+        .desc .row,
+        .row .col-lg-5,
+        .desc .row .col-lg-6 {
+            display: block !important;
+            width: auto;
+        }
+
+        .row .col-lg-1,
+        .row .utub div.w-25 {
+            display: none !important;
+        }
+
+        .video-desc h1 {
+            font-size: 100px !important;
+        }
+
+        .video-desc p {
+            font-size: 25px !important;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .video-desc h1 {
+            font-size: 4vw;
+        }
+
+        .video-desc p {
+            font-size: 1vw;
+        }
+
+        div.video-desc,
+        .utub {
+            height: 50vh;
+        }
     }
 </style>
 
@@ -64,14 +126,15 @@
 <!-- END OF HERO -->
 
 <!-- START OF VIDEO DESCRIPTION -->
-<div style="height:auto; background: rgb(1,151,148); width:100%; position:relative;" class="d-flex justify-content-center align-items-center">
-    <img src="img/home/bgvideo.jpg" alt="" style='width:100%; position: relative;'>
-    <div style='position:absolute; height: 33.33%;' class="d-flex">
-        <div style='height: 100%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
-        <div style="width:70%; height:100%;" class='d-flex'>
-            <div style="margin: 0 3%;">
-                <h1 style="font-size: 4vw;">INTO THE UNNAMED LAND</h1>
-                <p style="font-size: 1vw;">Di tahun 2020 kemarin, seluruh masyarakat Indonesia diwajibkan untuk melakukan segala aktivitas di rumah saja.
+<div class="desc d-lg-flex align-items-center">
+    <div class="row">
+        <div class="col-lg-1">
+            <div class="d-none d-md-block" style='height: 100%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+        </div>
+        <div class="col-lg-6">
+            <div class="text-center p-3 video-desc">
+                <h1 class="display-1 text-light">INTO THE UNNAMED LAND</h1>
+                <p class="h6 text-light">Di tahun 2020 kemarin, seluruh masyarakat Indonesia diwajibkan untuk melakukan segala aktivitas di rumah saja.
                     Perubahan yang drastis tersebut membuat beberapa orang tertekan dan sulit untuk beradaptasi. Di tengah ketidakpastian serta hal-hal baru,
                     tidak sedikit orang yang diwajibkan untuk membuat sebuah metode baru untuk menghadapi era asing yang baru ini. Banyak kegiatan sekarang beralih menjadi online.
                     ICF kali ini mengangkat tema "Into The Unnamed Land" yang terinspirasi dari lingkungan sekitar sekarang ini. Dari segi Informatika hingga Multimedia,
@@ -79,11 +142,13 @@
                     penggunaan platform online untuk proses belajar-mengajar, pemanfaatan platform digital untuk menyampaikan suatu pekerjaan,
                     bahkan hingga skill basic seperti cara mengoperasikan software akan sangat diperlukan.</p>
             </div>
-            <div style='height:100%; aspect-ratio: 16/9; box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'>
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-            </div>
         </div>
-        <div style='height: 100%; width:15%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+        <div class="col-lg-5 d-flex utub">
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+            </div>
+            <div class="d-none d-lg-block w-25" style='height: 100%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
+        </div>
     </div>
 </div>
 <!-- END OF VIDEO DESCRIPTION -->
@@ -97,7 +162,7 @@
 </div>
 <div class="w-100 d-flex justify-content-between">
     <div class="d-none d-md-block" style="height: auto; width: 5%; background: rgb(1, 151, 148)"></div>
-    <div class="row" style="width: 85%;">
+    <div class="row timeline-img w-100">
         <div class="col-md-6 d-sm-block d-md-flex align-items-center" style="background:#efece7;">
             <style>
                 ul.timeline {
