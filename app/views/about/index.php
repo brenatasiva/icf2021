@@ -12,9 +12,9 @@
             display: none;
         }
 
-        .about-intro-section{
-            position:relative;
-            height:auto;
+        .about-intro-section {
+            position: relative;
+            height: auto;
         }
 
         .about-judul {
@@ -32,23 +32,23 @@
         .div-text {
             width: 100%;
             position: absolute;
-            flex-direction:column; 
-            text-align:center;
-            height:100%;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
         }
 
-        .about-hero{
-            height:80vh;
+        .about-hero {
+            height: 80vh;
         }
 
-        .logo-about-hero{
-            width:15%;
-            aspect-ratio:1/1;
+        .logo-about-hero {
+            width: 15%;
+            aspect-ratio: 1/1;
         }
 
-        .speaker-list{
-            padding: 0 10% 5% 10%; 
-            background:#efece7 !important; 
+        .speaker-list {
+            padding: 0 10% 5% 10%;
+            background: #efece7 !important;
             margin: 0 !important;
         }
     }
@@ -76,9 +76,9 @@
             display: block;
         }
 
-        .about-intro-section{
-            position:relative;
-            height:auto;
+        .about-intro-section {
+            position: relative;
+            height: auto;
         }
 
         .about-judul {
@@ -96,23 +96,23 @@
         .div-text {
             width: 100%;
             position: absolute;
-            flex-direction:column; 
-            text-align:center;
-            height:100%;
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
         }
 
-        .about-hero{
-            width:100%;
+        .about-hero {
+            width: 100%;
         }
 
-        .logo-about-hero{
-            width:3%;
-            aspect-ratio:1/1;
+        .logo-about-hero {
+            width: 3%;
+            aspect-ratio: 1/1;
         }
 
-        .speaker-list{
-            padding: 0 20% 5% 20%; 
-            background:#efece7 !important; 
+        .speaker-list {
+            padding: 0 20% 5% 20%;
+            background: #efece7 !important;
             margin: 0 !important;
         }
     }
@@ -121,8 +121,6 @@
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
-
-    
 </style>
 <div class='about-intro-section'>
     <div class="div-text d-flex justify-content-center align-items-center">
@@ -148,7 +146,7 @@
                         <div class="carousel-item active">
                             <div class="col-md-4">
                                 <div class="card border-0">
-                                    <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
+                                    <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.jpg" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -156,7 +154,7 @@
                         <div class="carousel-item">
                             <div class="col-md-4">
                                 <div class="card border-0">
-                                    <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
+                                    <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.jpg" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -175,18 +173,15 @@
 </div>
 <!-- end of carousel -->
 
-<!-- The Speakers -->
 <div style='height: 24vh; width:100%; background:#efece7;'>
-    <div style='position:relative; display: flex; top: 120px; left: 22%; width:fit-content;'>
-        <img src="<?= BASECSS; ?>/img/home/dotted.png" width="25px" height="25px" style="margin-top: 8px;" alt="">
-        <h2 style="margin-left: 25px;"><b>The Speakers</b></h2>
+    <div style='position:relative; display: flex; top: 120px; left: 22%; width:fit-content;'> <img src="<?= BASECSS; ?>/img/home/dotted.png" width="25px" height="25px" style="margin-top: 6px;" alt="">
+        <h2 style="margin-left: 20px;"><b>The Speakers</b></h2>
     </div>
 </div>
 <div class="row row-cols-1 row-cols-md-3 g-4 speaker-list">
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'>
-                <img src="<?= BASECSS; ?>/img/about/speaker1.jpg" class="card-img-top" alt="...">
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker1.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Avianto Tiyo</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -196,8 +191,7 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'>
-                <img src="<?= BASECSS; ?>/img/about/speaker2.jpg" class="card-img-top" alt="...">
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker2.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Gerdy WK</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -207,8 +201,7 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'>
-                <img src="<?= BASECSS; ?>/img/about/speaker3.jpg" class="card-img-top" alt="...">
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker3.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Is Yuniarto</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -218,8 +211,7 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'>
-                <img src="<?= BASECSS; ?>/img/about/speaker4.jpg" class="card-img-top" alt="...">
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker4.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Yohanes D.P</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -229,8 +221,7 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'>
-                <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Vincentius R.P</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -240,8 +231,7 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'>
-                <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
                 <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Lorem Ipsum</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
@@ -250,118 +240,117 @@
         </div>
     </div>
 </div>
-<!-- End of The Speakers -->
 
 <style>
     @media (max-width: 767px) {
-        .comp-text{
-            height:4%; 
-            width:100%; 
-            position:absolute; 
-            top:0;
+        .comp-text {
+            height: 4%;
+            width: 100%;
+            position: absolute;
+            top: 0;
         }
 
-        .comp-pubg{
-            height:48%;
-            width:100%; 
-            position:absolute; 
-            top:4%;
+        .comp-pubg {
+            height: 48%;
+            width: 100%;
+            position: absolute;
+            top: 4%;
         }
 
-        .comp-pubg-img{
-            height:15%; 
-            background: url("<?= BASECSS; ?>/img/about/pubg.jpg"); 
+        .comp-pubg-img {
+            height: 15%;
+            background: url("<?= BASECSS; ?>/img/about/pubg.jpg");
             background-size: cover;
         }
 
-        .comp-cd{
-            height:45%; 
-            width:100%; 
-            position:absolute; 
-            top:52%;
+        .comp-cd {
+            height: 45%;
+            width: 100%;
+            position: absolute;
+            top: 52%;
         }
 
-        .comp-cd-img{
-            height:15%; 
-            background: url("<?= BASECSS; ?>/img/about/drawing.jpg"); 
-            background-size: cover; 
-            background-position:0% 40%;
+        .comp-cd-img {
+            height: 15%;
+            background: url("<?= BASECSS; ?>/img/about/drawing.jpg");
+            background-size: cover;
+            background-position: 0% 40%;
         }
 
-        .about-comp-section{
-            height: auto; 
-            width:100%; 
+        .about-comp-section {
+            height: auto;
+            width: 100%;
             position: relative;
-            display:flex;     
+            display: flex;
         }
 
-        .cover-comp-img{
-            width:100%; 
-            height:15%; 
-            position: absolute; 
-            top:0; 
-            background-color: black; 
-            opacity:.5;
+        .cover-comp-img {
+            width: 100%;
+            height: 15%;
+            position: absolute;
+            top: 0;
+            background-color: black;
+            opacity: .5;
         }
 
-        .comp-bg{
-            height:100%;
+        .comp-bg {
+            height: 100%;
         }
     }
 
     /* medium and up screens */
     @media (min-width: 768px) {
-        .comp-text{
-            height:12.5%; 
-            width:100%; 
-            position:absolute; 
-            top:0;
+        .comp-text {
+            height: 12.5%;
+            width: 100%;
+            position: absolute;
+            top: 0;
         }
 
-        .comp-pubg{
-            height:42.5%;
-            width:100%; 
-            position:absolute; 
-            top:12.5%;
+        .comp-pubg {
+            height: 42.5%;
+            width: 100%;
+            position: absolute;
+            top: 12.5%;
         }
 
-        .comp-pubg-img{
-            height:35%; 
-            background: url("<?= BASECSS; ?>/img/about/pubg.jpg"); 
+        .comp-pubg-img {
+            height: 35%;
+            background: url("<?= BASECSS; ?>/img/about/pubg.jpg");
             background-size: cover;
         }
 
-        .comp-cd{
-            height:45%; 
-            width:100%; 
-            position:absolute; 
-            top:55%;
+        .comp-cd {
+            height: 45%;
+            width: 100%;
+            position: absolute;
+            top: 55%;
         }
 
-        .comp-cd-img{
-            height:35%; 
-            background: url("<?= BASECSS; ?>/img/about/drawing.jpg"); 
-            background-size: cover; 
-            background-position:0% 40%;
+        .comp-cd-img {
+            height: 35%;
+            background: url("<?= BASECSS; ?>/img/about/drawing.jpg");
+            background-size: cover;
+            background-position: 0% 40%;
         }
 
-        .about-comp-section{
-            height: auto; 
-            width:100%; 
+        .about-comp-section {
+            height: auto;
+            width: 100%;
             position: relative;
         }
 
-        .cover-comp-img{
-            width:100%; 
-            height:35%; 
-            position: absolute; 
-            top:0; 
-            background-color: black; 
-            opacity:.5;
+        .cover-comp-img {
+            width: 100%;
+            height: 35%;
+            position: absolute;
+            top: 0;
+            background-color: black;
+            opacity: .5;
         }
 
-        .comp-bg{
-            width:100%;
+        .comp-bg {
+            width: 100%;
         }
     }
 </style>
@@ -428,19 +417,19 @@
 
 
 <script>
-    let items = document.querySelectorAll('.carousel .carousel-item')
+    let items = document.querySelectorAll('.carousel .carousel-item');
 
     items.forEach((el) => {
-        const minPerSlide = 3
-        let next = el.nextElementSibling
+        const minPerSlide = 3;
+        let next = el.nextElementSibling;
         for (var i = 1; i < minPerSlide; i++) {
             if (!next) {
                 // wrap carousel by using first child
-                next = items[0]
+                next = items[0];
             }
-            let cloneChild = next.cloneNode(true)
-            el.appendChild(cloneChild.children[0])
-            next = next.nextElementSibling
+            let cloneChild = next.cloneNode(true);
+            el.appendChild(cloneChild.children[0]);
+            next = next.nextElementSibling;
         }
-    })
+    });
 </script>

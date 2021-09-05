@@ -148,7 +148,7 @@
     <div class="container">
         <div class="d-flex flex-column justify-content-center">
             <div class="d-flex justify-content-center inner-container">
-                <img src="<?= BASECSS; ?>/img/login/icf_2021_blue_logo.png" class="logo-icf">
+                <img src="<?= BASECSS; ?>/img/login/Logo Sign Up-20.png" class="logo-icf">
             </div>
             <div class="d-flex justify-content-center">
                 <form class="w-50 form-user-input d-grid" action="<?= BASEURL; ?>/user/registUser" method="post">

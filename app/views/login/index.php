@@ -122,26 +122,24 @@
 
 <div class="modal fade" id="modalToggle" aria-hidden="true" aria-labelledby="modalToggleLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalToggleLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content p-5 center" style="background: #eeece7;">
+            <div class="modal-header" style="position: relative; justify-content: center; border-bottom: 0; padding: 0 1rem 1rem 1rem;">
+                <h1 class="modal-title circular-icf text-center" id="modalToggleLabel" style="font-weight: bold; margin-bottom: 0.5rem;">Forgot Password</h1>
+                <button type="button" class="btn-close" style="position: absolute; right: -15px; top: -15px;" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div id="reset1">
                     <form action="<?= BASEURL; ?>/user/requestReset" method="post">
-                        <div class="input-group mb-3" id="modalReset">
-                            <input type="text" class="form-control" placeholder="username" name="username" aria-describedby="button-addon2" id="usernameReset" required>
-                            <button type="submit" class="btn btn-primary" id="buttonSend">Send</button><br>
+                        <p class="text-center" style="font-weight: lighter;">Enter your username</p>
+                        <div class="input-group mb-3" id="modalReset" style="display: block;">
+                            <input type="text" class="form-control mb-2" style="width: 100%; border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem;" placeholder="username" name="username" aria-describedby="button-addon2" id="usernameReset" required>
+                            <button type="submit" class="btn btn-primary btn-user-submit" style="width: 100%; border-radius: 0.25rem; margin-left: 0;" id="buttonSend">Reset Password</button><br>
                         </div>
                     </form>
-                    <div class="pt-4 pb-5 text-dark d-flex justify-content-center">
-                        <label class="form-label">Already have the code? <a href="<?= BASEURL; ?>/user/reset" style="color: orange !important;" id="insertCode">Insert Code</a></label>
+                    <div class="text-dark d-flex justify-content-center">
+                        <label class="form-label" style="margin-bottom: 0;">Already have the code? <a href="<?= BASEURL; ?>/user/reset" style="color: orange !important;" id="insertCode">Insert Code</a></label>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-
             </div>
         </div>
     </div>

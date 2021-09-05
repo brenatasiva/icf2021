@@ -1,6 +1,6 @@
 <style>
     div.desc {
-        background-image: url("img/home/bgvideo.jpg");
+        background-image: url("<?= BASECSS; ?>/img/home/bgvideo.jpg");
         background-size: cover;
     }
 
@@ -105,7 +105,7 @@
 
         div.video-desc,
         .utub {
-            height: 50vh;
+            height: 40vh;
         }
     }
 </style>
@@ -113,7 +113,7 @@
 <!-- START OF HERO -->
 <div class="h-auto" style='width:100%; position:relative;'>
     <div style="text-align:right; position: relative;">
-        <img src="img/home/hero-main.jpg" alt="" style="width:70%;">
+        <img src="<?= BASECSS; ?>/img/home/hero-main.jpg" alt="" style="width:70%;">
         <div class='h-100 ' style="width:100%; position: absolute; top:0; left:0;
             background: rgb(239, 236, 231);
             background: linear-gradient(90deg, rgba(239, 236, 231,1) 0%, rgba(239, 236, 231,1) 43%, rgba(239, 236, 231,0.6699054621848739) 56%, rgba(239, 236, 231,0) 75%, rgba(239, 236, 231,0) 100%);">
@@ -145,7 +145,7 @@
         </div>
         <div class="col-lg-5 d-flex utub">
             <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" title="YouTube video" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/aK33uXl_qzo" title="YouTube video" allowfullscreen></iframe>
             </div>
             <div class="d-none d-lg-block w-25" style='height: 100%; background:#efece7;box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;'></div>
         </div>
@@ -156,8 +156,8 @@
 <!-- START OF TIMELINE -->
 <div style='height: 30vh; width:100%; background:#efece7;'>
     <div style='position:relative; display: flex; top: 170px; left: 22%; width:fit-content;'>
-        <img src="img/home/dotted.png" width="25px" height="25px" style="margin-top: 8px;" alt="">
-        <h2 style="margin-left: 25px;"><b>Timeline</b></h2>
+        <img src="<?= BASECSS; ?>/img/home/dotted.png" width="25px" height="25px" style="margin-top: 12px;" alt="">
+        <h1 style="margin-left: 15px;"><b>Timeline</b></h1>
     </div>
 </div>
 <div class="w-100 d-flex justify-content-between">
@@ -251,7 +251,7 @@
             </div>
         </div>
         <div class="col-md-6 d-none d-md-block">
-            <img src=" img/home/poster.png" style='height:100%; width:100%;' alt="">
+            <img src="<?= BASECSS; ?>/img/home/poster.png" style='height:100%; width:100%;' alt="">
         </div>
     </div>
     <div class="d-none d-md-block" style="height: auto; width: 10%; background: rgb(1, 151, 148); background: linear-gradient(90deg, rgba(1, 151, 148, 1) 0%, rgba(5, 132, 187, 1) 100%)"></div>
@@ -275,7 +275,7 @@
             </g>
         </svg>
         <div>
-            <h1 style="font-weight:bold;color:#efece7;font-family:'Circular Std Bold';font-size:50px;">Universitas Surabaya</h1>
+            <h1 style="font-weight:bold;color:#efece7;font-family:'Circular Std Bold';font-size: 5rem;">Universitas Surabaya</h1>
             <p style="color:#efece7;line-height:50%;font-size:13px;font-family:'Circular Std Thin'">Jl. Raya Rungkut, Kali Rungkut, Kec. Rungkut, Kota SBY, Jawa Timur 60293</p>
         </div>
 

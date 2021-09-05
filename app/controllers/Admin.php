@@ -15,7 +15,6 @@ class Admin extends Controller
         $data['listAllUser'] = $this->model('User_model')->getAllUser();
         $this->view('templates/header_admin', $data);
         $this->view('admin/peserta', $data);
-        $this->view('templates/footer');
     }
 
     // Event Methods
@@ -24,7 +23,6 @@ class Admin extends Controller
     {
         $this->view('templates/header_admin', $data);
         $this->view($view, $data);
-        $this->view('templates/footer');
     }
     public function getJenisEvent()
     {
@@ -37,7 +35,6 @@ class Admin extends Controller
         $data['listAllEvent'] = $this->model('Event_model')->getAllEvent();
         $this->view('templates/header_admin', $data);
         $this->view('admin/event', $data);
-        $this->view('templates/footer');
     }
 
     public function detil($idEvent)
@@ -107,7 +104,6 @@ class Admin extends Controller
         $data['listAllFaq'] = $this->model('Faq_model')->getAllFaq();
         $this->view('templates/header_admin', $data);
         $this->view('admin/faq', $data);
-        $this->view('templates/footer');
     }
 
     public function tambahFaq()

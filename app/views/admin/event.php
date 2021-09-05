@@ -1,4 +1,4 @@
-<div class="container">
+
     <h1 class="mt-4">Events</h1>
     <button type="button" class="mb-3 btn btn-primary" id="tambahEvent" data-bs-toggle="modal" data-bs-target="#modalEvent">
         Tambah Event

@@ -31,13 +31,19 @@
     .btn-user-save {
         width: 100%;
     }
+
+    .logo-icf {
+        height: auto;
+        width: 280px;
+    }
 </style>
 
 <div class="user-bg">
     <div class="container">
         <div class="d-flex flex-column justify-content-center">
             <div class="d-flex justify-content-center">
-                <span class="w-auto d-flex justify-content-center circular-icf text-light pb-5" style="font-size: 50px; font-weight: bold;">PROFILE</span>
+                <!-- <span class="w-auto d-flex justify-content-center circular-icf text-light pb-5" style="font-size: 50px; font-weight: bold;">PROFILE</span> -->
+                <img src="<?= BASECSS; ?>/img/login/Logo Profile-20.png" class="logo-icf">
             </div>
             <div class="d-flex justify-content-center">
                 <form class="w-50 form-user-input text-light" action="<?= BASEURL; ?>/user/editProfile" method="post">

@@ -2,7 +2,7 @@
 
     class Event extends Controller
     {
-        public function index($category)
+        public function index($category = null)
         {
             $data['listAllEvent'] = $this->model('Event_model')->getEventPerCategory($category);
             if ($category === "seminar") {

@@ -166,6 +166,7 @@
             </div>
             <div class="navbar-nav text-center">
               <a class="nav-link <?php echo ($data['judulHalaman'] == 'ICF 2021') ? 'active' : '' ?>" href="<?= BASEURL; ?>">Home</a>
+              <a class="nav-link <?php echo ($data['judulHalaman'] == 'About - ICF 2021') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About Us</a>
               <!-- dropdown event -->
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
@@ -178,7 +179,6 @@
                 </li>
               </ul>
               <!-- end event -->
-              <a class="nav-link <?php echo ($data['judulHalaman'] == 'About - ICF 2021') ? 'active' : '' ?>" href="<?= BASEURL; ?>/about">About</a>
               <a class="nav-link <?php echo ($data['judulHalaman'] == 'FAQ - ICF 2021') ? 'active' : '' ?>" href="<?= BASEURL; ?>/faq">FAQ</a>
             </div>
             <div class="navbar-nav text-center">

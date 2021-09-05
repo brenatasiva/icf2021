@@ -42,10 +42,7 @@
         color: #009b8d !important;
     }
 
-    .wa {
-        text-align: center;
-    }
-
+    .wa,
     .wa-group {
         text-align: center;
     }
@@ -75,7 +72,10 @@
     .btn-sign-up {
         color: #009b8d !important;
         border-color: #009b8d !important;
-        width: 90%;
+    }
+
+    .btn-style {
+        width: 90% !important;
         border-radius: 10px;
         font-weight: bold !important;
     }
@@ -99,6 +99,24 @@
         border-radius: 10px;
     }
 
+    .btn-disabled:hover {
+        cursor: default !important;
+    }
+
+    .btn-disabled .bi-whatsapp {
+        color: #6c757d !important;
+    }
+
+    .btn-disabled:hover .bi-whatsapp {
+        color: white !important;
+    }
+
+    .btn-disabled .join-disabled {
+        width: 90%;
+        border-radius: 10px;
+        font-weight: bold !important;
+    }
+
     .modal-dialog.seminar {
         max-width: 700px;
     }
@@ -107,12 +125,12 @@
         max-width: 1000px;
     }
 
-    .modal-content.lomba {
+    .modal-content.lomba,
+    .modal-content.riwayat {
         background: #eeece7;
     }
 
     .modal-header.seminar {
-        background-image: url("<?= BASECSS; ?>/img/event/avianto_tryo.png");
         background-position: 0px -72px;
         background-repeat: no-repeat;
         background-size: cover;
@@ -293,7 +311,6 @@
 
     .container-link-drive {
         text-align: center;
-        position: relative;
         justify-content: center;
         display: flex;
         width: 100%;
@@ -421,6 +438,26 @@
 
         .inner-link-drive {
             width: 100%
+        }
+    }
+
+    @media (max-width: 700px) {
+        .modal-body.seminar {
+            flex-direction: column;
+        }
+
+        .modal-body-content.modal-body-desc,
+        .modal-body-content.modal-body-info {
+            width: 100% !important;
+        }
+
+        .modal-body-content.modal-body-desc {
+            padding-right: 0 !important;
+            padding-bottom: 20px;
+        }
+
+        .modal-body-content.modal-body-info {
+            padding-left: 0 !important;
         }
     }
 
@@ -593,6 +630,15 @@
             display: grid;
             align-content: center;
             height: 72px;
+            padding: 3px 0;
+        }
+
+        td.deskripsi {
+            display: flex;
+        }
+
+        .centered-content.deskripsi {
+            height: 100%;
         }
 
         .icon-copy {
@@ -607,6 +653,10 @@
         .btn-disabled,
         .btn-sign-up {
             width: 100%;
+        }
+
+        .btn-style {
+            width: 100% !important;
         }
     }
 </style>
@@ -674,13 +724,13 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             <td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
                                                     <span class="centered-content">
-                                                        <div>' . (($key['id_zoom'] != "" && $key['pass_zoom'] != "" && $key['status'] == "Diterima") ? ('<span style="padding-right: 62px;">ID</span>: <span>' . $key['id_zoom'] . '</span><br><span style="padding-right: 6px;">Password</span>: <span>' . $key['pass_zoom'] . '</span>') : '-') . '</div>
+                                                        <div>' . (($key['id_zoom'] != "" && $key['pass_zoom'] != "") ? ('<span style="padding-right: 62px;">ID</span>: <span>' . $key['id_zoom'] . '</span><br><span style="padding-right: 6px;">Password</span>: <span>' . $key['pass_zoom'] . '</span>') : '-') . '</div>
                                                     </span>
                                                 </div>                                    
                                             </td>
                                             <td class="riwayat-daftar-seminar container-link-zoom">
                                                 <div class="half-content">
-                                                    <span class="centered-content">' . ((!empty($key['link_zoom']) && $key['status'] == "Diterima") ? '<span class="link-text text-truncate link-zoom-text" style="width: 90%;display: inline-block;">' . $key['link_zoom'] . '</span>
+                                                    <span class="centered-content">' . ((!empty($key['link_zoom'])) ? '<span class="link-text text-truncate link-zoom-text" style="width: 90%;display: inline-block;">' . $key['link_zoom'] . '</span>
                                                         <span>
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-files icon-copy copy-text" style="cursor: pointer;" viewBox="0 0 16 16">
                                                                 <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
@@ -711,7 +761,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             </td>
                                             <td class="riwayat-daftar-lomba wa">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a class="btn btn-sign-up join-wa"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
+                                                    <span class="centered-content"><a class="btn btn-style' . (($key['status'] == "Diterima") ? ' btn-sign-up join-wa" href="' . $key['link_wa'] . '"' : ' btn-outline-secondary btn-disabled join-disabled" disabled') . '><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
                                                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                                                     </svg>Join</a></span>
                                                 </div>
@@ -764,6 +814,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                     </div>
                                 </div>
                             </div>
+
                             <?php for ($i = 1; $i <= 3; $i++) { ?>
                                 <div style="padding-bottom: 50px;">
                                     <div class="mb-3 row">
@@ -798,6 +849,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                         </div>
                                     </div>
                                 </div>
+
                             <?php } ?>
                         </div>
                         <div class="px-3 pt-4" id="modal_lomba_individu">
@@ -830,7 +882,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                         echo "<th class='nama-cabang-lomba'>Nama Cabang Lomba</th>
                                 <th>Tanggal & Jam</th>
                                 <th>Jenis</th>
-                                <th>Mekaninsme</th>
+                                <th class='text-center'>Mekanisme</th>
                                 <th class='details'></th>";
                     else if ($data['judulHalaman'] == "Pameran - ICF 2021")
                         echo "<th style='width: 30%;'>Nama/Judul Karya</th>
@@ -872,7 +924,7 @@ $judul = explode(" - ", $data['judulHalaman']);
 
                                 <td class="daftar-seminar">
                                     <div class="half-content" style="text-align: center !important;">
-                                        <span class="centered-content"><a class="btn <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href="<?php echo ($status == "Open") ? "#modalToggle" . $key['id'] : ""; ?>" role="button">Sign Up</a></span>
+                                        <span class="centered-content"><a class="btn btn-style <?php echo ($status == "Open") ? "btn-outline-success btn-sign-up" : "btn-outline-secondary btn-disabled disabled"; ?>" data-bs-toggle="modal" href="<?php echo ($status == "Open") ? "#modalToggle" . $key['id'] : ""; ?>" role="button">Sign Up</a></span>
                                     </div>
                                 </td>
                             <?php } else if ($data['judulHalaman'] == "Lomba - ICF 2021") { ?>
@@ -898,6 +950,8 @@ $judul = explode(" - ", $data['judulHalaman']);
                                                         <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
                                                         <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
                                                     </svg></a></span>
+                                        <?php } else { ?>
+                                            <span class="centered-content"> - </span>
                                         <?php } ?>
                                     </div>
                                 </td>
@@ -905,7 +959,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                     <div class="half-content" style="text-align: center !important;">
                                         <?php
                                         $class_enabled = ($status == "Open") ? 'btn-outline-success btn-sign-up' : 'btn-outline-secondary btn-disabled disabled';
-                                        echo (($key['jenis'] == "Lomba Kelompok") ? '<form action="' . BASEURL . '/event/formLomba" method="post" class="centered-content"><button class="btn ' . $class_enabled . '" name="eid" value="' . $key['id'] . '">Sign Up</button></form>' : '<span class="centered-content"><button class="btn ' . $class_enabled . '" data-bs-toggle="modal" href="#modalToggle' . $key['id'] . '" role="button">Sign Up</button></span>');
+                                        echo (($key['jenis'] == "Lomba Kelompok") ? '<form action="' . BASEURL . '/event/formLomba" method="post" class="centered-content"><button class="btn btn-style ' . $class_enabled . '" name="eid" value="' . $key['id'] . '">Sign Up</button></form>' : '<span class="centered-content"><button class="btn btn-style ' . $class_enabled . '" data-bs-toggle="modal" href="#modalToggle' . $key['id'] . '" role="button">Sign Up</button></span>');
                                         ?>
                                     </div>
                                 </td>
@@ -920,9 +974,9 @@ $judul = explode(" - ", $data['judulHalaman']);
                                         <span class="centered-content"><?= $key['author']; ?></span>
                                     </div>
                                 </td>
-                                <td class="daftar-pameran">
+                                <td class="daftar-pameran deskripsi">
                                     <div class="half-content">
-                                        <span class="centered-content"><?= $key['deskripsi']; ?></span>
+                                        <span class="centered-content deskripsi text-justify"><?= $key['deskripsi']; ?></span>
                                     </div>
                                 </td>
                             <?php } ?>
@@ -935,7 +989,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                         <div class="modal fade <?= $page_name; ?>" id="modalToggle<?= $key['id']; ?>" aria-hidden="true" aria-labelledby="modalToggle<?= $key['id']; ?>Label" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered <?= $first_name; ?>">
                                 <div class="modal-content <?= $first_name; ?>">
-                                    <div class="modal-header <?= $page_name; ?>">
+                                    <div class="modal-header <?= $page_name; ?>" style="background-image: url('<?= BASECSS; ?>/img/uploadedEventImage/<?= $key['idgambar'] ?>.<?= $key['extension'] ?>');">
                                         <div class="modal-header-layer"></div>
                                         <div class="modal-header-content <?= $page_name; ?>">
                                             <button type="button" class="btn-close btn-modal-close" data-bs-dismiss="modal" aria-label="Close">

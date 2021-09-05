@@ -30,7 +30,7 @@
                 $result[0] = 'Zero';
             }
         ?>
-            <div class="col-10">
+            <div class="col-9">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading<?= $result[0]; ?>">
                         <button class="accordion-button collapsed  accordion-pertanyaan" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $result[0]; ?>" id-faq="<?= $key['id']; ?>" aria-expanded="false" aria-controls="collapse<?= $result[0]; ?>">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <button class="btn btn-altorange editFaq ms-5" id-faq="<?= $key['id']; ?>" data-bs-toggle="modal" data-bs-target="#modalFaq">edit</button>
                 <button class="btn btn-danger ms-5 deleteFaq" id-faq='<?= $key['id']; ?>' id="deleteFaq" data-bs-toggle="modal" data-bs-target="#modalFaq">delete</button>
             </div>
