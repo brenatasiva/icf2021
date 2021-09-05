@@ -10,6 +10,7 @@
                     $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
                 $data['judulHalaman'] = "Seminar - ICF 2021";
             } else if ($category === "lomba") {
+                Flasher::setFlash("Information", "Pendaftaran lomba dilakukan oleh satu perwakilan saja", "primary");
                 if (isset($_SESSION['username']))
                     $data['listRiwayat'] = $this->model('User_model')->riwayatPendaftaran($category);
                 $data['judulHalaman'] = "Lomba - ICF 2021";

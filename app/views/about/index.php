@@ -11,6 +11,46 @@
         .carousel-transparant {
             display: none;
         }
+
+        .about-intro-section{
+            position:relative;
+            height:auto;
+        }
+
+        .about-judul {
+            color: white;
+            font-size: 9vw;
+        }
+
+        .about-text {
+            color: white;
+            width: 80%;
+            font-family: 'Circular Std Thin' !important;
+            font-size: 4vw;
+        }
+
+        .div-text {
+            width: 100%;
+            position: absolute;
+            flex-direction:column; 
+            text-align:center;
+            height:100%;
+        }
+
+        .about-hero{
+            height:80vh;
+        }
+
+        .logo-about-hero{
+            width:15%;
+            aspect-ratio:1/1;
+        }
+
+        .speaker-list{
+            padding: 0 10% 5% 10%; 
+            background:#efece7 !important; 
+            margin: 0 !important;
+        }
     }
 
     .carousel-inner .carousel-item.active,
@@ -35,42 +75,65 @@
         .carousel-transparant {
             display: block;
         }
+
+        .about-intro-section{
+            position:relative;
+            height:auto;
+        }
+
+        .about-judul {
+            color: white;
+            font-size: 3vw;
+        }
+
+        .about-text {
+            color: white;
+            width: 40%;
+            font-family: 'Circular Std Thin' !important;
+            font-size: 1.2vw;
+        }
+
+        .div-text {
+            width: 100%;
+            position: absolute;
+            flex-direction:column; 
+            text-align:center;
+            height:100%;
+        }
+
+        .about-hero{
+            width:100%;
+        }
+
+        .logo-about-hero{
+            width:3%;
+            aspect-ratio:1/1;
+        }
+
+        .speaker-list{
+            padding: 0 20% 5% 20%; 
+            background:#efece7 !important; 
+            margin: 0 !important;
+        }
     }
 
     .carousel-inner .carousel-item-end,
     .carousel-inner .carousel-item-start {
         transform: translateX(0);
     }
+
+    
 </style>
-<div style='position:relative; height:auto;'>
-    <div class="divText d-flex justify-content-center align-items-center" style='flex-direction:column; text-align:center; height:100%;'>
-        <img style='width:40px;aspect-ratio:1/1;' src="<?= BASECSS; ?>/img/about/logoicf.png" alt="">
-        <h1 style='color:white;'><b>About ICF</b></h1>
-        <p class="aboutText">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
+<div class='about-intro-section'>
+    <div class="div-text d-flex justify-content-center align-items-center">
+        <img class='logo-about-hero' src="<?= BASECSS; ?>/img/about/logoicf.png" alt="">
+        <h1 class='about-judul'><b>About ICF</b></h1>
+        <p class="about-text">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
             Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
             Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
         <br><?php echo (isset($_SESSION['username'])) ? "" : "<a href='" . BASEURL . "/user/login' class='btn btn-outline-light'>Register Now</a>"; ?>
     </div>
-    <img src="<?= BASECSS; ?>/img/about/hero.jpg" width="100%">
-    <style type="text/css">
-        .aboutJudul {
-            color: white;
-            width: 100%;
-            font-size: 80px;
-            font-weight: bold !important;
-        }
-
-        .aboutText {
-            color: white;
-            width: 40%;
-            font-weight: lighter !important;
-        }
-
-        .divText {
-            width: 100%;
-            position: absolute;
-        }
-    </style>
+    <img src="<?= BASECSS; ?>/img/about/hero.jpg" class='about-hero'>
 </div>
 <!-- carousel -->
 <div class="container-fluid p-0 text-center">
@@ -119,7 +182,7 @@
         <h2 style="margin-left: 25px;"><b>The Speakers</b></h2>
     </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-4" style='padding: 0 20% 5% 20%; background:#efece7; margin: 0 !important;'>
+<div class="row row-cols-1 row-cols-md-3 g-4 speaker-list">
     <div class="col">
         <div class="card h-100">
             <div style='position:relative;'>
@@ -189,21 +252,133 @@
 </div>
 <!-- End of The Speakers -->
 
+<style>
+    @media (max-width: 767px) {
+        .comp-text{
+            height:4%; 
+            width:100%; 
+            position:absolute; 
+            top:0;
+        }
 
+        .comp-pubg{
+            height:48%;
+            width:100%; 
+            position:absolute; 
+            top:4%;
+        }
+
+        .comp-pubg-img{
+            height:15%; 
+            background: url("<?= BASECSS; ?>/img/about/pubg.jpg"); 
+            background-size: cover;
+        }
+
+        .comp-cd{
+            height:45%; 
+            width:100%; 
+            position:absolute; 
+            top:52%;
+        }
+
+        .comp-cd-img{
+            height:15%; 
+            background: url("<?= BASECSS; ?>/img/about/drawing.jpg"); 
+            background-size: cover; 
+            background-position:0% 40%;
+        }
+
+        .about-comp-section{
+            height: auto; 
+            width:100%; 
+            position: relative;
+            display:flex;     
+        }
+
+        .cover-comp-img{
+            width:100%; 
+            height:15%; 
+            position: absolute; 
+            top:0; 
+            background-color: black; 
+            opacity:.5;
+        }
+
+        .comp-bg{
+            height:100%;
+        }
+    }
+
+    /* medium and up screens */
+    @media (min-width: 768px) {
+        .comp-text{
+            height:12.5%; 
+            width:100%; 
+            position:absolute; 
+            top:0;
+        }
+
+        .comp-pubg{
+            height:42.5%;
+            width:100%; 
+            position:absolute; 
+            top:12.5%;
+        }
+
+        .comp-pubg-img{
+            height:35%; 
+            background: url("<?= BASECSS; ?>/img/about/pubg.jpg"); 
+            background-size: cover;
+        }
+
+        .comp-cd{
+            height:45%; 
+            width:100%; 
+            position:absolute; 
+            top:55%;
+        }
+
+        .comp-cd-img{
+            height:35%; 
+            background: url("<?= BASECSS; ?>/img/about/drawing.jpg"); 
+            background-size: cover; 
+            background-position:0% 40%;
+        }
+
+        .about-comp-section{
+            height: auto; 
+            width:100%; 
+            position: relative;
+        }
+
+        .cover-comp-img{
+            width:100%; 
+            height:35%; 
+            position: absolute; 
+            top:0; 
+            background-color: black; 
+            opacity:.5;
+        }
+
+        .comp-bg{
+            width:100%;
+        }
+    }
+</style>
 <!-- Competitions -->
-<div style='height: auto; width:100%; position: relative;'>
-    <img src="<?= BASECSS; ?>/img/about/competition.jpg" width='100%'>
-    <div style='height:12.5%; width:100%; position:absolute; top:0;' class='d-flex justify-content-center align-items-center'>
+<div class='about-comp-section'>
+    <img src="<?= BASECSS; ?>/img/about/competition.jpg" class='comp-bg'>
+    <div class='d-flex justify-content-center align-items-center comp-text'>
         <h1 style='color:white;'><b>Competitions</b></h1>
     </div>
-    <div style='height:42.5%; width:100%; position:absolute; top:12.5%;'>
-        <div style='height:35%; background: url("<?= BASECSS; ?>/img/about/pubg.jpg"); background-size: cover;' class='d-flex justify-content-center align-items-center'>
-            <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
+    <div class='comp-pubg'>
+        <div class='d-flex justify-content-center align-items-center comp-pubg-img'>
+            <div class='cover-comp-img'></div>
             <img style='position:relative;' src="<?= BASECSS; ?>/img/about/pubg.png" alt="">
-            <h1 style='position:relative; color:white;'><b>PUBG Battles</b></h1>
+            <h1 style='position:relative; color:white; margin:0;'><b>PUBG Battles</b></h1>
         </div>
         <div style='margin: 0 15%; width:70%;'>
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/pubg1.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
@@ -222,25 +397,25 @@
             </div>
         </div>
     </div>
-    <div style='height:45%; width:100%; position:absolute; top:55%;'>
-        <div style='height:35%; background: url("<?= BASECSS; ?>/img/about/drawing.jpg"); background-size: cover; background-position:0% 40%;' class='d-flex justify-content-center align-items-center'>
-            <div style='width:100%; height:35%; position: absolute; top:0; background-color: black; opacity:.5;'></div>
+    <div class='comp-cd'>
+        <div class='d-flex justify-content-center align-items-center comp-cd-img'>
+            <div class='cover-comp-img'></div>
             <img style='position:relative;' src="<?= BASECSS; ?>/img/about/pencil.png" alt="">
-            <h1 style='position:relative; color:white;'><b>Character Design<br>Competition</b></h1>
+            <h1 style='position:relative; color:white; margin:0;'><b>Character Design<br>Competition</b></h1>
         </div>
         <div style='margin: 0 15%; width:70%;'>
-            <div class="row">
-                <div class="col" style='margin: 0 3%'>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/chardes1.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color:gold;'><b>1<sup>st</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 500.000</h3>
                 </div>
-                <div class="col" style='margin: 0 3%'>
+                <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/chardes2.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: white;'><b>2<sup>nd</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 250.000</h3>
                 </div>
-                <div class="col" style='margin: 0 3%'>
+                <div class="col">
                     <img src="<?= BASECSS; ?>/img/about/chardes3.png" style='width:100%; aspect-ratio:1/1;' alt="">
                     <h1 style='text-align:center; color: brown;'><b>3<sup>rd</sup> Place</b></h1>
                     <h3 style='text-align:center; color:white;'>Rp. 125.000</h3>
