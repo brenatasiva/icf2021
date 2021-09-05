@@ -72,7 +72,7 @@
                         <input type="text" class="form-control user-input" id="code" name="code" placeholder="Code" required>
                     </div>
                     <div class="pb-2">
-                        <input type="password" class="form-control user-input" id="password1" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control user-input" id="password1" name="password" placeholder="New Password" required>
                     </div>
                     <div class="pb-2">
                         <input type="password" class="form-control user-input" id="password2" name="repassword" placeholder="Re-type Password" required>
@@ -85,3 +85,17 @@
         </div>
     </div>
 </div>
+<script>
+    // $("body").on('click', '.btn-eye', function() {
+    //     var passType = $(this).next().attr("type");
+    //     if (passType == "password") {
+    //         $(this).next().attr("type", "text");
+    //         $(this).children("#eyeShow").addClass("show");
+    //         $(this).children("#eyeClose").removeClass("show");
+    //     } else {
+    //         $(this).next().attr("type", "password");
+    //         $(this).children("#eyeShow").removeClass("show");
+    //         $(this).children("#eyeClose").addClass("show");
+    //     }
+    // });
+</script>

@@ -39,6 +39,7 @@
         overflow-y: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
+        text-align: justify;
     }
 
     .syarat::-webkit-scrollbar {
@@ -103,12 +104,6 @@
         position: relative;
     }
 
-    /*.container-link-drive {
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        width: 100%;
-    }*/
     .text-link-drive {
         position: absolute;
         left: -100px;

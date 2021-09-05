@@ -1,6 +1,6 @@
 <style type="text/css">
     .faq-header-bg {
-        background-image: url("<?= BASECSS; ?>/img/faq/judul_faq_BG.jpg");
+        background-image: url("<?= BASECSS; ?>/img/event/judul_event_BG.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -117,7 +117,6 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="inner-container">
         <div class="accordion" id="accordionExample">

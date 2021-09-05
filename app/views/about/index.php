@@ -49,7 +49,7 @@
         <p class="aboutText">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
             Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
             Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
-        <br><button type="button" class="btn btn-outline-light">Register Now</button>
+        <br><?php echo (isset($_SESSION['username'])) ? "" : "<a href='" . BASEURL . "/user/login' class='btn btn-outline-light'>Register Now</a>"; ?>
     </div>
     <img src="<?= BASECSS; ?>/img/about/hero.jpg" width="100%">
     <style type="text/css">
@@ -57,13 +57,13 @@
             color: white;
             width: 100%;
             font-size: 80px;
-            font-family: 'Circular Std Bold' !important;
+            font-weight: bold !important;
         }
 
         .aboutText {
             color: white;
             width: 40%;
-            font-family: 'Circular Std Thin' !important;
+            font-weight: lighter !important;
         }
 
         .divText {
@@ -84,7 +84,7 @@
                 ?>
                         <div class="carousel-item active">
                             <div class="col-md-4">
-                                <div class="card" style="border-radius: 0px;">
+                                <div class="card border-0">
                                     <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                     <?php } else { ?>
                         <div class="carousel-item">
                             <div class="col-md-4">
-                                <div class="card">
+                                <div class="card border-0">
                                     <img src="<?= BASECSS; ?>/img/home/home_<?= $i + 1 ?>.JPG" class="img-fluid">
                                 </div>
                             </div>

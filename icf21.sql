@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2021 at 05:53 AM
+-- Generation Time: Sep 04, 2021 at 09:11 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -31,11 +31,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `anggota` (
   `id` int(11) NOT NULL,
   `pendaftar_id` int(11) DEFAULT NULL,
-  `nama` varchar(45) NOT NULL,
-  `nrp` varchar(10) DEFAULT NULL,
+  `nama` text NOT NULL,
+  `nrp` char(9) DEFAULT NULL,
   `no_hp` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `id_game` varchar(45) NOT NULL
+  `email` text NOT NULL,
+  `id_game` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -58,17 +58,17 @@ INSERT INTO `anggota` (`id`, `pendaftar_id`, `nama`, `nrp`, `no_hp`, `email`, `i
 
 CREATE TABLE `event` (
   `id` int(11) NOT NULL,
-  `nama` varchar(45) NOT NULL,
-  `tanggal_mulai` date DEFAULT NULL,
-  `tanggal_selesai` date DEFAULT NULL,
+  `nama` text NOT NULL,
+  `tanggal_mulai` datetime DEFAULT NULL,
+  `tanggal_selesai` datetime DEFAULT NULL,
   `deskripsi` text,
-  `author` varchar(255) DEFAULT NULL,
+  `author` text,
   `syarat_ketentuan` text,
-  `link_wa` varchar(255) DEFAULT NULL,
-  `link_zoom` varchar(255) DEFAULT NULL,
-  `id_zoom` varchar(255) DEFAULT NULL,
-  `pass_zoom` varchar(255) DEFAULT NULL,
-  `link_mekanisme` varchar(255) DEFAULT NULL,
+  `link_wa` text,
+  `link_zoom` text,
+  `id_zoom` text,
+  `pass_zoom` text,
+  `link_mekanisme` text,
   `jenis_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -77,10 +77,10 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `nama`, `tanggal_mulai`, `tanggal_selesai`, `deskripsi`, `author`, `syarat_ketentuan`, `link_wa`, `link_zoom`, `id_zoom`, `pass_zoom`, `link_mekanisme`, `jenis_id`) VALUES
-(1, 'Mona Lisa', '2021-08-01', '2021-08-01', 'grrgsd', 'Leonardo da Vinci', '', '', '', NULL, NULL, NULL, 2),
-(2, 'Seminar IoT', '2021-08-27', '2021-09-10', 'lorem lorem', 'Avianto Tiyo', '', '', '', '', '', NULL, 1),
-(3, 'PUBG Competition', '2021-08-31', '2021-09-23', 'lomba dor2', '', '', '', '', '', '', NULL, 3),
-(4, 'Character Design', '2021-08-28', '2021-08-30', 'gambar 3d', '', '', '', '', NULL, NULL, NULL, 4);
+(1, 'Mona Lisa', '2021-08-01 00:00:00', '2021-08-01 00:00:00', 'grrgsd', 'Leonardo da Vinci', '', '', '', NULL, NULL, NULL, 2),
+(2, 'Seminar IoT', '2021-08-27 00:00:00', '2021-09-02 00:00:00', 'lorem lorem', 'Avianto Tiyo', '', '', '', '', '', NULL, 1),
+(3, 'PUBG Competition', '2021-08-31 00:00:00', '2021-09-23 00:00:00', 'lomba dor2', '', '', '', '', '', '', NULL, 3),
+(4, 'Character Design', '2021-08-28 00:00:00', '2021-08-30 00:00:00', 'gambar 3d', '', '', '', '', NULL, NULL, NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -148,9 +148,9 @@ CREATE TABLE `pendaftar` (
   `event_id` int(11) NOT NULL,
   `tanggal_daftar` date NOT NULL,
   `status` enum('Pending','Diterima','Ditolak') NOT NULL DEFAULT 'Pending',
-  `nama_tim` varchar(45) DEFAULT NULL,
-  `id_game` varchar(45) DEFAULT NULL,
-  `link_drive` varchar(255) DEFAULT NULL
+  `nama_tim` text,
+  `id_game` text,
+  `link_drive` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -174,13 +174,13 @@ INSERT INTO `pendaftar` (`id`, `user_username`, `event_id`, `tanggal_daftar`, `s
 
 CREATE TABLE `user` (
   `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `nama` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `no_hp` varchar(15) NOT NULL,
-  `nrp` varchar(10) DEFAULT NULL,
-  `salt` varchar(55) NOT NULL,
-  `code` varchar(8) NOT NULL
+  `password` text NOT NULL,
+  `nama` text NOT NULL,
+  `email` text NOT NULL,
+  `no_hp` varchar(45) NOT NULL,
+  `nrp` char(9) DEFAULT NULL,
+  `salt` text NOT NULL,
+  `code` char(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -188,10 +188,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`, `nama`, `email`, `no_hp`, `nrp`, `salt`, `code`) VALUES
-('dummy1', '4eb8211165d8a4fa60fc8c5acf66fb53f90f5190', 'dummy1', 'brenatasiva@gmail.com', '08123456789', '123', 'lmtau', '50813252'),
+('dummy1', 'd929ee365c1ca8ee669f9d29a2f607f5a8b4187b', 'dummy1', 'brenatasiva@gmail.com', '08123456789', '123', 'ms2tr', ''),
 ('dummy2', 'd8d30c6b86825ec6db7b4a3c7e1fc4689a19bbe3', 'dummy2', 'dummy2@gmail.com', '08123456789', '123456789', 'flh4r', ''),
 ('dummy3', '00c4eea8d467cee28c59e508920b30baf60e0d25', 'dummy3', 'dummy3@gmail.com', '081333', '00000', 'flh4r', ''),
-('dummy4', 'bdeb75a1fad64ee027fdde3f41861d8256749131', 'dummy4', 'brenatasiva@gmail.com', '081333', '', 'flh4r', '38702117');
+('dummy4', 'bdeb75a1fad64ee027fdde3f41861d8256749131', 'dummy4', 'brenatasiva@gmail.com', '081333', '', 'flh4r', '');
 
 --
 -- Indexes for dumped tables

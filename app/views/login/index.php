@@ -32,6 +32,52 @@
         max-width: 450px !important;
     }
 
+    .btn-eye {
+        position: absolute;
+        color: white;
+        background: transparent;
+        border: 0;
+        z-index: 2;
+        top: 10px;
+        right: 13px;
+    }
+
+    .bi-eye,
+    .bi-eye-slash {
+        display: none;
+    }
+
+    .bi-eye.show {
+        display: block;
+    }
+
+    .bi-eye-slash.show {
+        display: block;
+    }
+
+    .btn-eye {
+        position: absolute;
+        color: white;
+        background: transparent;
+        border: 0;
+        z-index: 2;
+        top: 10px;
+        right: 13px;
+    }
+
+    .bi-eye,
+    .bi-eye-slash {
+        display: none;
+    }
+
+    .bi-eye.show {
+        display: block;
+    }
+
+    .bi-eye-slash.show {
+        display: block;
+    }
+
     .btn-user-submit {
         width: 100%;
         color: #2b313d;
@@ -68,8 +114,19 @@
                     <div class="pb-4">
                         <input type="text" class="form-control user-input" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Username">
                     </div>
-                    <div class="pb-2">
-                        <input type="password" class="form-control user-input" id="exampleInputPassword1" name="password" placeholder="Password">
+                    <div class="pb-2" style="position: relative;">
+                        <button type="button" class="btn-eye">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="eyeShow" class="bi bi-eye" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="eyeClose" class="bi bi-eye-slash show" viewBox="0 0 16 16">
+                                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z" />
+                                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z" />
+                                <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z" />
+                            </svg>
+                        </button>
+                        <input type="password" class="form-control user-input" style="padding-right: 3rem;" id="loginPassword" name="password" placeholder="Password">
                     </div>
                     <div class="pb-3 d-flex justify-content-end">
                         <a data-bs-toggle="modal" role="button" href="#modalToggle" style="color: orange !important;">Forgot Password?</a>
@@ -95,27 +152,14 @@
             </div>
             <div class="modal-body">
                 <div id="reset1">
-                    <div class="input-group mb-3" id="modalReset">
-                        <input type="text" class="form-control" placeholder="username" aria-describedby="button-addon2" id="usernameReset" required>
-                        <button type="button" class="btn btn-primary" id="buttonSend">Send</button><br>
-                    </div>
+                    <form action="<?= BASEURL; ?>/user/requestReset" method="post">
+                        <div class="input-group mb-3" id="modalReset">
+                            <input type="text" class="form-control" placeholder="username" name="username" aria-describedby="button-addon2" id="usernameReset" required>
+                            <button type="submit" class="btn btn-primary" id="buttonSend">Send</button><br>
+                        </div>
+                    </form>
                     <div class="pt-4 pb-5 text-dark d-flex justify-content-center">
                         <label class="form-label">Already have the code? <a href="<?= BASEURL; ?>/user/reset" style="color: orange !important;" id="insertCode">Insert Code</a></label>
-                    </div>
-                </div>
-                <div id="reset2">
-                    <div class="input-group mb-3" id="modalReset2">
-                        <form action="<?= BASEURL; ?>/user/reset" method="POST">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
-                                <input type="text" class="form-control" readonly name="username" id="modalUsername">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
-                                <input type="text" class="form-control" readonly id="modalEmail">
-                            </div>
-                            <input type="text" class="form-control" name="code" placeholder="code" aria-describedby="button-addon2" id="codeReset" required>
-                            <button type="submit" class="btn btn-primary" id="buttonReset">Reset</button>
-                        </form>
-
                     </div>
                 </div>
             </div>
@@ -126,31 +170,24 @@
     </div>
 </div>
 <script type="text/javascript">
-    $('#reset2').hide();
-    var username = "";
+    $('#buttonSend').click(function() {
+        var btn = $(this);
+        btn.prop('disabled', true);
+        setTimeout(function() {
+            btn.prop('disabled', false);
+        }, 15000);
+    });
 
-    $('body').on('click', '#buttonSend', function() {
-
-        username = $('#usernameReset').val();
-
-        if (username != "") {
-            $.ajax({
-                method: 'post',
-                url: '<?= BASEURL; ?>/user/requestReset',
-                data: {
-                    username: username
-                },
-                dataType: 'json',
-                success: function(data) {
-                    // $('#modalToggle').modal('hide');
-                    // $('#reset1').hide();
-                    // $('#reset2').show();
-                    // $('.modal-header').html("Please check your email for confirmation code");
-                    // $('#modalUsername').val(data[0]['username']);
-                    // $('#modalEmail').val(data[0]['email']);
-                    window.location.href = '<?= BASEURL; ?>/user/reset';
-                }
-            });
+    $("body").on('click', '.btn-eye', function() {
+        var passType = $(this).next().attr("type");
+        if (passType == "password") {
+            $(this).next().attr("type", "text");
+            $(this).children("#eyeShow").addClass("show");
+            $(this).children("#eyeClose").removeClass("show");
+        } else {
+            $(this).next().attr("type", "password");
+            $(this).children("#eyeShow").removeClass("show");
+            $(this).children("#eyeClose").addClass("show");
         }
     });
 </script>
