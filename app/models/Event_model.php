@@ -44,9 +44,9 @@ class Event_model
 
     public function getEventPerCategory($data)
     {
-        $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where j.jenis like :jenis";
+        $sql = "SELECT e.*, j.jenis from event e inner join jenis j on e.jenis_id = j.id where j.jenis like :jenis order by e.id";
         if ($data === 'seminar') {
-            $sql = "SELECT e.*, j.jenis, g.id as idgambar, g.extension from event e inner join jenis j on e.jenis_id = j.id inner join gambar g on g.event_id = e.id where j.jenis like :jenis";
+            $sql = "SELECT e.*, j.jenis, g.id as idgambar, g.extension from event e inner join jenis j on e.jenis_id = j.id inner join gambar g on g.event_id = e.id where j.jenis like :jenis order by e.id";
         }
         $this->db->query($sql);
         $this->db->bind('jenis', "%$data%");
@@ -117,8 +117,7 @@ class Event_model
 
     public function updateEvent($data, $files)
     {
-
-        $sql = "UPDATE event SET nama = :nama, tanggal_mulai = :tgl_mulai, tanggal_selesai = :tgl_selesai, deskripsi = :deskripsi, author = :author, syarat_ketentuan = :syarat, link_wa = :linkwa, link_zoom = :linkzoom, id_zoom = :idzoom, pass_zoom = :passzoom, jenis_id = :jenis_id WHERE id = :id";
+        $sql = "UPDATE event SET nama = :nama, tanggal_mulai = :tgl_mulai, tanggal_selesai = :tgl_selesai, deskripsi = :deskripsi, author = :author, syarat_ketentuan = :syarat, link_wa = :linkwa, link_zoom = :linkzoom, id_zoom = :idzoom, pass_zoom = :passzoom, jenis_id = :jenis_id, link_mekanisme = :linkmekanisme WHERE id = :id";
         $this->db->query($sql);
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('tgl_mulai', $data['tgl_mulai']);
@@ -131,6 +130,7 @@ class Event_model
         $this->db->bind('idzoom', $data['idzoom']);
         $this->db->bind('passzoom', $data['passzoom']);
         $this->db->bind('jenis_id', $data['jenis_id']);
+        $this->db->bind('linkmekanisme', $data['linkmekanisme']);
         $this->db->bind('id', $data['eid']);
         $this->db->execute();
         if ($files['poster']['error'][0] != 4) {
@@ -147,8 +147,8 @@ class Event_model
                 $this->db->query($sql);
                 $this->db->bind('idgambar', $idgambar);
                 $this->db->execute();
-                if (file_exists("img/uploadedEventImage/$nama_file")) {
-                    unlink("img/uploadedEventImage/$nama_file");
+                if (file_exists(BASECSS . "/img/uploadedEventImage/$nama_file")) {
+                    unlink(BASECSS . "/img/uploadedEventImage/$nama_file");
                 }
             }
         }

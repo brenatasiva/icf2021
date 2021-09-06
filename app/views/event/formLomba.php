@@ -205,7 +205,7 @@
                 <h1 class="title-lomba circular-icf"><?= $data['event']['nama']; ?> Registration<br>Syarat & Ketentuan</h1>
             </div>
             <div class="container-syarat-ketentuan">
-                <div class="syarat-ketentuan ps-2 pe-2">
+                <div class="syarat-ketentuan ps-2 pe-2" onmouseover="scrolling(this)">
                     <?= $data['event']['syarat_ketentuan']; ?>
                 </div>
             </div>
@@ -262,6 +262,7 @@
                                 <input type="text" class="form-control input-link-drive" id="linkDrive" name="linkDrive" required>
                             </div>
                             <div style="display: flex; justify-content: center;">
+                                <input type="hidden" name="jns" value="lomba">
                                 <button type="input" class="btn btn-primary btn-lomba-submit" name="eid" value="<?= $data['event']['id']; ?>">SUBMIT</button>
                             </div>
                         </div>
@@ -272,3 +273,6 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function scrolling(obj) { obj.setActive(); }
+</script>

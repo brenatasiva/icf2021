@@ -10,7 +10,9 @@ if ($_SESSION['username'] != 'adminduongz') {
         <td>Username</td>
         <td>Nama</td>
         <td>Email</td>
+        <td>NRP</td>
         <td>Nomor Hp</td>
+        <td>Code<td>
     </thead>
     <tbody>
         <?php foreach ($data['listAllUser'] as $key) : ?>
@@ -18,7 +20,9 @@ if ($_SESSION['username'] != 'adminduongz') {
                 <td><?= $key['username']; ?></td>
                 <td><?= $key['nama']; ?></td>
                 <td><?= $key['email']; ?></td>
+                <td><?= $key['nrp']; ?></td>
                 <td><?= $key['no_hp']; ?></td>
+                <td> <?= $key['code']; ?> </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

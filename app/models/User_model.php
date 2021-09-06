@@ -86,7 +86,7 @@ class User_model
 
     public function checkUsername($data)
     {
-        $sql = "SELECT ('username') from user where username = :username";
+        $sql = "SELECT username from user where username = :username";
         $this->db->query($sql);
         $this->db->bind('username', $data['username']);
         $this->db->execute();
@@ -95,7 +95,6 @@ class User_model
 
     public function insertUser($data)
     {
-
         $salt = $this->generateSalt();
         $saltedPwd = $this->generateSaltedPwd($data['password'], $salt);
 
@@ -249,34 +248,44 @@ class User_model
 
     public function requestReset($data)
     {
-        $code = rand(10000000, 99999999);
-        $sql = "UPDATE user set code = :code where username = :username";
-        $this->db->query($sql);
-        $this->db->bind('code', $code);
-        $this->db->bind('username', $data['username']);
-        $this->db->execute();
-
-        $sql = "SELECT username, email from user where username = :username";
+        $sql = "SELECT username, email, nama from user where username = :username";
         $this->db->query($sql);
         $this->db->bind('username', $data['username']);
-
         $data = $this->db->resultSet();
 
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = "true";
-        $mail->SMTPSecure = "tls";
-        $mail->Port = "587";
-        $mail->Username = "si.icf.ubaya@gmail.com";
-        $mail->Password = "KerjaTerusHiyaHiya";
-        $mail->Subject = "ICF 2021 - Password Reset";
-        $mail->setFrom("si.icf.ubaya@gmail.com");
-        $mail->Body = '' . $code . '';
-        $mail->addAddress($data[0]['email']);
-        $mail->Send();
-        $mail->smtpClose();
+        if ($data != null){
+            $code = rand(10000000, 99999999);
+            $sql = "UPDATE user set code = :code where username = :username";
+            $this->db->query($sql);
+            $this->db->bind('code', $code);
+            $this->db->bind('username', $data[0]['username']);
+            $this->db->execute();
 
+            $mail = new PHPMailer();
+            $mail->isSMTP();
+            $mail->IsHTML(true); 
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = "true";
+            $mail->SMTPSecure = "tls";
+            $mail->Port = "587";
+            $mail->Username = "si.icf.ubaya@gmail.com";
+            $mail->Password = "KerjaTerusHiyaHiya";
+            $mail->Subject = "ICF 2021 - Password Reset";
+            $mail->setFrom("si.icf.ubaya@gmail.com");
+            $mail->Body = '<p>Halo '. $data[0]['nama'] .',</p>
+<p>Kami menerima permintaan untuk Reset Password terhadap username Anda melalui
+Website kami http://icf.ifubaya.id/index.php/user/reset </p>
+Kode verifikasi anda:<br>
+<b>' . $code . '</b>
+<p>Jika bukan Anda yang meminta kode ini, ada kemungkinan bahwa orang lain mencoba
+mengakses username Anda. Bila hal ini terjadi lakukan email balasan pada email ini.<p><br>
+
+Hormat kami,<br>
+SI ICF 2021';
+            $mail->addAddress($data[0]['email']);
+            $mail->Send();
+            $mail->smtpClose();
+        }
         return $data;
     }
 

@@ -108,19 +108,115 @@
             height: 40vh;
         }
     }
+
+    .title-map {
+        font-size: 3rem;
+    }
+
+    .map-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 10% 40px 10%;
+    }
+
+    .icon-map {
+        width: 70px;
+    }
+
+    @media only screen and (max-width: 620px) {
+        .map-header {
+            flex-direction: column;
+        }
+        .icon-map {
+            width: 50px;
+            flex-shrink: 0;
+        }
+    }
+
+</style>
+
+<style>
+    @media (max-width: 767px) {
+        .home-hero-img {
+            width:250%;
+            margin-left:-100%;
+        }
+
+        .home-hero-gradient {
+            width:100%; position: absolute; top:0; left:0;
+            background: rgb(239, 236, 231);
+            background: linear-gradient(90deg, rgba(239, 236, 231,1) 0%, 
+            rgba(239, 236, 231,1) 27%, 
+            rgba(239, 236, 231,0.6699054621848739) 40%, 
+            rgba(239, 236, 231,0) 60%, rgba(239, 236, 231,0) 100%);
+        }
+
+        .home-hero-text-container{
+            position: absolute; 
+            top:0; 
+            justify-content: end !important;
+            flex-direction: column; 
+            margin-left: 2%; 
+            width:auto;
+            padding-bottom: 6%;
+        }
+
+        .home-hero-text{
+            height:25%;
+        }
+        
+        .desc-header {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            font-family: "circular icf";
+            font-weight: 900;
+        }
+
+        .desc-isi {
+            padding-bottom: 100px;
+            line-height: 1.5rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .home-hero-img {
+            width:70%;
+        }
+
+        .home-hero-gradient {
+            width:100%; position: absolute; top:0; left:0;
+            background: rgb(239, 236, 231);
+            background: linear-gradient(90deg, rgba(239, 236, 231,1) 0%, 
+            rgba(239, 236, 231,1) 43%, 
+            rgba(239, 236, 231,0.6699054621848739) 56%, 
+            rgba(239, 236, 231,0) 75%, rgba(239, 236, 231,0) 100%);
+        }
+
+        .home-hero-text-container{
+            position: absolute; 
+            top:0; 
+            flex-direction: column; 
+            justify-content: center !important;
+            margin-left: 15%; 
+            width:auto;
+        }
+
+        .home-hero-text{
+            height:40%;
+        }
+    }
 </style>
 
 <!-- START OF HERO -->
 <div class="h-auto" style='width:100%; position:relative;'>
     <div style="text-align:right; position: relative;">
-        <img src="<?= BASECSS; ?>/img/home/hero-main.jpg" alt="" style="width:70%;">
-        <div class='h-100 ' style="width:100%; position: absolute; top:0; left:0;
-            background: rgb(239, 236, 231);
-            background: linear-gradient(90deg, rgba(239, 236, 231,1) 0%, rgba(239, 236, 231,1) 43%, rgba(239, 236, 231,0.6699054621848739) 56%, rgba(239, 236, 231,0) 75%, rgba(239, 236, 231,0) 100%);">
-        </div>
+        <img src="<?= BASECSS; ?>/img/home/hero-main.jpg" alt="" class="home-hero-img">
+        <div class='h-100 home-hero-gradient'></div>
     </div>
-    <div class='h-100 d-flex justify-content-center container' style='position: absolute; top:0; align-items:flex-start !important; flex-direction: column; margin-left: 15%; width:auto;'>
-        <img src="<?= BASECSS; ?>/img/home/welcome.png" style='height:40%;' alt="">
+    <div class='h-100 d-flex justify-content-center container home-hero-text-container'>
+        <img src="<?= BASECSS; ?>/img/home/welcome.png" class='home-hero-text' alt="">
     </div>
 </div>
 <!-- END OF HERO -->
@@ -133,14 +229,8 @@
         </div>
         <div class="col-lg-6">
             <div class="text-center p-3 video-desc">
-                <h1 class="display-1 text-light">INTO THE UNNAMED LAND</h1>
-                <p class="h6 text-light">Di tahun 2020 kemarin, seluruh masyarakat Indonesia diwajibkan untuk melakukan segala aktivitas di rumah saja.
-                    Perubahan yang drastis tersebut membuat beberapa orang tertekan dan sulit untuk beradaptasi. Di tengah ketidakpastian serta hal-hal baru,
-                    tidak sedikit orang yang diwajibkan untuk membuat sebuah metode baru untuk menghadapi era asing yang baru ini. Banyak kegiatan sekarang beralih menjadi online.
-                    ICF kali ini mengangkat tema "Into The Unnamed Land" yang terinspirasi dari lingkungan sekitar sekarang ini. Dari segi Informatika hingga Multimedia,
-                    masyarakat di era baru seperti sekarang ini harus keluar dari zona nyaman dan mempelajari skill-skill yang dibutuhkan seperti
-                    penggunaan platform online untuk proses belajar-mengajar, pemanfaatan platform digital untuk menyampaikan suatu pekerjaan,
-                    bahkan hingga skill basic seperti cara mengoperasikan software akan sangat diperlukan.</p>
+                <h1 class="display-1 text-light desc-header">INTO THE UNNAMED LAND</h1>
+                <p class="h6 text-light desc-isi">Di tahun 2020 kemarin, seluruh masyarakat Indonesia diwajibkan untuk melakukan segala aktivitas di rumah saja. Di tengah ketidakpastian serta hal-hal baru, tidak sedikit orang yang diwajibkan untuk membuat sebuah metode baru untuk menghadapi era asing yang baru ini. ICF kali ini mengangkat tema "Into The Unnamed Land" yang terinspirasi dari lingkungan sekitar sekarang ini. Dari segi Informatika hingga Multimedia, masyarakat di era baru seperti sekarang ini harus keluar dari zona nyaman dan mempelajari skill-skill yang dibutuhkan.</p>
             </div>
         </div>
         <div class="col-lg-5 d-flex utub">
@@ -312,8 +402,8 @@
 
 <!-- START OF LOCATION -->
 <div class="mapouter">
-    <div class="bg-location d-flex justify-content-center align-items-center">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90px" height="90px;" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;fill:#f36f25" xml:space="preserve">
+    <div class="bg-location map-header">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90px" x="0px" y="0px" viewBox="0 0 512 512" class="icon-map" style="fill:#f36f25" xml:space="preserve">
             <g>
                 <g>
                     <path d="M256,0C161.896,0,85.333,76.563,85.333,170.667c0,28.25,7.063,56.26,20.49,81.104L246.667,506.5
@@ -324,8 +414,8 @@
             </g>
         </svg>
         <div>
-            <h1 style="font-weight:bold;color:#efece7;font-family:'Circular Std Bold';font-size: 5rem;">Universitas Surabaya</h1>
-            <p style="color:#efece7;line-height:50%;font-size:13px;font-family:'Circular Std Thin'">Jl. Raya Rungkut, Kali Rungkut, Kec. Rungkut, Kota SBY, Jawa Timur 60293</p>
+            <h1 class="circular-icf text-center" style="font-weight:bold;color:#efece7;">Universitas Surabaya</h1>
+            <p class="circular-icf text-center" style="color:#efece7;font-size:13px; margin: 0;">Jl. Raya Rungkut, Kali Rungkut, Kec. Rungkut, Kota SBY, Jawa Timur 60293</p>
         </div>
 
     </div>
@@ -353,7 +443,6 @@
             <style>
                 .bg-location {
                     width: 100%;
-                    height: 150px;
                 }
             </style>
             <style>
@@ -366,21 +455,3 @@
     </div>
 </div>
 <!-- END OF LOCATION -->
-
-<script>
-    let items = document.querySelectorAll('.carousel .carousel-item')
-
-    items.forEach((el) => {
-        const minPerSlide = 3
-        let next = el.nextElementSibling
-        for (var i = 1; i < minPerSlide; i++) {
-            if (!next) {
-                // wrap carousel by using first child
-                next = items[0]
-            }
-            let cloneChild = next.cloneNode(true)
-            el.appendChild(cloneChild.children[0])
-            next = next.nextElementSibling
-        }
-    })
-</script>

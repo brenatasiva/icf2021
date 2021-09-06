@@ -25,7 +25,7 @@
         .about-text {
             color: white;
             width: 80%;
-            font-family: 'Circular Std Thin' !important;
+            font-family: 'Circular Icf' !important;
             font-size: 4vw;
         }
 
@@ -89,7 +89,7 @@
         .about-text {
             color: white;
             width: 40%;
-            font-family: 'Circular Std Thin' !important;
+            font-family: 'Circular Icf' !important;
             font-size: 1.2vw;
         }
 
@@ -129,7 +129,7 @@
         <p class="about-text">ICF (Informatics Creative Festival) adalah sebuah festival yang memamerkan hasil-hasil karya mahasiswa dari Informatika Universitas Surabaya.
             Tiap tahunnya, ICF mengenalkan desain dan pemrograman melalui pameran karya-karya mahasiswa akhir teknik informatika UBAYA.
             Selain itu, ICF juga ada berbagai macam seminar dan lomba untuk menambah pengetahuan dan mengasah kemampuan para peserta sesuai dengan perkembangan teknologi.</p>
-        <br><?php echo (isset($_SESSION['username'])) ? "" : "<a href='" . BASEURL . "/user/login' class='btn btn-outline-light'>Register Now</a>"; ?>
+        <br><?php echo (isset($_SESSION['username'])) ? "" : "<a href='" . BASEURL . "/user/login' class='btn btn-outline-light'>Register Now</a>"; ?> 
     </div>
     <img src="<?= BASECSS; ?>/img/about/hero.jpg" class='about-hero'>
 </div>
@@ -181,8 +181,8 @@
 <div class="row row-cols-1 row-cols-md-3 g-4 speaker-list">
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker1.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Liliana</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker1.jpg" class="card-img-top" alt="Liliana">
+                <h2 class="card-title speaker-name"><b>Liliana</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
                 <p class="card-text">Informatics: Link & Think</p>
@@ -191,8 +191,8 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker2.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Fini Charisa</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker2.jpg" class="card-img-top" alt="Fini Charisa">
+                <h2 class="card-title speaker-name"><b>Fini Charisa</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
                 <p class="card-text">Digitalize your roadmap through UI/UX</p>
@@ -201,8 +201,8 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker3.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Marcellinus Ferdinand Suciadi</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker3.jpg" class="card-img-top" alt="Marcellinus Ferdinand Suciadi">
+                <h2 class="card-title speaker-name"><b>Marcellinus Ferdinand Suciadi</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
                 <p class="card-text">Dive Into Another World: Anytime, Anywhere, on Your Fingertips</p>
@@ -211,8 +211,8 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker4.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Bani Adil</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker4.jpg" class="card-img-top" alt="Bani Adil">
+                <h2 class="card-title speaker-name"><b>Bani Adil</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
                 <p class="card-text">Secret Knowledge of Content Creating</p>
@@ -221,8 +221,8 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Mikhael Ming Khosasih</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker5.jpg" class="card-img-top" alt="Mikhael Ming Khosasih">
+                <h2 class="card-title speaker-name"><b>Mikhael Ming Khosasih</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
                 <p class="card-text">So you want to be a Motion Grapher?</p>
@@ -231,8 +231,8 @@
     </div>
     <div class="col">
         <div class="card h-100">
-            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker6.jpg" class="card-img-top" alt="...">
-                <h2 class="card-title" style='position:absolute; width:100%; text-align:center; bottom:0; color:#efece7;'><b>Ario Anindito</b></h2>
+            <div style='position:relative;'> <img src="<?= BASECSS; ?>/img/about/speaker6.jpg" class="card-img-top" alt="Ario Anindito">
+                <h2 class="card-title speaker-name"><b>Ario Anindito</b></h2>
             </div>
             <div class="card-body" style='background-color:#efece7; border: 1px solid rgba(5,132,187,1); text-align:center; border-top:none;'>
                 <p class="card-text">The Process of Creating a Marvel Comic</p>
@@ -296,6 +296,15 @@
         .comp-bg {
             height: 100%;
         }
+
+        .speaker-name{
+            position:absolute; 
+            width:100%; 
+            text-align:center; 
+            bottom:0; 
+            color:#efece7;
+            font-size: 8vw;
+        }
     }
 
     /* medium and up screens */
@@ -351,6 +360,15 @@
 
         .comp-bg {
             width: 100%;
+        }
+
+        .speaker-name{
+            position:absolute; 
+            width:100%;
+            text-align:center;
+            bottom:0;
+            color:#efece7;
+            font-size: 2vw;
         }
     }
 </style>

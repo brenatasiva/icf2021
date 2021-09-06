@@ -5,10 +5,10 @@
     </button>
     <table class="table table-border table-dark">
         <thead>
-            <td>Nama</td>
-            <td>Tanggal</td>
-            <td>Jenis</td>
-            <td>Aksi</td>
+            <td class="col-5">Nama</td>
+            <td class="col-2">Tanggal</td>
+            <td class="col-1">Jenis</td>
+            <td class="col-4">Aksi</td>
         </thead>
         <tbody>
             <?php foreach ($data['listAllEvent'] as $key) :
@@ -73,6 +73,12 @@
                             <label for="syarat" class="col-sm-3 col-form-label">Syarat Ketentuan</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="syarat" name="syarat">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="linkwa" class="col-sm-3 col-form-label">Link Mekanisme</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="linkmekanisme" name="linkmekanisme">
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -178,6 +184,7 @@
         $('#deskripsi').val('');
         $('#author').val('');
         $('#syarat').val('');
+        $('#linkmekanisme').val('');
         $('#linkwa').val('');
         $('#linkzoom').val('');
         $('#selectJenis').val('1');
@@ -213,6 +220,7 @@
                 $('#deskripsi').val(data.event.deskripsi);
                 $('#author').val(data.event.author);
                 $('#syarat').val(data.event.syarat_ketentuan);
+                $('#linkmekanisme').val(data.event.link_mekanisme);
                 $('#linkwa').val(data.event.link_wa);
                 $('#linkzoom').val(data.event.link_zoom);
                 $('#idzoom').val(data.event.id_zoom);

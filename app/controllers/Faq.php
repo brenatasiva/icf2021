@@ -2,6 +2,13 @@
 
 class Faq extends Controller
 {
+    public function __construct()
+    {
+        if ($_SESSION['xyz'] != "abudabi") {
+            header('location: ' . BASEURL);
+        }
+    }
+    
     public function index()
     {
         $data['judulHalaman'] = 'FAQ - ICF 2021';

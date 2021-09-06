@@ -213,7 +213,7 @@
                     </div>
                     <div id="nrp"></div>
                     <div class="pt-4 pb-5">
-                        <button type="input" class="btn btn-primary btn-user-submit" name="btnsubmit" type="button"><b>SIGN UP</b></button>
+                        <button type="submit" class="btn btn-primary btn-user-submit" name="btnsubmit"><b>SIGN UP</b></button>
                     </div>
                     <div class="pt-4 pb-5 text-light d-flex justify-content-center">
                         <label for="" class="form-label">Already have an account? <a href="<?= BASEURL; ?>/user/login" style="color: orange !important;">Login</a></label>

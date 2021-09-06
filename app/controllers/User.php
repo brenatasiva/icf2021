@@ -2,6 +2,13 @@
 
 class User extends Controller
 {
+    public function __construct()
+    {
+        if ($_SESSION['xyz'] != "abudabi") {
+            header('location: ' . BASEURL);
+        }
+    }
+
     public function index()
     {
         header('Location: ' . BASEURL);
@@ -80,7 +87,7 @@ class User extends Controller
     public function registUser()
     {
         if (isset($_POST['btnsubmit'])) {
-            if ($this->model('User_model')->checkUsername($_POST) == 0) {
+            if ($this->model('User_model')->checkUsername($_POST) == 0 && $_POST['username'] != 'admindongz') {
                 if (!isset($_POST['username']) || $_POST['username'] == "") {
                     Flasher::setFlash('Error', 'Registration failed', 'danger');
                     header('Location: ' . BASEURL . '/user/register');
@@ -123,14 +130,14 @@ class User extends Controller
     public function requestReset()
     {
         $hasil = $this->model('User_model')->requestReset($_POST);
-        if ($hasil == null)
+        
+        if ($hasil == null) {
             Flasher::setFlash('Error', 'Username does not exist', 'danger');
-        else {
+            header('Location: ' . BASEURL . '/user/login');
+        } else {
             Flasher::setFlash('Information', 'Please check your email: <u><b>' . $hasil[0]['email'] . '</b></u> for confirmation code', 'warning');
-            $data['judulHalaman'] = "Reset Password - ICF 2021";
-            $this->view('templates/header', $data);
-            $this->view('login/resetPassword', $data);
-        }
+            header('Location: ' . BASEURL . '/user/reset');
+        } 
     }
 
     public function reset()

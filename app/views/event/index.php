@@ -20,8 +20,8 @@
     }
 
     .zoom-id {
-        min-width: 227px;
-        width: 227px;
+        min-width: 180px;
+        width: 180px;
     }
 
     .container-link-zoom {
@@ -162,7 +162,7 @@
         padding: 2rem 2rem 0.5rem 2rem;
     }
 
-    .modal-header-content .btn-close {
+    .modal-header-content .btn-modal-close {
         padding: 0.5rem 0.5rem;
         margin: -1.2rem -1rem -1rem auto;
     }
@@ -171,7 +171,7 @@
         max-width: 300px;
         color: white;
         line-height: 0.9;
-        font-size: 40px;
+        font-size: 2.1rem;
         text-shadow: 0px 0px 30px black;
     }
 
@@ -179,10 +179,6 @@
         display: flex;
         flex-direction: row;
         padding: 2rem 2rem 3rem 2rem;
-    }
-
-    .modal-body.seminar .modal-body-content {
-        width: 50%;
     }
 
     .modal-body.seminar .modal-body-desc {
@@ -255,14 +251,14 @@
         max-width: unset;
     }
 
-    .modal-header-content.lomba-individu .btn-close {
+    .modal-header-content.lomba-individu .btn-modal-close {
         margin: 0;
         position: absolute;
         right: 0;
         top: 0;
     }
 
-    .modal-header-content.lomba-individu .btn-close .bi-x-lg {
+    .modal-header-content.lomba-individu .btn-modal-close .bi-x-lg {
         fill: black;
     }
 
@@ -279,6 +275,14 @@
         text-align: justify;
     }
 
+    .syarat:hover {
+        overflow-y: scroll;
+    }
+
+    .syarat.deskripsi {
+        height: 200px !important;
+    }
+
     .syarat::-webkit-scrollbar {
         display: none;
     }
@@ -287,7 +291,7 @@
         padding-top: 70px;
     }
 
-    .btn-close {
+    .btn-modal-close {
         color: white;
         width: unset;
         height: unset;
@@ -296,7 +300,7 @@
         line-height: unset;
     }
 
-    .btn-close:hover {
+    .btn-modal-close:hover {
         box-shadow: unset;
     }
 
@@ -400,23 +404,19 @@
         color: black !important;
     }
 
-    @media (min-width: 992px) and (max-width: 1199px) {
-        .zoom-id {
-            min-width: 227px;
-            width: 227px;
+    @media only screen and (max-width: 1000px) {
+        .tanggal-jam {
+            min-width: unset;
         }
+    }
 
+    @media (min-width: 992px) and (max-width: 1199px) {
         .link-zoom {
             min-width: 140px !important;
         }
     }
 
     @media (max-width: 991px) {
-        .zoom-id {
-            min-width: 227px;
-            width: 227px;
-        }
-
         .link-zoom {
             width: 75px !important;
         }
@@ -448,7 +448,7 @@
         }
     }
 
-    @media (max-width: 700px) {
+    @media only screen and (max-width: 700px) {
         .modal-body.seminar {
             flex-direction: column;
         }
@@ -465,6 +465,30 @@
 
         .modal-body-content.modal-body-info {
             padding-left: 0 !important;
+        }
+
+        .modal-header.seminar {
+            background: unset !important;
+        }
+
+        .modal-header-content.seminar .modal-title {
+            text-shadow: unset !important;
+            color: #3f5537 !important;
+            text-align: center;
+            max-width: 400px !important;
+        }
+
+        .modal-header-content.seminar {
+            align-items: center !important;
+        }
+    }
+
+    @media only screen and (max-width: 486px) {
+        .modal-header.seminar {
+            height: 160px !important;
+        }
+        .modal-header-content.seminar .modal-title {
+            font-size: 1.7rem;
         }
     }
 
@@ -539,10 +563,14 @@
         }
 
         td.riwayat-daftar-seminar:nth-of-type(4):before {
-            content: "Zoom ID";
+            content: "Whatsapp Group";
         }
 
         td.riwayat-daftar-seminar:nth-of-type(5):before {
+            content: "Zoom ID";
+        }
+
+        td.riwayat-daftar-seminar:nth-of-type(6):before {
             content: "Link Zoom";
         }
 
@@ -551,7 +579,7 @@
         }
 
         td.riwayat-daftar-lomba:nth-of-type(2):before {
-            content: "Tanggal & Jam";
+            content: "Tanggal";
         }
 
         td.riwayat-daftar-lomba:nth-of-type(3):before {
@@ -575,7 +603,7 @@
         }
 
         td.daftar-seminar:nth-of-type(3):before {
-            content: "Tanggal & Jam";
+            content: "Tanggal";
         }
 
         td.daftar-seminar:nth-of-type(4):before {
@@ -591,7 +619,7 @@
         }
 
         td.daftar-lomba:nth-of-type(2):before {
-            content: "Tanggal & Jam";
+            content: "Tanggal";
         }
 
         td.daftar-lomba:nth-of-type(3):before {
@@ -607,7 +635,7 @@
         }
 
         td.daftar-pameran:nth-of-type(1):before {
-            content: "Nama/Judul Karya";
+            content: "Stand";
         }
 
         td.daftar-pameran:nth-of-type(2):before {
@@ -615,7 +643,7 @@
         }
 
         td.daftar-pameran:nth-of-type(3):before {
-            content: "Deskripsi";
+            content: "Judul";
         }
 
         .half-content {
@@ -729,9 +757,9 @@ $judul = explode(" - ", $data['judulHalaman']);
                                                     <span class="centered-content">' . $tgl . '</span>
                                                 </div>
                                             </td>
-                                             <td class="riwayat-daftar-lomba wa">
+                                             <td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a href="' . $key['link_wa'] . '"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
+                                                    <span class="centered-content"><a href="' . $key['link_wa'] . '" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
                                                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                                                     </svg></a></span>
                                                 </div>
@@ -739,7 +767,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             <td class="riwayat-daftar-seminar">
                                                 <div class="half-content">
                                                     <span class="centered-content">
-                                                        <div>' . (($key['id_zoom'] != "" && $key['pass_zoom'] != "") ? ('<span style="padding-right: 62px;">ID</span>: <span>' . $key['id_zoom'] . '</span><br><span style="padding-right: 6px;">Password</span>: <span>' . $key['pass_zoom'] . '</span>') : '-') . '</div>
+                                                        <div>' . (($key['id_zoom'] != "" && $key['pass_zoom'] != "") ? ('<span style="padding-right: 26px;">ID</span>: <span>' . $key['id_zoom'] . '</span><br><span style="padding-right: 6px;">Pass</span>: <span>' . $key['pass_zoom'] . '</span>') : '-') . '</div>
                                                     </span>
                                                 </div>                                    
                                             </td>
@@ -776,7 +804,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             </td>
                                             <td class="riwayat-daftar-lomba wa">
                                                 <div class="half-content">
-                                                    <span class="centered-content"><a class="btn btn-style' . (($key['status'] == "Diterima") ? ' btn-sign-up join-wa" href="' . $key['link_wa'] . '"' : ' btn-outline-secondary btn-disabled join-disabled" disabled') . '><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
+                                                    <span class="centered-content"><a target="_blank" class="btn btn-style' . (($key['status'] == "Diterima") ? ' btn-sign-up join-wa" href="' . $key['link_wa'] . '"' : ' btn-outline-secondary btn-disabled join-disabled" disabled') . '><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-whatsapp" style="margin:0 5px 5px 0;" viewBox="0 0 16 16">
                                                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                                                     </svg>Join</a></span>
                                                 </div>
@@ -900,8 +928,8 @@ $judul = explode(" - ", $data['judulHalaman']);
                                 <th class='text-center'>Mekanisme</th>
                                 <th class='details'></th>";
                     else if ($data['judulHalaman'] == "Pameran - ICF 2021")
-                        echo "<th style='width: 30%;'>Stand</th>
-                                <th style='width: 20%;'>Author</th>
+                        echo "<th>Stand</th>
+                                <th>Author</th>
                                 <th>Judul</th>";
                     ?>
                 </thead>
@@ -981,7 +1009,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                             <?php } else if ($data['judulHalaman'] == "Pameran - ICF 2021") { ?>
                                 <td class="daftar-pameran">
                                     <div class="half-content">
-                                        <span class="centered-content"><?= $key['nama']; ?></span>
+                                        <span class="centered-content"><?= $key['deskripsi']; ?></span>
                                     </div>
                                 </td>
                                 <td class="daftar-pameran">
@@ -991,7 +1019,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                 </td>
                                 <td class="daftar-pameran deskripsi">
                                     <div class="half-content">
-                                        <span class="centered-content deskripsi text-justify"><?= $key['deskripsi']; ?></span>
+                                        <span class="centered-content deskripsi text-justify"><?= $key['nama']; ?></span>
                                     </div>
                                 </td>
                             <?php } ?>
@@ -1018,7 +1046,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                     <div class="modal-body <?= $page_name; ?>">
                                         <div class="lomba">
                                             <div class="container lomba-content">
-                                                <div class="syarat">
+                                                <div class="syarat" onmouseover="scrolling(this)">
                                                     <?= $key['syarat_ketentuan']; ?>
                                                 </div>
                                                 <div class="modal-submit">
@@ -1029,6 +1057,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                                                     <span class="text-link-drive">Drive Link</span>
                                                                     <input type="text" class="form-control" aria-describedby="button-addon2" name="link" required>
                                                                 </div>
+                                                                <input type="hidden" name="jns" value="lomba">
                                                                 <button type="submit" class="btn btn-modal-info btn-sign-up" id="button-addon2" name="eid" value="<?= $key['id']; ?>">Submit</button>
                                                             </div>
                                                         </div>
@@ -1036,8 +1065,10 @@ $judul = explode(" - ", $data['judulHalaman']);
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal-body-content modal-body-desc"><?= $key['deskripsi']; ?></div>
-                                        <div class="modal-body-content modal-body-info">
+                                        <div class="modal-body-content modal-body-desc text-justify" style="width: 60%;">
+                                            <div class="syarat deskripsi" onmouseover="scrolling(this)"><?= $key['deskripsi']; ?></div>
+                                        </div>
+                                        <div class="modal-body-content modal-body-info" style="width: 40%;">
                                             <span class="modal-info"><span class="icf-color" style="margin-right: 7px;"><?= $key['jenis']; ?></span>
                                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-info-circle" viewBox="0 -1 18 18">
                                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -1050,6 +1081,7 @@ $judul = explode(" - ", $data['judulHalaman']);
                                             </span>
                                             <?php if ($key['jenis'] == 'Seminar') { ?>
                                                 <form action="<?= BASEURL; ?>/event/daftarEvent" method="post">
+                                                    <input type="hidden" name="jns" value="seminar">
                                                     <input type="hidden" name="eid" value="<?= $key['id']; ?>">
                                                     <input type="submit" class="btn btn-modal-info btn-sign-up" value="Sign Up for this event">
 
@@ -1101,41 +1133,46 @@ $judul = explode(" - ", $data['judulHalaman']);
                 alert(msg);
             }
         }
-    });
 
-    $('body').on('click', '#detailRiwayat', function() {
-        $('#modalTitle').html('Detail Riwayat');
 
-        const idevent = $(this).data('id');
-        const jenis = $(this).data('jenis');
-        $.ajax({
-            method: 'post',
-            url: '<?= BASEURL; ?>/user/getDetilRiwayat',
-            data: {
-                eid: idevent
-            },
-            dataType: 'json',
-            success: function(data) {
-                if (jenis == "Lomba Kelompok") {
-                    $('#modal_lomba_kelompok').show();
-                    $('#modal_lomba_individu').hide();
-                    $('#nama_tim').val(data[0]['nama_tim']);
-                    $('#id_game_ketua').val(data[0]['id_game']);
-                    $('#link_drive_tim').val(data[0]['link_drive']);
+        $('body').on('click', '#detailRiwayat', function() {
+            $('#modalTitle').html('Detail Riwayat');
 
-                    for (let i = 1; i <= 3; i++) {
-                        $('#nama_' + i).val(data[i]['nama']);
-                        $('#no_hp_' + i).val(data[i]['no_hp']);
-                        $('#email_' + i).val(data[i]['email']);
-                        $('#nrp_' + i).val((data[i]['nrp'] == "") ? "-" : data[i]['nrp']);
-                        $('#id_game_' + i).val(data[i]['id_game']);
+            const idevent = $(this).data('id');
+            const jenis = $(this).data('jenis');
+            $.ajax({
+                method: 'post',
+                url: '<?= BASEURL; ?>/user/getDetilRiwayat',
+                data: {
+                    eid: idevent
+                },
+                dataType: 'json',
+                success: function(data) {
+                    if (jenis == "Lomba Kelompok") {
+                        $('#modal_lomba_kelompok').show();
+                        $('#modal_lomba_individu').hide();
+                        $('#nama_tim').val(data[0]['nama_tim']);
+                        $('#id_game_ketua').val(data[0]['id_game']);
+                        $('#link_drive_tim').val(data[0]['link_drive']);
+
+                        for (let i = 1; i <= 3; i++) {
+                            $('#nama_' + i).val(data[i]['nama']);
+                            $('#no_hp_' + i).val(data[i]['no_hp']);
+                            $('#email_' + i).val(data[i]['email']);
+                            $('#nrp_' + i).val((data[i]['nrp'] == "") ? "-" : data[i]['nrp']);
+                            $('#id_game_' + i).val(data[i]['id_game']);
+                        }
+                    } else {
+                        $('#modal_lomba_individu').show();
+                        $('#modal_lomba_kelompok').hide();
+                        $('#link_drive_individu').val(data[0]['link_drive']);
                     }
-                } else {
-                    $('#modal_lomba_individu').show();
-                    $('#modal_lomba_kelompok').hide();
-                    $('#link_drive_individu').val(data[0]['link_drive']);
                 }
-            }
+            });
         });
+
+        function scrolling(obj) {
+            obj.setActive();
+        }
     });
 </script>

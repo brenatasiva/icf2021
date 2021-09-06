@@ -62,9 +62,11 @@
         border: 0px !important;
     }
 
-    .btn-user-submit:hover {
-        color: #2b313d;
-        background-color: #02756b;
+    .btn-user-submit:hover, .btn-user-submit:active, .btn-user-submit:focus {
+        color: #2b313d !important;
+        background-color: #02756b !important;
+        outline: 0 !important;
+        box-shadow: unset;
     }
 
     .crop-login {
@@ -145,13 +147,13 @@
     </div>
 </div>
 <script type="text/javascript">
-    $('#buttonSend').click(function() {
-        var btn = $(this);
-        btn.prop('disabled', true);
-        setTimeout(function() {
-            btn.prop('disabled', false);
-        }, 15000);
-    });
+    // $('#buttonSend').click(function() {
+    //     var btn = $(this);
+    //     btn.prop('disabled', true);
+    //     setTimeout(function() {
+    //         btn.prop('disabled', false);
+    //     }, 15000);
+    // });
 
     $("body").on('click', '.btn-eye', function() {
         var passType = $(this).next().attr("type");
