@@ -253,7 +253,7 @@ class User_model
         $this->db->bind('username', $data['username']);
         $data = $this->db->resultSet();
 
-        if ($data != null){
+        if ($data != null) {
             $code = rand(10000000, 99999999);
             $sql = "UPDATE user set code = :code where username = :username";
             $this->db->query($sql);
@@ -263,7 +263,7 @@ class User_model
 
             $mail = new PHPMailer();
             $mail->isSMTP();
-            $mail->IsHTML(true); 
+            $mail->IsHTML(true);
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = "true";
             $mail->SMTPSecure = "tls";
@@ -272,7 +272,7 @@ class User_model
             $mail->Password = "KerjaTerusHiyaHiya";
             $mail->Subject = "ICF 2021 - Password Reset";
             $mail->setFrom("si.icf.ubaya@gmail.com");
-            $mail->Body = '<p>Halo '. $data[0]['nama'] .',</p>
+            $mail->Body = '<p>Halo ' . $data[0]['nama'] . ',</p>
 <p>Kami menerima permintaan untuk Reset Password terhadap username Anda melalui
 Website kami http://icf.ifubaya.id/index.php/user/reset </p>
 Kode verifikasi anda:<br>
@@ -315,5 +315,31 @@ SI ICF 2021';
         $this->db->bind('username', $data['username']);
         $this->db->execute();
         return $this->db->rowCount();
+    }
+
+    public function updatePendaftar($data)
+    {
+        $sql = "UPDATE pendaftar set link_drive = :linkdrive where user_username = :username";
+        $this->db->query($sql);
+        $this->db->bind('linkdrive', $data['link_drive_individu']);
+        $this->db->bind('username', $_SESSION['username']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    //khusus edit custom
+    public function hapusPendaftar($data)
+    {
+        $sql = "DELETE FROM `pendaftar` WHERE user_username = :username and event_id = :idevent";
+        $this->db->query($sql);
+        $this->db->bind('username', $data['username']);
+        $this->db->bind('idevent', $data['idevent']);
+        $this->db->execute();
+
+        //$sql = "UPDATE anggota set nama = :nama where id_game = :idgame ";
+        // $this->db->query($sql);
+        // $this->db->bind('nama', 'JohBuster');
+        // $this->db->bind('idgame', '51578977428');
+        // $this->db->execute();
     }
 }

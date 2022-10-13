@@ -487,6 +487,7 @@
         .modal-header.seminar {
             height: 160px !important;
         }
+
         .modal-header-content.seminar .modal-title {
             font-size: 1.7rem;
         }
@@ -899,7 +900,11 @@ $judul = explode(" - ", $data['judulHalaman']);
                             <div class="mb-3 row" style="padding-bottom: 50px;">
                                 <label for="link_drive_individu" class="col-sm-3 col-form-label">Link Drive</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="link_drive_individu" name="link_drive_individu" readonly>
+                                    <form method="POST" action="<?= BASEURL; ?>/event/editLink">
+                                        <input type="hidden" name="jns" value="lomba">
+                                        <input type="text" class="form-control" id="link_drive_individu" name="link_drive_individu">
+                                        <button type="submit" class="btn btn-modal-info btn-sign-up">SAVE</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

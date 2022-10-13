@@ -42,7 +42,7 @@
 
                         <?php foreach ($data['detilPeserta'] as $perwakilan) : ?>
                             <tr>
-                                <td class="table-info"><?= $perwakilan['user_username']; ?></td>
+                                <td class="table-info"><?= $perwakilan['nama']; ?></td>
                                 <td class="table-info"><?= $perwakilan['nrp']; ?></td>
                                 <td class="table-info"><?= $perwakilan['no_hp']; ?></td>
                                 <td class="table-info"><?= $perwakilan['email']; ?></td>

@@ -103,9 +103,9 @@ class User extends Controller
                 } else if (!isset($_POST['nomor'])) {
                     Flasher::setFlash('Error', 'Registration failed', 'danger');
                     header('Location: ' . BASEURL . '/user/register');
-                    // } else if (!isset($_POST['nrp']) || strlen($_POST['nrp']) > 10) {
-                    //     Flasher::setFlash('gagal', 'terdaftar', 'danger');
-                    //     header('Location: ' . BASEURL . '/user/register');
+                } else if (strlen($_POST['nrp']) > 9) {
+                    Flasher::setFlash('gagal', 'terdaftar', 'danger');
+                    header('Location: ' . BASEURL . '/user/register');
                 } else if ($this->model('User_model')->insertUser($_POST) > 0) {
                     Flasher::setFlash('Success', 'Registration succeeded', 'success');
                     header('Location: ' . BASEURL . '/user/login');

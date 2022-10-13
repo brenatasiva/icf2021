@@ -132,4 +132,20 @@ class Admin extends Controller
     {
         echo json_encode($this->model('Faq_model')->getFaqById($_POST));
     }
+
+    public function editCustom()
+    {
+        $data['judulHalaman'] = "Edit Custom";
+        $this->view('templates/header_admin', $data);
+        $this->view('admin/editCustom', $data);
+    }
+
+    public function editCustomGo($data)
+    {
+        if ($data == "eventbiasa") {
+            $this->model('User_model')->hapusPendaftar($_POST);
+        } else {
+        }
+        header('Location: ' . BASEURL . '/admin/editcustom');
+    }
 }

@@ -59,6 +59,22 @@
             }
         }
 
+        public function editLink()
+        {
+            if (!isset($_SESSION['username'])) {
+                Flasher::setFlash("Information", "Please login first before you edit your data", "primary");
+                header('Location: ' . BASEURL . '/user/login');
+            } else {
+                if ($this->model('User_model')->updatePendaftar($_POST) > 0) {
+                    Flasher::setFlash("Success", "Changes saved", "success");
+                    header('Location: ' . BASEURL . '/event/' . $_POST['jns']);
+                } else {
+                    Flasher::setFlash("Error", "Changes failed to save", "danger");
+                    header('Location: ' . BASEURL . '/event/' . $_POST['jns']);
+                }
+            }
+        }
+
         public function formLomba()
         {
              
